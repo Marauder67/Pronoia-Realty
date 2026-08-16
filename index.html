@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pronoia Realty — Puerto Rico Real Estate</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ocean:    #1B4F6B;
+    --reef:     #2A7F62;
+    --sand:     #F5EFE4;
+    --coral:    #C94F3A;
+    --midnight: #0E1F2B;
+    --mist:     #E8EEF2;
+    --text:     #1A1A1A;
+    --subtext:  #5A6672;
+    --white:    #FFFFFF;
+    --border:   #D4DCE2;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--sand);
+    color: var(--text);
+    min-height: 100vh;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--midnight);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 2rem;
+    height: 60px;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 600;
+    color: var(--white); letter-spacing: 0.02em;
+  }
+  .nav-logo span { color: #6ECBAA; }
+  .nav-links { display: flex; gap: 1.8rem; }
+  .nav-links a {
+    color: rgba(255,255,255,0.65); font-size: 0.82rem;
+    text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: #fff; }
+  .nav-cta {
+    background: var(--reef); color: #fff;
+    border: none; padding: 0.45rem 1.1rem;
+    border-radius: 4px; font-size: 0.8rem;
+    cursor: pointer; font-family: 'DM Sans', sans-serif;
+    letter-spacing: 0.04em; text-transform: uppercase;
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background: #236B52; }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--midnight);
+    padding: 4rem 2rem 3rem;
+    text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 120%, rgba(27,79,107,0.5) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: #6ECBAA; margin-bottom: 1rem;
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.8rem, 6vw, 4.8rem);
+    font-weight: 500; color: var(--white);
+    line-height: 1.08; margin-bottom: 1rem;
+  }
+  .hero h1 em { font-style: italic; color: #6ECBAA; }
+  .hero-sub {
+    color: rgba(255,255,255,0.55); font-size: 1rem;
+    max-width: 480px; margin: 0 auto 2.5rem; line-height: 1.6;
+  }
+
+  /* ── SEARCH BAR ── */
+  .search-bar {
+    background: var(--white);
+    border-radius: 8px;
+    display: flex; flex-wrap: wrap; gap: 0;
+    max-width: 860px; margin: 0 auto;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.28);
+  }
+  .search-field {
+    flex: 1; min-width: 140px;
+    border-right: 1px solid var(--border);
+    padding: 0.9rem 1.1rem;
+  }
+  .search-field label {
+    display: block; font-size: 0.65rem;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--subtext); margin-bottom: 0.2rem;
+  }
+  .search-field select, .search-field input {
+    width: 100%; border: none; outline: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem; color: var(--text);
+    background: transparent; cursor: pointer;
+  }
+  .search-btn {
+    background: var(--coral); color: #fff;
+    border: none; padding: 0 1.6rem;
+    font-size: 0.85rem; font-weight: 500;
+    cursor: pointer; font-family: 'DM Sans', sans-serif;
+    letter-spacing: 0.04em; text-transform: uppercase;
+    transition: background 0.2s; min-width: 110px;
+  }
+  .search-btn:hover { background: #A83E2D; }
+
+  /* ── STATS STRIP ── */
+  .stats-strip {
+    background: var(--ocean);
+    display: flex; justify-content: center; gap: 0;
+  }
+  .stat {
+    padding: 1.1rem 2.5rem;
+    text-align: center;
+    border-right: 1px solid rgba(255,255,255,0.1);
+  }
+  .stat:last-child { border-right: none; }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem; font-weight: 600; color: #fff;
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.68rem; letter-spacing: 0.1em;
+    text-transform: uppercase; color: rgba(255,255,255,0.55);
+    margin-top: 0.2rem;
+  }
+
+  /* ── MAIN LAYOUT ── */
+  .main {
+    max-width: 1280px; margin: 0 auto;
+    padding: 2.5rem 1.5rem;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  /* ── SIDEBAR FILTERS ── */
+  .sidebar {
+    background: var(--white);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    padding: 1.5rem;
+    position: sticky; top: 72px;
+  }
+  .sidebar-title {
+    font-size: 0.68rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--subtext);
+    margin-bottom: 1.2rem; padding-bottom: 0.8rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .filter-group { margin-bottom: 1.4rem; }
+  .filter-label {
+    font-size: 0.75rem; font-weight: 500;
+    color: var(--text); margin-bottom: 0.5rem;
+    display: block;
+  }
+  .filter-select, .filter-input {
+    width: 100%; padding: 0.5rem 0.7rem;
+    border: 1px solid var(--border); border-radius: 4px;
+    font-family: 'DM Sans', sans-serif; font-size: 0.85rem;
+    color: var(--text); background: var(--sand);
+    outline: none; cursor: pointer;
+  }
+  .filter-select:focus, .filter-input:focus {
+    border-color: var(--ocean);
+  }
+  .price-range {
+    display: flex; gap: 0.5rem; align-items: center;
+  }
+  .price-range span { color: var(--subtext); font-size: 0.8rem; }
+  .checkbox-group { display: flex; flex-direction: column; gap: 0.4rem; }
+  .checkbox-item {
+    display: flex; align-items: center; gap: 0.5rem;
+    font-size: 0.83rem; color: var(--text); cursor: pointer;
+  }
+  .checkbox-item input { accent-color: var(--ocean); cursor: pointer; }
+  .apply-btn {
+    width: 100%; background: var(--ocean); color: #fff;
+    border: none; padding: 0.7rem; border-radius: 4px;
+    font-family: 'DM Sans', sans-serif; font-size: 0.85rem;
+    font-weight: 500; cursor: pointer; letter-spacing: 0.04em;
+    text-transform: uppercase; transition: background 0.2s;
+    margin-top: 0.5rem;
+  }
+  .apply-btn:hover { background: #163F56; }
+  .reset-link {
+    display: block; text-align: center; margin-top: 0.6rem;
+    font-size: 0.78rem; color: var(--subtext);
+    cursor: pointer; text-decoration: underline;
+  }
+
+  /* ── LISTINGS ── */
+  .listings-header {
+    display: flex; justify-content: space-between;
+    align-items: center; margin-bottom: 1.2rem;
+  }
+  .listings-count {
+    font-size: 0.82rem; color: var(--subtext);
+  }
+  .listings-count strong { color: var(--text); }
+  .sort-select {
+    border: 1px solid var(--border); border-radius: 4px;
+    padding: 0.4rem 0.7rem; font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem; color: var(--text);
+    background: var(--white); outline: none; cursor: pointer;
+  }
+  .view-toggle { display: flex; gap: 0.3rem; margin-left: 0.8rem; }
+  .view-btn {
+    border: 1px solid var(--border); background: var(--white);
+    padding: 0.35rem 0.55rem; border-radius: 4px;
+    cursor: pointer; color: var(--subtext); font-size: 0.9rem;
+    transition: all 0.15s;
+  }
+  .view-btn.active { background: var(--ocean); color: #fff; border-color: var(--ocean); }
+
+  .listings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.2rem;
+  }
+
+  /* ── LISTING CARD ── */
+  .card {
+    background: var(--white);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+  }
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(14,31,43,0.14);
+  }
+  .card-img {
+    width: 100%; height: 190px;
+    object-fit: cover; display: block;
+    background: var(--mist);
+    position: relative; overflow: hidden;
+  }
+  .card-img-placeholder {
+    width: 100%; height: 190px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, var(--mist) 0%, #C8DDE8 100%);
+  }
+  .card-badge {
+    position: absolute; top: 0.7rem; left: 0.7rem;
+    background: var(--reef); color: #fff;
+    font-size: 0.62rem; letter-spacing: 0.08em;
+    text-transform: uppercase; padding: 0.2rem 0.55rem;
+    border-radius: 3px; font-weight: 500;
+  }
+  .card-badge.sold { background: var(--subtext); }
+  .card-badge.pending { background: #C97A2A; }
+  .card-save {
+    position: absolute; top: 0.7rem; right: 0.7rem;
+    background: rgba(255,255,255,0.9);
+    border: none; width: 30px; height: 30px;
+    border-radius: 50%; display: flex; align-items: center;
+    justify-content: center; cursor: pointer; font-size: 0.85rem;
+    transition: background 0.2s;
+  }
+  .card-save:hover { background: #fff; }
+  .card-body { padding: 1rem 1.1rem; }
+  .card-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.45rem; font-weight: 600;
+    color: var(--ocean); margin-bottom: 0.2rem;
+  }
+  .card-address {
+    font-size: 0.82rem; color: var(--text);
+    font-weight: 500; margin-bottom: 0.15rem;
+  }
+  .card-location {
+    font-size: 0.75rem; color: var(--subtext);
+    margin-bottom: 0.7rem;
+  }
+  .card-specs {
+    display: flex; gap: 1rem;
+    padding-top: 0.7rem;
+    border-top: 1px solid var(--mist);
+  }
+  .spec {
+    display: flex; align-items: center; gap: 0.3rem;
+    font-size: 0.75rem; color: var(--subtext);
+  }
+  .spec strong { color: var(--text); font-size: 0.82rem; }
+  .card-footer {
+    padding: 0.6rem 1.1rem;
+    border-top: 1px solid var(--mist);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .card-mls {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem; color: var(--subtext);
+    letter-spacing: 0.04em;
+  }
+  .card-type {
+    font-size: 0.68rem; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--subtext);
+  }
+
+  /* ── DETAIL MODAL ── */
+  .modal-overlay {
+    position: fixed; inset: 0; z-index: 500;
+    background: rgba(14,31,43,0.75);
+    display: none; align-items: flex-start;
+    justify-content: center; padding: 2rem 1rem;
+    overflow-y: auto;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal {
+    background: var(--white); border-radius: 10px;
+    max-width: 860px; width: 100%;
+    overflow: hidden; position: relative;
+    margin: auto;
+  }
+  .modal-close {
+    position: absolute; top: 1rem; right: 1rem; z-index: 10;
+    background: rgba(255,255,255,0.9); border: none;
+    width: 36px; height: 36px; border-radius: 50%;
+    font-size: 1.1rem; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s;
+  }
+  .modal-close:hover { background: #fff; }
+  .modal-gallery {
+    width: 100%; height: 320px;
+    background: linear-gradient(135deg, var(--mist) 0%, #C8DDE8 100%);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 5rem;
+  }
+  .modal-body { padding: 1.8rem 2rem; }
+  .modal-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem; font-weight: 600;
+    color: var(--ocean);
+  }
+  .modal-address {
+    font-size: 1rem; color: var(--text);
+    font-weight: 500; margin-bottom: 0.2rem;
+  }
+  .modal-loc { font-size: 0.85rem; color: var(--subtext); margin-bottom: 1.2rem; }
+  .modal-specs {
+    display: flex; gap: 1.5rem; flex-wrap: wrap;
+    padding: 1rem 0; border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 1.2rem;
+  }
+  .modal-spec { text-align: center; }
+  .modal-spec-val {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem; font-weight: 600;
+    color: var(--ocean);
+  }
+  .modal-spec-key {
+    font-size: 0.7rem; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--subtext);
+  }
+  .modal-desc {
+    font-size: 0.88rem; line-height: 1.7;
+    color: var(--text); margin-bottom: 1.4rem;
+  }
+  .modal-details-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 0.5rem 2rem; margin-bottom: 1.4rem;
+  }
+  .detail-row {
+    display: flex; justify-content: space-between;
+    font-size: 0.82rem; padding: 0.35rem 0;
+    border-bottom: 1px solid var(--mist);
+  }
+  .detail-row span:first-child { color: var(--subtext); }
+  .detail-row span:last-child { font-weight: 500; }
+  .modal-actions { display: flex; gap: 0.8rem; }
+  .btn-primary {
+    flex: 1; background: var(--ocean); color: #fff;
+    border: none; padding: 0.85rem; border-radius: 5px;
+    font-family: 'DM Sans', sans-serif; font-size: 0.88rem;
+    font-weight: 500; cursor: pointer; transition: background 0.2s;
+    text-transform: uppercase; letter-spacing: 0.04em;
+  }
+  .btn-primary:hover { background: #163F56; }
+  .btn-secondary {
+    flex: 1; background: transparent; color: var(--ocean);
+    border: 1.5px solid var(--ocean); padding: 0.85rem;
+    border-radius: 5px; font-family: 'DM Sans', sans-serif;
+    font-size: 0.88rem; font-weight: 500; cursor: pointer;
+    transition: all 0.2s; text-transform: uppercase; letter-spacing: 0.04em;
+  }
+  .btn-secondary:hover { background: var(--mist); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--midnight); color: rgba(255,255,255,0.45);
+    text-align: center; padding: 2rem;
+    font-size: 0.75rem; line-height: 1.7;
+    margin-top: 3rem;
+  }
+  footer strong { color: rgba(255,255,255,0.7); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .main { grid-template-columns: 1fr; }
+    .sidebar { position: static; }
+    .stat { padding: 0.8rem 1.2rem; }
+    .stat-num { font-size: 1.2rem; }
+    .modal-details-grid { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Pronoia<span>Realty</span></div>
+  <div class="nav-links">
+    <a href="#">Buy</a>
+    <a href="#">Rent</a>
+    <a href="#">Sell</a>
+    <a href="#">Market Reports</a>
+    <a href="#">About</a>
+  </div>
+  <button class="nav-cta">Contact Coral</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">Stellar MLS · Puerto Rico</div>
+  <h1>Find your place<br>in <em>La Isla del Encanto</em></h1>
+  <p class="hero-sub">Curated listings across every municipio — from beachfront condos in Dorado to mountain estates in Jayuya.</p>
+
+  <div class="search-bar">
+    <div class="search-field">
+      <label>Municipio</label>
+      <select id="heroMunicipio">
+        <option value="">All Puerto Rico</option>
+        <option>San Juan</option><option>Dorado</option><option>Guaynabo</option>
+        <option>Bayamón</option><option>Carolina</option><option>Ponce</option>
+        <option>Humacao</option><option>Rincón</option><option>Isabela</option>
+        <option>Aguadilla</option><option>Mayagüez</option><option>Jayuya</option>
+        <option>Fajardo</option><option>Culebra</option><option>Vieques</option>
+      </select>
+    </div>
+    <div class="search-field">
+      <label>Property Type</label>
+      <select id="heroType">
+        <option value="">Any Type</option>
+        <option>Single Family</option><option>Condo / Apartment</option>
+        <option>Townhouse</option><option>Land</option><option>Commercial</option>
+        <option>Multi-Family</option>
+      </select>
+    </div>
+    <div class="search-field">
+      <label>Max Price</label>
+      <select id="heroPrice">
+        <option value="">No Limit</option>
+        <option value="300000">$300,000</option>
+        <option value="500000">$500,000</option>
+        <option value="750000">$750,000</option>
+        <option value="1000000">$1,000,000</option>
+        <option value="2000000">$2,000,000+</option>
+      </select>
+    </div>
+    <button class="search-btn" onclick="applyHeroSearch()">Search</button>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-strip">
+  <div class="stat"><div class="stat-num">847</div><div class="stat-label">Active Listings</div></div>
+  <div class="stat"><div class="stat-num">$485K</div><div class="stat-label">Median Price</div></div>
+  <div class="stat"><div class="stat-num">23</div><div class="stat-label">Municipios</div></div>
+  <div class="stat"><div class="stat-num">62</div><div class="stat-label">Avg Days on Market</div></div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-title">Filter Listings</div>
+
+    <div class="filter-group">
+      <label class="filter-label">Municipio</label>
+      <select class="filter-select" id="filtMunicipio">
+        <option value="">All Puerto Rico</option>
+        <option>San Juan</option><option>Dorado</option><option>Guaynabo</option>
+        <option>Bayamón</option><option>Carolina</option><option>Ponce</option>
+        <option>Humacao</option><option>Rincón</option><option>Isabela</option>
+        <option>Aguadilla</option><option>Mayagüez</option><option>Jayuya</option>
+        <option>Fajardo</option><option>Culebra</option><option>Vieques</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label class="filter-label">Property Type</label>
+      <select class="filter-select" id="filtType">
+        <option value="">Any Type</option>
+        <option>Single Family</option><option>Condo / Apartment</option>
+        <option>Townhouse</option><option>Land</option><option>Commercial</option>
+        <option>Multi-Family</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label class="filter-label">Price Range</label>
+      <div class="price-range">
+        <input class="filter-input" type="number" id="filtPriceMin" placeholder="Min $" style="width:48%">
+        <span>–</span>
+        <input class="filter-input" type="number" id="filtPriceMax" placeholder="Max $" style="width:48%">
+      </div>
+    </div>
+
+    <div class="filter-group">
+      <label class="filter-label">Bedrooms (min)</label>
+      <select class="filter-select" id="filtBeds">
+        <option value="0">Any</option>
+        <option value="1">1+</option><option value="2">2+</option>
+        <option value="3">3+</option><option value="4">4+</option>
+        <option value="5">5+</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label class="filter-label">Bathrooms (min)</label>
+      <select class="filter-select" id="filtBaths">
+        <option value="0">Any</option>
+        <option value="1">1+</option><option value="2">2+</option>
+        <option value="3">3+</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label class="filter-label">Features</label>
+      <div class="checkbox-group">
+        <label class="checkbox-item"><input type="checkbox" id="chkPool"> Pool</label>
+        <label class="checkbox-item"><input type="checkbox" id="chkOcean"> Ocean View</label>
+        <label class="checkbox-item"><input type="checkbox" id="chkGated"> Gated Community</label>
+        <label class="checkbox-item"><input type="checkbox" id="chkBeach"> Beachfront</label>
+        <label class="checkbox-item"><input type="checkbox" id="chkMtn"> Mountain View</label>
+      </div>
+    </div>
+
+    <button class="apply-btn" onclick="applyFilters()">Apply Filters</button>
+    <span class="reset-link" onclick="resetFilters()">Reset all filters</span>
+  </aside>
+
+  <!-- LISTINGS -->
+  <div>
+    <div class="listings-header">
+      <div class="listings-count">Showing <strong id="countDisplay">18</strong> listings</div>
+      <div style="display:flex;align-items:center;gap:0.5rem">
+        <select class="sort-select" id="sortSelect" onchange="renderListings()">
+          <option value="newest">Newest First</option>
+          <option value="price-asc">Price: Low → High</option>
+          <option value="price-desc">Price: High → Low</option>
+          <option value="sqft">Largest First</option>
+        </select>
+        <div class="view-toggle">
+          <button class="view-btn active" onclick="setView('grid',this)">⊞</button>
+          <button class="view-btn" onclick="setView('list',this)">≡</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="listings-grid" id="listingsGrid"></div>
+  </div>
+</div>
+
+<!-- DETAIL MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+  <div class="modal" id="modalContent">
+    <button class="modal-close" onclick="closeModalDirect()">✕</button>
+    <div class="modal-gallery" id="modalGallery"></div>
+    <div class="modal-body">
+      <div class="modal-price" id="mPrice"></div>
+      <div class="modal-address" id="mAddress"></div>
+      <div class="modal-loc" id="mLoc"></div>
+      <div class="modal-specs" id="mSpecs"></div>
+      <div class="modal-desc" id="mDesc"></div>
+      <div class="modal-details-grid" id="mDetails"></div>
+      <div class="modal-actions">
+        <button class="btn-primary">Schedule a Showing</button>
+        <button class="btn-secondary">Request Info</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <strong>Coral Santiago</strong> · Licensed Real Estate Broker &amp; Broker · <strong>Pronoia Realty</strong> · Puerto Rico<br>
+  <a href="mailto:c.santiago@pronoiarealty.com" style="color:rgba(255,255,255,0.6);text-decoration:none;">c.santiago@pronoiarealty.com</a><br>
+  Data provided by <strong>Stellar MLS</strong> via MLS Grid API · Updated every 15 minutes<br>
+  © 2026 Pronoia Realty · All rights reserved. Listings are subject to prior sale or withdrawal without notice.<br>
+  <span style="font-size:0.68rem;opacity:0.6">This prototype uses demo data. Live site will connect to your Stellar MLS member feed.</span>
+</footer>
+
+<script>
+// ── MOCK DATA (MLS Grid field names) ──
+const LISTINGS = [
+  {
+    ListingKey: "PR-240001", ListingId: "PR24001",
+    ListPrice: 1_850_000, PropertyType: "Single Family",
+    BedroomsTotal: 5, BathroomsTotalInteger: 4,
+    LivingArea: 4800, LotSizeAcres: 0.85,
+    City: "Dorado", StateOrProvince: "PR",
+    StreetNumber: "18", StreetName: "Calle Palma Real",
+    SubdivisionName: "Dorado Beach Resort",
+    PublicRemarks: "Stunning resort-style estate within the prestigious Dorado Beach community. This fully renovated home features soaring ceilings, a chef's kitchen, and a wraparound terrace overlooking a private pool and manicured gardens. Walk to the beach, golf courses, and the Ritz-Carlton Reserve.",
+    YearBuilt: 2018, GarageSpaces: 2,
+    StandardStatus: "Active", DaysOnMarket: 14,
+    ListAgentFullName: "Agent Name",
+    features: ["Pool","Ocean View","Gated Community","Beachfront"],
+    emoji: "🏡", pricePerSqft: 385
+  },
+  {
+    ListingKey: "PR-240002", ListingId: "PR24002",
+    ListPrice: 425_000, PropertyType: "Condo / Apartment",
+    BedroomsTotal: 2, BathroomsTotalInteger: 2,
+    LivingArea: 1240, LotSizeAcres: null,
+    City: "San Juan", StateOrProvince: "PR",
+    StreetNumber: "1055", StreetName: "Ave Ashford",
+    SubdivisionName: "Condado Lagoon",
+    PublicRemarks: "Modern condo in the heart of Condado with spectacular lagoon views. Open floor plan, floor-to-ceiling windows, updated kitchen with quartz countertops, and a private balcony. Building amenities include pool, gym, and 24-hour concierge. Steps to restaurants, boutiques, and the beach.",
+    YearBuilt: 2015, GarageSpaces: 1,
+    StandardStatus: "Active", DaysOnMarket: 28,
+    ListAgentFullName: "Agent Name",
+    features: ["Pool","Ocean View"],
+    emoji: "🏢", pricePerSqft: 342
+  },
+  {
+    ListingKey: "PR-240003", ListingId: "PR24003",
+    ListPrice: 2_750_000, PropertyType: "Single Family",
+    BedroomsTotal: 6, BathroomsTotalInteger: 6,
+    LivingArea: 7200, LotSizeAcres: 1.2,
+    City: "Guaynabo", StateOrProvince: "PR",
+    StreetNumber: "34", StreetName: "Camino del Rey",
+    SubdivisionName: "Bairoa Park",
+    PublicRemarks: "Grand estate on a private acre in sought-after Guaynabo. Six en-suite bedrooms, a home theatre, wine cellar, full outdoor kitchen, and a resort pool with waterfall. Gated entrance, generator, and cistern. Ideal for the discerning buyer seeking privacy and luxury without compromise.",
+    YearBuilt: 2012, GarageSpaces: 3,
+    StandardStatus: "Active", DaysOnMarket: 45,
+    ListAgentFullName: "Agent Name",
+    features: ["Pool","Gated Community","Mountain View"],
+    emoji: "🏰", pricePerSqft: 381
+  },
+  {
+    ListingKey: "PR-240004", ListingId: "PR24004",
+    ListPrice: 320_000, PropertyType: "Single Family",
+    BedroomsTotal: 3, BathroomsTotalInteger: 2,
+    LivingArea: 1850, LotSizeAcres: 0.22,
+    City: "Bayamón", StateOrProvince: "PR",
+    StreetNumber: "77", StreetName: "Calle Cedro",
+    SubdivisionName: "Urb. Villa del Rey",
+    PublicRemarks: "Well-maintained family home in a quiet, established neighborhood. Tile floors throughout, updated bathrooms, covered carport, and a large backyard with mature fruit trees. Minutes from shopping centers, schools, and the expressway. Solid concrete construction with recent roof.",
+    YearBuilt: 1998, GarageSpaces: 1,
+    StandardStatus: "Active", DaysOnMarket: 62,
+    ListAgentFullName: "Agent Name",
+    features: [],
+    emoji: "🏠", pricePerSqft: 173
+  },
+  {
+    ListingKey: "PR-240005", ListingId: "PR24005",
+    ListPrice: 895_000, PropertyType: "Single Family",
+    BedroomsTotal: 4, BathroomsTotalInteger: 3,
+    LivingArea: 3100, LotSizeAcres: 0.35,
+    City: "Rincón", StateOrProvince: "PR",
+    StreetNumber: "88", StreetName: "Calle Sandy Beach",
+    SubdivisionName: "Puntas",
+    PublicRemarks: "Surfer's paradise meets luxury living. This oceanfront property in Rincón's coveted Puntas area boasts panoramic Caribbean sunsets, a rooftop deck, three en-suite bedrooms, and an income-generating casita. Fully furnished and turnkey. Steps from Sandy Beach and world-class surf breaks.",
+    YearBuilt: 2019, GarageSpaces: 0,
+    StandardStatus: "Active", DaysOnMarket: 9,
+    ListAgentFullName: "Agent Name",
+    features: ["Ocean View","Beachfront","Pool"],
+    emoji: "🌊", pricePerSqft: 288
+  },
+  {
+    ListingKey: "PR-240006", ListingId: "PR24006",
+    ListPrice: 185_000, PropertyType: "Land",
+    BedroomsTotal: 0, BathroomsTotalInteger: 0,
+    LivingArea: 0, LotSizeAcres: 2.4,
+    City: "Isabela", StateOrProvince: "PR",
+    StreetNumber: "", StreetName: "PR-4466 Km 1.2",
+    SubdivisionName: "",
+    PublicRemarks: "Exceptional 2.4-acre parcel in Isabela with unobstructed ocean views from every angle. Flat buildable terrain with access road, utilities at street, and preliminary topographic study available. Ideal for a private estate, boutique resort, or vacation rental development. Just minutes from Jobos Beach.",
+    YearBuilt: null, GarageSpaces: 0,
+    StandardStatus: "Active", DaysOnMarket: 103,
+    ListAgentFullName: "Agent Name",
+    features: ["Ocean View"],
+    emoji: "🌿", pricePerSqft: 0
+  },
+  {
+    ListingKey: "PR-240007", ListingId: "PR24007",
+    ListPrice: 560_000, PropertyType: "Condo / Apartment",
+    BedroomsTotal: 3, BathroomsTotalInteger: 3,
+    LivingArea: 1890, LotSizeAcres: null,
+    City: "Carolina", StateOrProvince: "PR",
+    StreetNumber: "1 Ave", StreetName: "Los Gobernadores",
+    SubdivisionName: "El Conquistador Resort Residences",
+    PublicRemarks: "Rare three-bedroom unit at the exclusive El Conquistador resort community in Fajardo. Furnished with high-end finishes, private terrace, and access to five pools, marina, private island ferry, golf, and spa. Robust rental income history. Owner financing considered.",
+    YearBuilt: 2008, GarageSpaces: 1,
+    StandardStatus: "Active", DaysOnMarket: 37,
+    ListAgentFullName: "Agent Name",
+    features: ["Pool","Ocean View","Gated Community"],
+    emoji: "🏖️", pricePerSqft: 296
+  },
+  {
+    ListingKey: "PR-240008", ListingId: "PR24008",
+    ListPrice: 1_200_000, PropertyType: "Single Family",
+    BedroomsTotal: 5, BathroomsTotalInteger: 4,
+    LivingArea: 4100, LotSizeAcres: 0.6,
+    City: "Ponce", StateOrProvince: "PR",
+    StreetNumber: "200", StreetName: "Calle Luna",
+    SubdivisionName: "El Vigía",
+    PublicRemarks: "Architectural masterpiece perched on a hilltop in El Vigía with sweeping views of the southern coast and the Caribbean. Custom stone construction, vaulted ceilings, tropical courtyard with fountain, infinity pool, and a two-bedroom guest quarters. An extraordinary property in Puerto Rico's second city.",
+    YearBuilt: 2003, GarageSpaces: 2,
+    StandardStatus: "Active", DaysOnMarket: 78,
+    ListAgentFullName: "Agent Name",
+    features: ["Pool","Ocean View","Mountain View"],
+    emoji: "🏛️", pricePerSqft: 292
+  },
+  {
+    ListingKey: "PR-240009", ListingId: "PR24009",
+    ListPrice: 275_000, PropertyType: "Townhouse",
+    BedroomsTotal: 3, BathroomsTotalInteger: 2,
+    LivingArea: 1680, LotSizeAcres: 0.08,
+    City: "Guaynabo", StateOrProvince: "PR",
+    StreetNumber: "12", StreetName: "Calle Roble",
+    SubdivisionName: "Urb. Montehiedra",
+    PublicRemarks: "Move-in ready townhouse in gated Montehiedra. Three bedrooms, updated kitchen, private patio, and two assigned parking spaces. Community pool and playground. Excellent location minutes from Las Catalinas mall, top schools, and major highways.",
+    YearBuilt: 2005, GarageSpaces: 0,
+    StandardStatus: "Active", DaysOnMarket: 19,
+    ListAgentFullName: "Agent Name",
+    features: ["Pool","Gated Community"],
+    emoji: "🏘️", pricePerSqft: 163
+  },
+  {
+    ListingKey: "PR-240010", ListingId: "PR24010",
+    ListPrice: 3_900_000, PropertyType: "Single Family",
+    BedroomsTotal: 7, BathroomsTotalInteger: 7,
+    LivingArea: 9500, LotSizeAcres: 3.1,
+    City: "Dorado", StateOrProvince: "PR",
+    StreetNumber: "5", StreetName: "Camino Playa Dorado",
+    SubdivisionName: "Dorado Beach East",
+    PublicRemarks: "Iconic beachfront compound on three acres of private oceanfront in Dorado Beach East. Ten-thousand square foot main residence plus two guest houses, a private gym, screening room, tennis court, and 160 feet of direct beach access. One of Puerto Rico's most significant private estates.",
+    YearBuilt: 2021, GarageSpaces: 4,
+    StandardStatus: "Active", DaysOnMarket: 5,
+    ListAgentFullName: "Agent Name",
+    features: ["Pool","Ocean View","Gated Community","Beachfront"],
+    emoji: "🌴", pricePerSqft: 410
+  },
+  {
+    ListingKey: "PR-240011", ListingId: "PR24011",
+    ListPrice: 149_000, PropertyType: "Condo / Apartment",
+    BedroomsTotal: 1, BathroomsTotalInteger: 1,
+    LivingArea: 720, LotSizeAcres: null,
+    City: "San Juan", StateOrProvince: "PR",
+    StreetNumber: "350", StreetName: "Ave de Diego",
+    SubdivisionName: "Urb. Puerto Nuevo",
+    PublicRemarks: "Affordable studio apartment in a well-maintained building in Puerto Nuevo. Fully renovated interior with ceramic floors, modern kitchen, and split AC. Building includes laundry facility and parking. Great for a first home or investment rental property in a central San Juan location.",
+    YearBuilt: 1985, GarageSpaces: 1,
+    StandardStatus: "Active", DaysOnMarket: 44,
+    ListAgentFullName: "Agent Name",
+    features: [],
+    emoji: "🏢", pricePerSqft: 206
+  },
+  {
+    ListingKey: "PR-240012", ListingId: "PR24012",
+    ListPrice: 680_000, PropertyType: "Single Family",
+    BedroomsTotal: 4, BathroomsTotalInteger: 3,
+    LivingArea: 2900, LotSizeAcres: 0.45,
+    City: "Humacao", StateOrProvince: "PR",
+    StreetNumber: "40", StreetName: "Calle Palmas",
+    SubdivisionName: "Palmas del Mar",
+    PublicRemarks: "Resort lifestyle in prestigious Palmas del Mar. This beautifully landscaped home features an open kitchen, formal dining, a private pool, and a large deck with tropical garden views. Access to 20+ amenities including golf, tennis, marina, beach club, and equestrian center. 24-hour security.",
+    YearBuilt: 2000, GarageSpaces: 2,
+    StandardStatus: "Active", DaysOnMarket: 55,
+    ListAgentFullName: "Agent Name",
+    features: ["Pool","Gated Community","Ocean View"],
+    emoji: "⛳", pricePerSqft: 234
+  },
+  {
+    ListingKey: "PR-240013", ListingId: "PR24013",
+    ListPrice: 495_000, PropertyType: "Single Family",
+    BedroomsTotal: 3, BathroomsTotalInteger: 3,
+    LivingArea: 2200, LotSizeAcres: 0.28,
+    City: "Aguadilla", StateOrProvince: "PR",
+    StreetNumber: "22", StreetName: "Calle Coral",
+    SubdivisionName: "Urb. Borinquen Beach",
+    PublicRemarks: "Contemporary beach home steps from Borinquen Beach and the former Ramey Air Force Base. Three full suites, a chef's kitchen, wrap-around terrace, and an oversized lot with room for a pool. Walking distance to the Golf Club, Crash Boat Beach, and Rafael Hernandez Airport.",
+    YearBuilt: 2016, GarageSpaces: 1,
+    StandardStatus: "Active", DaysOnMarket: 31,
+    ListAgentFullName: "Agent Name",
+    features: ["Ocean View","Beachfront"],
+    emoji: "🏄", pricePerSqft: 225
+  },
+  {
+    ListingKey: "PR-240014", ListingId: "PR24014",
+    ListPrice: 220_000, PropertyType: "Single Family",
+    BedroomsTotal: 3, BathroomsTotalInteger: 2,
+    LivingArea: 1450, LotSizeAcres: 0.18,
+    City: "Mayagüez", StateOrProvince: "PR",
+    StreetNumber: "55", StreetName: "Calle Dr. Loyola",
+    SubdivisionName: "Urb. Santa María",
+    PublicRemarks: "Charming home in a quiet residential neighborhood near the University of Puerto Rico, Mayagüez campus. Renovated kitchen and baths, tile floors, enclosed garage, and a covered patio. Excellent value in the heart of Puerto Rico's west coast hub.",
+    YearBuilt: 1992, GarageSpaces: 1,
+    StandardStatus: "Active", DaysOnMarket: 88,
+    ListAgentFullName: "Agent Name",
+    features: [],
+    emoji: "🏠", pricePerSqft: 151
+  },
+  {
+    ListingKey: "PR-240015", ListingId: "PR24015",
+    ListPrice: 1_450_000, PropertyType: "Multi-Family",
+    BedroomsTotal: 8, BathroomsTotalInteger: 8,
+    LivingArea: 5600, LotSizeAcres: 0.32,
+    City: "San Juan", StateOrProvince: "PR",
+    StreetNumber: "222", StreetName: "Calle Loíza",
+    SubdivisionName: "Ocean Park",
+    PublicRemarks: "Four-unit income property one block from Ocean Park beach. Each unit is 2BR/2BA, individually metered, fully renovated with high-end finishes, and currently rented with excellent rental history. Cap rate 6.8%. Ideal for an investor seeking strong cash flow in one of San Juan's most desirable neighborhoods.",
+    YearBuilt: 1974, GarageSpaces: 4,
+    StandardStatus: "Active", DaysOnMarket: 22,
+    ListAgentFullName: "Agent Name",
+    features: ["Ocean View","Beachfront"],
+    emoji: "🏗️", pricePerSqft: 258
+  },
+  {
+    ListingKey: "PR-240016", ListingId: "PR24016",
+    ListPrice: 750_000, PropertyType: "Single Family",
+    BedroomsTotal: 4, BathroomsTotalInteger: 3,
+    LivingArea: 3400, LotSizeAcres: 5.0,
+    City: "Jayuya", StateOrProvince: "PR",
+    StreetNumber: "10", StreetName: "Ruta Panorámica",
+    SubdivisionName: "",
+    PublicRemarks: "Breathtaking mountain estate on five acres in Puerto Rico's highlands. Dramatic valley and cloud forest views, spring-fed stream, coffee plantation, and a fully self-sufficient property with solar, rainwater collection, and a generator. A true sanctuary for nature lovers and those seeking off-grid luxury.",
+    YearBuilt: 2010, GarageSpaces: 2,
+    StandardStatus: "Active", DaysOnMarket: 67,
+    ListAgentFullName: "Agent Name",
+    features: ["Mountain View"],
+    emoji: "⛰️", pricePerSqft: 220
+  },
+  {
+    ListingKey: "PR-240017", ListingId: "PR24017",
+    ListPrice: 385_000, PropertyType: "Condo / Apartment",
+    BedroomsTotal: 2, BathroomsTotalInteger: 2,
+    LivingArea: 1380, LotSizeAcres: null,
+    City: "Fajardo", StateOrProvince: "PR",
+    StreetNumber: "100", StreetName: "Calle Marina",
+    SubdivisionName: "Isleta Marina",
+    PublicRemarks: "Stunning marina-front condo at Isleta Marina with direct views of Fajardo's sailboat harbor and the islands of Culebra and Vieques on the horizon. Two full suites, an open-concept living area, and a large terrace perfect for watching the sunset. Boat slip available separately.",
+    YearBuilt: 2011, GarageSpaces: 1,
+    StandardStatus: "Active", DaysOnMarket: 41,
+    ListAgentFullName: "Agent Name",
+    features: ["Ocean View","Pool"],
+    emoji: "⛵", pricePerSqft: 278
+  },
+  {
+    ListingKey: "PR-240018", ListingId: "PR24018",
+    ListPrice: 580_000, PropertyType: "Single Family",
+    BedroomsTotal: 4, BathroomsTotalInteger: 3,
+    LivingArea: 2600, LotSizeAcres: 0.3,
+    City: "Carolina", StateOrProvince: "PR",
+    StreetNumber: "8", StreetName: "Calle Flamboyan",
+    SubdivisionName: "Urb. Nuevo San Juan",
+    PublicRemarks: "Spacious family home in a prime Carolina location minutes from Luis Muñoz Marín International Airport and the beaches of Isla Verde. Updated throughout with a modern kitchen, quartz baths, and a heated pool. Gated entrance, two-car garage, and mature tropical landscaping.",
+    YearBuilt: 2001, GarageSpaces: 2,
+    StandardStatus: "Active", DaysOnMarket: 16,
+    ListAgentFullName: "Agent Name",
+    features: ["Pool","Gated Community"],
+    emoji: "🌺", pricePerSqft: 223
+  }
+];
+
+// ── STATE ──
+let filtered = [...LISTINGS];
+let currentView = 'grid';
+
+function fmt(n) {
+  return '$' + n.toLocaleString();
+}
+
+function statusColor(s) {
+  if (s === 'Active') return '';
+  if (s === 'Pending') return 'pending';
+  return 'sold';
+}
+
+// ── RENDER ──
+function renderListings() {
+  const sort = document.getElementById('sortSelect').value;
+  let data = [...filtered];
+  if (sort === 'price-asc') data.sort((a,b) => a.ListPrice - b.ListPrice);
+  else if (sort === 'price-desc') data.sort((a,b) => b.ListPrice - a.ListPrice);
+  else if (sort === 'sqft') data.sort((a,b) => b.LivingArea - a.LivingArea);
+  else data.sort((a,b) => a.DaysOnMarket - b.DaysOnMarket);
+
+  document.getElementById('countDisplay').textContent = data.length;
+  const grid = document.getElementById('listingsGrid');
+  grid.style.gridTemplateColumns = currentView === 'list'
+    ? '1fr' : 'repeat(auto-fill, minmax(280px, 1fr))';
+
+  grid.innerHTML = data.map(p => `
+    <div class="card" onclick="openModal('${p.ListingKey}')">
+      <div style="position:relative">
+        <div class="card-img-placeholder">${p.emoji}</div>
+        <div class="card-badge ${statusColor(p.StandardStatus)}">${p.StandardStatus}</div>
+        <button class="card-save" onclick="event.stopPropagation()">♡</button>
+      </div>
+      <div class="card-body">
+        <div class="card-price">${fmt(p.ListPrice)}</div>
+        <div class="card-address">${p.StreetNumber} ${p.StreetName}${p.SubdivisionName ? ', ' + p.SubdivisionName : ''}</div>
+        <div class="card-location">${p.City}, PR</div>
+        <div class="card-specs">
+          ${p.BedroomsTotal > 0 ? `<div class="spec"><span>🛏</span> <strong>${p.BedroomsTotal}</strong> bd</div>` : ''}
+          ${p.BathroomsTotalInteger > 0 ? `<div class="spec"><span>🚿</span> <strong>${p.BathroomsTotalInteger}</strong> ba</div>` : ''}
+          ${p.LivingArea > 0 ? `<div class="spec"><span>📐</span> <strong>${p.LivingArea.toLocaleString()}</strong> sqft</div>` : ''}
+          ${p.LotSizeAcres ? `<div class="spec"><span>🌿</span> <strong>${p.LotSizeAcres}</strong> ac</div>` : ''}
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="card-mls">MLS# ${p.ListingId}</span>
+        <span class="card-type">${p.PropertyType}</span>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ── MODAL ──
+function openModal(key) {
+  const p = LISTINGS.find(l => l.ListingKey === key);
+  if (!p) return;
+  document.getElementById('modalGallery').textContent = p.emoji;
+  document.getElementById('mPrice').textContent = fmt(p.ListPrice);
+  document.getElementById('mAddress').textContent = `${p.StreetNumber} ${p.StreetName}${p.SubdivisionName ? ', ' + p.SubdivisionName : ''}`;
+  document.getElementById('mLoc').textContent = `${p.City}, Puerto Rico · MLS# ${p.ListingId}`;
+
+  document.getElementById('mSpecs').innerHTML = [
+    p.BedroomsTotal > 0 ? `<div class="modal-spec"><div class="modal-spec-val">${p.BedroomsTotal}</div><div class="modal-spec-key">Bedrooms</div></div>` : '',
+    p.BathroomsTotalInteger > 0 ? `<div class="modal-spec"><div class="modal-spec-val">${p.BathroomsTotalInteger}</div><div class="modal-spec-key">Bathrooms</div></div>` : '',
+    p.LivingArea > 0 ? `<div class="modal-spec"><div class="modal-spec-val">${p.LivingArea.toLocaleString()}</div><div class="modal-spec-key">Sq Ft</div></div>` : '',
+    p.LotSizeAcres ? `<div class="modal-spec"><div class="modal-spec-val">${p.LotSizeAcres}</div><div class="modal-spec-key">Acres</div></div>` : '',
+    p.YearBuilt ? `<div class="modal-spec"><div class="modal-spec-val">${p.YearBuilt}</div><div class="modal-spec-key">Year Built</div></div>` : '',
+    p.pricePerSqft > 0 ? `<div class="modal-spec"><div class="modal-spec-val">$${p.pricePerSqft}</div><div class="modal-spec-key">$/Sq Ft</div></div>` : '',
+  ].join('');
+
+  document.getElementById('mDesc').textContent = p.PublicRemarks;
+
+  const details = [
+    ['Property Type', p.PropertyType],
+    ['Status', p.StandardStatus],
+    ['Days on Market', p.DaysOnMarket],
+    ['Garage Spaces', p.GarageSpaces || 'None'],
+    ['Municipio', p.City],
+    ['Year Built', p.YearBuilt || 'N/A'],
+    ['Features', p.features.length ? p.features.join(', ') : 'Standard'],
+    ['Listing ID', p.ListingId],
+  ];
+  document.getElementById('mDetails').innerHTML = details.map(([k,v]) =>
+    `<div class="detail-row"><span>${k}</span><span>${v}</span></div>`
+  ).join('');
+
+  document.getElementById('modalOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal(e) {
+  if (e.target === document.getElementById('modalOverlay')) closeModalDirect();
+}
+function closeModalDirect() {
+  document.getElementById('modalOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// ── FILTERS ──
+function applyFilters() {
+  const mun = document.getElementById('filtMunicipio').value;
+  const type = document.getElementById('filtType').value;
+  const pMin = parseFloat(document.getElementById('filtPriceMin').value) || 0;
+  const pMax = parseFloat(document.getElementById('filtPriceMax').value) || Infinity;
+  const beds = parseInt(document.getElementById('filtBeds').value) || 0;
+  const baths = parseInt(document.getElementById('filtBaths').value) || 0;
+  const pool = document.getElementById('chkPool').checked;
+  const ocean = document.getElementById('chkOcean').checked;
+  const gated = document.getElementById('chkGated').checked;
+  const beach = document.getElementById('chkBeach').checked;
+  const mtn = document.getElementById('chkMtn').checked;
+
+  filtered = LISTINGS.filter(p => {
+    if (mun && p.City !== mun) return false;
+    if (type && p.PropertyType !== type) return false;
+    if (p.ListPrice < pMin || p.ListPrice > pMax) return false;
+    if (p.BedroomsTotal < beds) return false;
+    if (p.BathroomsTotalInteger < baths) return false;
+    if (pool && !p.features.includes('Pool')) return false;
+    if (ocean && !p.features.includes('Ocean View')) return false;
+    if (gated && !p.features.includes('Gated Community')) return false;
+    if (beach && !p.features.includes('Beachfront')) return false;
+    if (mtn && !p.features.includes('Mountain View')) return false;
+    return true;
+  });
+  renderListings();
+}
+
+function resetFilters() {
+  ['filtMunicipio','filtType','filtBeds','filtBaths'].forEach(id => {
+    document.getElementById(id).value = '';
+  });
+  ['filtPriceMin','filtPriceMax'].forEach(id => {
+    document.getElementById(id).value = '';
+  });
+  ['chkPool','chkOcean','chkGated','chkBeach','chkMtn'].forEach(id => {
+    document.getElementById(id).checked = false;
+  });
+  filtered = [...LISTINGS];
+  renderListings();
+}
+
+function applyHeroSearch() {
+  const mun = document.getElementById('heroMunicipio').value;
+  const type = document.getElementById('heroType').value;
+  const maxP = parseFloat(document.getElementById('heroPrice').value) || Infinity;
+  if (mun) document.getElementById('filtMunicipio').value = mun;
+  if (type) document.getElementById('filtType').value = type;
+  if (maxP < Infinity) document.getElementById('filtPriceMax').value = maxP;
+  applyFilters();
+  document.getElementById('listingsGrid').scrollIntoView({ behavior: 'smooth' });
+}
+
+function setView(v, btn) {
+  currentView = v;
+  document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderListings();
+}
+
+// Escape key closes modal
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModalDirect(); });
+
+// Init
+renderListings();
+</script>
+</body>
+</html>
