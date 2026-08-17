@@ -899,6 +899,11 @@
     .modal-details-grid { grid-template-columns: 1fr; }
     .hero-eyebrow::before { display: none; }
   }
+
+  
+
+  /* LANG */
+  .es-text { display: none; }
 </style>
 </head>
 <body>
@@ -914,16 +919,20 @@
     </div>
   </div>
   <div class="nav-tabs">
-    <button class="nav-tab active" id="tab-home" onclick="showTab('home')">Home</button>
-    <button class="nav-tab" id="tab-buyers" onclick="showTab('buyers')">For Buyers</button>
-    <button class="nav-tab" id="tab-sellers" onclick="showTab('sellers')">For Sellers</button>
-    <button class="nav-tab" id="tab-advisory" onclick="showTab('advisory')">Relocation</button>
+    <button class="nav-tab active" id="tab-home" onclick="showTab('home')"><span class="en-text">Home</span><span class="es-text">Inicio</span></button>
+    <button class="nav-tab" id="tab-buyers" onclick="showTab('buyers')"><span class="en-text">For Buyers</span><span class="es-text">Para Compradores</span></button>
+    <button class="nav-tab" id="tab-sellers" onclick="showTab('sellers')"><span class="en-text">For Sellers</span><span class="es-text">Para Vendedores</span></button>
+    <button class="nav-tab" id="tab-advisory" onclick="showTab('advisory')"><span class="en-text">Relocation</span><span class="es-text">Reubicaci&#243;n</span></button>
     <button class="nav-tab" id="tab-scouting" onclick="showTab('scouting')">Drone Tours</button>
   </div>
   <div class="nav-right">
     <img src="https://raw.githubusercontent.com/Marauder67/Pronoia-Realty/main/IMG_2351.jpeg" alt="Coral Santiago" class="nav-coral-img">
+    <div style="display:flex;gap:4px;background:rgba(255,255,255,0.12);border-radius:20px;padding:3px;margin-right:0.5rem;">
+      <button id="btn-en" onclick="setLang('en')" style="background:#C59B27;color:#fff;border:none;padding:4px 14px;border-radius:16px;font-size:0.72rem;font-weight:700;cursor:pointer;font-family:inherit;">EN</button>
+      <button id="btn-es" onclick="setLang('es')" style="background:transparent;color:rgba(255,255,255,0.6);border:none;padding:4px 14px;border-radius:16px;font-size:0.72rem;font-weight:700;cursor:pointer;font-family:inherit;">ES</button>
+    </div>
     <div class="nav-contact">
-      <button class="nav-cta" id="navContactBtn" onclick="toggleContact(event)" aria-expanded="false">Contact Coral</button>
+      <button class="nav-cta" id="navContactBtn" onclick="toggleContact(event)" aria-expanded="false"><span class="en-text">Contact Coral</span><span class="es-text">Contactar a Coral</span></button>
       <div class="contact-pop" id="contactPop">
         <div class="contact-pop-header">
           <img src="https://raw.githubusercontent.com/Marauder67/Pronoia-Realty/main/IMG_2351.jpeg" alt="Coral Santiago" class="contact-pop-avatar">
@@ -943,10 +952,10 @@
 </nav>
 <div class="nav-mobile-panel" id="navMobilePanel">
   <button class="nav-tab" onclick="showTab('home')">Home</button>
-  <button class="nav-tab" onclick="showTab('buyers')">For Buyers</button>
-  <button class="nav-tab" onclick="showTab('sellers')">For Sellers</button>
+  <button class="nav-tab" onclick="showTab('buyers')"><span class="en-text">For Buyers</span><span class="es-text">Para Compradores</span></button>
+  <button class="nav-tab" onclick="showTab('sellers')"><span class="en-text">For Sellers</span><span class="es-text">Para Vendedores</span></button>
   <button class="nav-tab" onclick="showTab('advisory')">Relocation & Advisory</button>
-  <button class="nav-tab" onclick="showTab('scouting')">Drone & Scouting</button>
+  <button class="nav-tab" onclick="showTab('scouting')"><span class="en-text">Drone &amp; Scouting</span><span class="es-text">Drone y Exploraci&#243;n</span></button>
   <a class="btn btn-primary" style="justify-content:center;margin-top:1rem" href="tel:+17875013992">Call Coral (787) 501-3992</a>
 </div>
 
@@ -958,30 +967,31 @@
     <div class="hero-bg"><img src="https://raw.githubusercontent.com/Marauder67/Pronoia-Realty/main/hero-coastline.png" alt="Puerto Rico coastline at golden hour"></div>
     <div class="hero-inner">
       <div class="reveal in">
-        <div class="hero-eyebrow">Boutique Buyer & Seller Representation</div>
+        <div class="hero-eyebrow"><span class="en-text">Boutique Buyer &amp; Seller Representation</span><span class="es-text">Representaci&#243;n Boutique de Compradores y Vendedores</span></div>
         <h1>
-          Puerto Rico Real Estate,
-          <span class="em">personally represented.</span>
+          <span class="en-text">Puerto Rico Real Estate,
+          <span class="em">personally represented.</span></span><span class="es-text">Bienes Ra&#237;ces en Puerto Rico,
+          <span class="em">representados personalmente.</span></span>
         </h1>
         <p class="hero-sub">
-          Buying, selling, or relocating in Puerto Rico is more than a transaction — it's a major life decision. You deserve a licensed broker who <strong>understands the island, listens to your goals, and personally guides you</strong> from the first conversation through closing and beyond.
+          <span class="en-text">Buying, selling, or relocating in Puerto Rico is more than a transaction &mdash; it's a major life decision. You deserve a licensed broker who <strong>understands the island, listens to your goals, and personally guides you</strong> from the first conversation through closing and beyond.</span><span class="es-text">Comprar, vender o mudarse a Puerto Rico es m&#225;s que una transacci&#243;n &mdash; es una decisi&#243;n de vida importante. Mereces un corredor licenciado que <strong>entiende la isla, escucha tus metas y te gu&#237;a personalmente</strong> desde la primera conversaci&#243;n hasta el cierre y m&#225;s all&#225;.</span>
         </p>
         <div class="hero-btns">
-          <a href="#buy-path" class="btn btn-primary" onclick="event.preventDefault();document.getElementById('paths').scrollIntoView({behavior:'smooth'});">I want to buy →</a>
-          <button class="btn btn-outline-light" onclick="showTab('sellers')">I want to sell</button>
+          <a href="#buy-path" class="btn btn-primary" onclick="event.preventDefault();document.getElementById('paths').scrollIntoView({behavior:'smooth'});"><span class="en-text">I want to buy →</span><span class="es-text">Quiero comprar →</span></a>
+          <button class="btn btn-outline-light" onclick="showTab('sellers')"><span class="en-text">I want to sell</span><span class="es-text">Quiero vender</span></button>
         </div>
         <div class="hero-trust">
-          <div class="hero-trust-item"><span class="dot"></span> Licensed PR Broker</div>
-          <div class="hero-trust-item"><span class="dot"></span> Act 60 Specialist</div>
+          <div class="hero-trust-item"><span class="dot"></span> <span class="en-text">Licensed PR Broker</span><span class="es-text">Corredor Licenciado PR</span></div>
+          <div class="hero-trust-item"><span class="dot"></span> <span class="en-text">Act 60 Specialist</span><span class="es-text">Especialista Ley 60</span></div>
           <div class="hero-trust-item"><span class="dot"></span> Bilingual (EN / ES)</div>
-          <div class="hero-trust-item"><span class="dot"></span> Native Puerto Rican</div>
+          <div class="hero-trust-item"><span class="dot"></span> <span class="en-text">Native Puerto Rican</span><span class="es-text">Puertorrique&#241;a Nativa</span></div>
         </div>
       </div>
       <div class="hero-card reveal in d2">
         <div class="hero-card-photo">
           <img src="https://raw.githubusercontent.com/Marauder67/Pronoia-Realty/main/IMG_2351.jpeg" alt="Coral Santiago">
         </div>
-        <div class="hero-card-label">Your Broker</div>
+        <div class="hero-card-label"><span class="en-text">Your Broker</span><span class="es-text">Tu Corredora</span></div>
         <div class="hero-card-name">Coral Santiago</div>
         <div class="hero-card-title">Founder & Licensed Real Estate Broker<br>Pronoia Realty · Puerto Rico</div>
         <div class="hero-card-creds">
@@ -1052,10 +1062,10 @@
       <a class="path-card" onclick="event.preventDefault();showTab('buyers');" href="#">
         <div class="path-img">
           <img src="https://raw.githubusercontent.com/Marauder67/Pronoia-Realty/main/dorado-estate.png" alt="Luxury oceanfront estate">
-          <div class="path-label">For Buyers</div>
+          <div class="path-label"><span class="en-text">For Buyers</span><span class="es-text">Para Compradores</span></div>
         </div>
         <div class="path-body">
-          <h3>Find a home that feels like the island</h3>
+          <h3><span class="en-text">Find a home that feels like the island</span><span class="es-text">Encuentra un hogar que se sienta como la isla</span></h3>
           <p>Exclusive buyer representation for mainlanders, investors, and Act 60 relocators — including drone flyovers, landing rentals, financing connections, and vetted local trades.</p>
           <span class="path-arrow">Explore buyer services
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -1065,10 +1075,10 @@
       <a class="path-card" onclick="event.preventDefault();showTab('sellers');" href="#">
         <div class="path-img">
           <img src="https://raw.githubusercontent.com/Marauder67/Pronoia-Realty/main/interior-warmth.png" alt="Bright coastal interior">
-          <div class="path-label">For Sellers</div>
+          <div class="path-label"><span class="en-text">For Sellers</span><span class="es-text">Para Vendedores</span></div>
         </div>
         <div class="path-body">
-          <h3>Sell for what your home is truly worth</h3>
+          <h3><span class="en-text">Sell for what your home is truly worth</span><span class="es-text">Vende por lo que tu casa realmente vale</span></h3>
           <p>Matterport 3D twins, 4K drone showcases, and dual-market campaigns that reach local buyers and qualified mainland Act 60 relocators simultaneously.</p>
           <span class="path-arrow">See seller services
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -1356,7 +1366,7 @@
 <div class="tab-content" id="content-buyers">
   <section class="tab-hero">
     <div class="tab-hero-inner">
-      <div class="kicker">For Buyers</div>
+      <div class="kicker"><span class="en-text">For Buyers</span><span class="es-text">Para Compradores</span></div>
       <h1>The kind of representation<br>that <em>protects your move</em>.</h1>
       <p>You deserve a licensed broker who works only for you — not the seller, not the listing, not the deal. From your first phone call to the final signature, Coral advocates for your interests, your timeline, and your peace of mind.</p>
     </div>
@@ -1413,7 +1423,7 @@
 <div class="tab-content" id="content-sellers">
   <section class="tab-hero">
     <div class="tab-hero-inner">
-      <div class="kicker">For Sellers</div>
+      <div class="kicker"><span class="en-text">For Sellers</span><span class="es-text">Para Vendedores</span></div>
       <h1>Maximize your home's value<br>with <em>white-glove care</em>.</h1>
       <p>We don't just put a sign in your yard. We craft immersive Matterport 3D virtual tours, 4K aerial drone showcases, and targeted campaigns that connect your home with qualified local buyers and off-island Act 60 relocators actively searching the island.</p>
     </div>
@@ -1581,10 +1591,10 @@
     <div class="footer-col">
       <h4>Navigation</h4>
       <a onclick="showTab('home')">Home</a>
-      <a onclick="showTab('buyers')">For Buyers</a>
-      <a onclick="showTab('sellers')">For Sellers</a>
+      <a onclick="showTab('buyers')"><span class="en-text">For Buyers</span><span class="es-text">Para Compradores</span></a>
+      <a onclick="showTab('sellers')"><span class="en-text">For Sellers</span><span class="es-text">Para Vendedores</span></a>
       <a onclick="showTab('advisory')">Relocation & Advisory</a>
-      <a onclick="showTab('scouting')">Drone & Scouting</a>
+      <a onclick="showTab('scouting')"><span class="en-text">Drone &amp; Scouting</span><span class="es-text">Drone y Exploraci&#243;n</span></a>
     </div>
     <div class="footer-col">
       <h4>Focus Areas</h4>
@@ -1595,7 +1605,7 @@
       <a>Mountain Highlands</a>
     </div>
     <div class="footer-col">
-      <h4>Contact Coral</h4>
+      <h4><span class="en-text">Contact Coral</span><span class="es-text">Contactar a Coral</span></h4>
       <div class="footer-coral">
         <img src="https://raw.githubusercontent.com/Marauder67/Pronoia-Realty/main/IMG_2351.jpeg" alt="Coral Santiago">
         <div>
@@ -1812,6 +1822,25 @@ document.addEventListener('DOMContentLoaded',function(){
   const sortSel=document.getElementById('sortSelect');
   if(sortSel) sortSel.addEventListener('change',renderListings);
   renderListings();
+
+// Language toggle
+function setLang(lang) {
+  var enEls = document.querySelectorAll('.en-text');
+  var esEls = document.querySelectorAll('.es-text');
+  var btnEn = document.getElementById('btn-en');
+  var btnEs = document.getElementById('btn-es');
+  if (lang === 'es') {
+    enEls.forEach(function(el){ el.style.display='none'; });
+    esEls.forEach(function(el){ el.style.display='inline'; });
+    btnEs.style.background='#C59B27'; btnEs.style.color='#fff';
+    btnEn.style.background='transparent'; btnEn.style.color='rgba(255,255,255,0.6)';
+  } else {
+    enEls.forEach(function(el){ el.style.display='inline'; });
+    esEls.forEach(function(el){ el.style.display='none'; });
+    btnEn.style.background='#C59B27'; btnEn.style.color='#fff';
+    btnEs.style.background='transparent'; btnEs.style.color='rgba(255,255,255,0.6)';
+  }
+}
 
   function wireForm(formId, btnId, successId) {
     var form = document.getElementById(formId);
