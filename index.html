@@ -1813,7 +1813,6 @@ document.addEventListener('DOMContentLoaded',function(){
   if(sortSel) sortSel.addEventListener('change',renderListings);
   renderListings();
 
-  // AJAX handler for all Formspree forms
   function wireForm(formId, btnId, successId) {
     var form = document.getElementById(formId);
     if (!form) return;
@@ -1831,8 +1830,8 @@ document.addEventListener('DOMContentLoaded',function(){
       .then(function(r) {
         if (r.ok) {
           form.style.display = 'none';
-          var success = document.getElementById(successId);
-          if (success) success.style.display = 'block';
+          var s = document.getElementById(successId);
+          if (s) s.style.display = 'block';
         } else {
           btn.textContent = origText;
           btn.disabled = false;
