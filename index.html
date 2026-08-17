@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pronoia Realty — Puerto Rico Real Estate</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<title>Pronoia Realty — Boutique Buyer Representation & Relocation | Puerto Rico</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
     --navy:    #1D2D50;
@@ -43,28 +43,56 @@
   .contact-pop::before { content: ''; position: absolute; top: -6px; right: 22px; width: 11px; height: 11px; background: #fff; border-left: 1px solid var(--border); border-top: 1px solid var(--border); transform: rotate(45deg); }
   .contact-pop-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; }
   .contact-pop-avatar { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 2px solid var(--gold); flex-shrink: 0; }
-  .contact-pop-name { font-size: 0.92rem; font-weight: 600; color: var(--navy); letter-spacing: -0.01em; font-family: 'Poppins', sans-serif; }
+  .contact-pop-name { font-size: 0.92rem; font-weight: 600; color: var(--navy); font-family: 'Poppins', sans-serif; }
   .contact-pop-role { font-size: 0.7rem; color: var(--subtext); line-height: 1.4; }
   .contact-pop-link { display: flex; align-items: center; gap: 0.5rem; font-size: 0.82rem; color: var(--navy); text-decoration: none; padding: 0.42rem 0.5rem; margin: 0 -0.5rem; border-radius: 4px; transition: background 0.15s; word-break: break-all; }
   .contact-pop-link:hover { background: var(--mist); }
-  .contact-pop-ico { font-size: 0.9rem; opacity: 0.65; flex-shrink: 0; }
 
   /* HERO */
-  .hero { background: var(--navy); padding: 4rem 2rem 3rem; text-align: center; position: relative; overflow: hidden; }
+  .hero { background: var(--navy); padding: 4.5rem 2rem 3.5rem; text-align: center; position: relative; overflow: hidden; }
   .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 50% 120%, rgba(29,45,80,0.6) 0%, transparent 70%); pointer-events: none; }
   .hero-inner { position: relative; }
-  .hero-eyebrow { display: inline-block; background: rgba(158,163,150,0.2); border: 1px solid rgba(158,163,150,0.35); font-family: 'Poppins', sans-serif; font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sage); margin-bottom: 1rem; padding: 0.3rem 1rem; border-radius: 20px; }
-  .hero h1 { font-family: 'Poppins', sans-serif; font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 700; color: var(--white); line-height: 1.1; margin-bottom: 0.75rem; }
+  .hero-eyebrow { display: inline-block; background: rgba(158,163,150,0.2); border: 1px solid rgba(158,163,150,0.35); font-family: 'Poppins', sans-serif; font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sage); margin-bottom: 1rem; padding: 0.35rem 1.1rem; border-radius: 20px; }
+  .hero h1 { font-family: 'Poppins', sans-serif; font-size: clamp(2.2rem, 4.5vw, 3.8rem); font-weight: 700; color: var(--white); line-height: 1.15; margin-bottom: 0.85rem; }
   .hero h1 em { font-style: italic; color: var(--gold); font-weight: 600; }
-  .hero-sub { color: rgba(255,255,255,0.55); font-size: 1rem; max-width: 560px; margin: 0 auto 2.5rem; line-height: 1.6; }
+  .hero-sub { color: rgba(255,255,255,0.7); font-size: 1rem; max-width: 620px; margin: 0 auto 2.5rem; line-height: 1.6; }
 
   /* SEARCH BAR */
   .search-bar { background: var(--white); border-radius: 10px; display: flex; flex-wrap: wrap; gap: 0; max-width: 860px; margin: 0 auto; overflow: hidden; box-shadow: 0 16px 48px rgba(0,0,0,0.28); }
-  .search-field { flex: 1; min-width: 140px; border-right: 1px solid var(--border); padding: 0.9rem 1.1rem; }
+  .search-field { flex: 1; min-width: 140px; border-right: 1px solid var(--border); padding: 0.9rem 1.1rem; text-align: left; }
   .search-field label { display: block; font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--subtext); margin-bottom: 0.2rem; font-family: 'Poppins', sans-serif; font-weight: 600; }
-  .search-field select { width: 100%; border: none; outline: none; font-family: 'Inter', sans-serif; font-size: 0.9rem; color: var(--text); background: transparent; cursor: pointer; }
-  .search-btn { background: var(--gold); color: #fff; border: none; padding: 0 1.6rem; font-size: 0.82rem; font-weight: 600; cursor: pointer; font-family: 'Poppins', sans-serif; letter-spacing: 0.04em; text-transform: uppercase; transition: background 0.2s; min-width: 110px; }
+  .search-field select { width: 100%; border: none; outline: none; font-family: 'Inter', sans-serif; font-size: 0.88rem; color: var(--text); background: transparent; cursor: pointer; }
+  .search-btn { background: var(--gold); color: #fff; border: none; padding: 0 1.6rem; font-size: 0.82rem; font-weight: 600; cursor: pointer; font-family: 'Poppins', sans-serif; letter-spacing: 0.04em; text-transform: uppercase; transition: background 0.2s; min-width: 130px; }
   .search-btn:hover { background: var(--gold2); }
+
+  /* ABOUT SECTION */
+  .about-section { background: var(--white); border-bottom: 1px solid var(--border); padding: 4rem 1.5rem; }
+  .about-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.1fr; gap: 3.5rem; align-items: center; }
+  .about-badge { color: var(--gold); font-family: 'Poppins', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.5rem; }
+  .about-title { font-family: 'Poppins', sans-serif; font-size: 2.1rem; font-weight: 700; color: var(--navy); line-height: 1.2; margin-bottom: 1.2rem; }
+  .about-p { font-size: 0.92rem; line-height: 1.7; color: var(--text); margin-bottom: 1rem; }
+  .about-highlights { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
+  .highlight-card { background: var(--sand); border: 1px solid var(--border); padding: 1rem; border-radius: 8px; }
+  .highlight-card h4 { font-family: 'Poppins', sans-serif; font-size: 0.85rem; font-weight: 600; color: var(--navy); margin-bottom: 0.25rem; }
+  .highlight-card p { font-size: 0.76rem; color: var(--subtext); line-height: 1.4; }
+  .geo-card { background: var(--sand); padding: 2rem; border-radius: 12px; border: 1px solid var(--border); }
+  .geo-card h3 { font-family: 'Poppins', sans-serif; color: var(--navy); margin-bottom: 1rem; font-size: 1.2rem; font-weight: 600; }
+  .geo-card p { font-size: 0.85rem; color: var(--subtext); margin-bottom: 1.2rem; line-height: 1.6; }
+  .geo-list { list-style: none; font-size: 0.85rem; color: var(--text); }
+  .geo-list li { margin-bottom: 0.8rem; }
+
+  /* SERVICES SECTION */
+  .services-section { max-width: 1280px; margin: 0 auto; padding: 3.5rem 1.5rem; }
+  .section-head { text-align: center; margin-bottom: 2rem; }
+  .section-eyebrow { font-family: 'Poppins', sans-serif; font-size: 0.65rem; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.5rem; }
+  .section-head h2 { font-family: 'Poppins', sans-serif; font-size: 1.8rem; color: var(--navy); font-weight: 700; }
+  .section-head p { font-size: 0.88rem; color: var(--subtext); max-width: 540px; margin: 0.3rem auto 0; }
+  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.2rem; }
+  .service-card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 1.4rem; transition: transform 0.2s, box-shadow 0.2s; }
+  .service-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(29,45,80,0.1); }
+  .service-icon { font-size: 1.8rem; margin-bottom: 0.8rem; display: block; }
+  .service-card h3 { font-family: 'Poppins', sans-serif; font-size: 1rem; font-weight: 600; color: var(--navy); margin-bottom: 0.4rem; }
+  .service-card p { font-size: 0.78rem; color: var(--subtext); line-height: 1.55; }
 
   /* STATS */
   .stats-strip { background: var(--navy2); display: flex; justify-content: center; gap: 0; }
@@ -87,7 +115,7 @@
   .price-range span { color: var(--subtext); font-size: 0.8rem; }
   .checkbox-group { display: flex; flex-direction: column; gap: 0.4rem; }
   .checkbox-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.83rem; color: var(--text); cursor: pointer; }
-  .checkbox-item input { accent-color: var(--navy); cursor: pointer; }
+  .checkbox-item input { accent-color: var(--navy); }
   .apply-btn { width: 100%; background: var(--navy); color: #fff; border: none; padding: 0.7rem; border-radius: 6px; font-family: 'Poppins', sans-serif; font-size: 0.82rem; font-weight: 600; cursor: pointer; letter-spacing: 0.04em; text-transform: uppercase; transition: background 0.2s; margin-top: 0.5rem; }
   .apply-btn:hover { background: #162240; }
   .reset-link { display: block; text-align: center; margin-top: 0.6rem; font-size: 0.78rem; color: var(--subtext); cursor: pointer; text-decoration: underline; }
@@ -102,14 +130,14 @@
   .view-btn.active { background: var(--navy); color: #fff; border-color: var(--navy); }
   .listings-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.2rem; }
 
-  /* CARD */
+  /* CARDS */
   .card { background: var(--white); border-radius: 12px; border: 1px solid var(--border); overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer; }
   .card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(29,45,80,0.12); }
   .card-img { width: 100%; height: 190px; object-fit: cover; display: block; }
   .card-img-placeholder { width: 100%; height: 190px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; background: linear-gradient(135deg, var(--mist) 0%, #C8DDE8 100%); }
   .card-badge { position: absolute; top: 0.7rem; left: 0.7rem; background: var(--sage); color: #fff; font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.2rem 0.55rem; border-radius: 4px; font-weight: 600; font-family: 'Poppins', sans-serif; }
-  .card-badge.sold { background: var(--subtext); }
   .card-badge.pending { background: var(--gold); }
+  .card-badge.sold { background: var(--subtext); }
   .card-save { position: absolute; top: 0.7rem; right: 0.7rem; background: rgba(255,255,255,0.9); border: none; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 0.85rem; transition: background 0.2s; }
   .card-save:hover { background: #fff; }
   .card-save.saved { color: #e03; }
@@ -171,7 +199,7 @@
   footer { background: var(--navy); color: rgba(255,255,255,0.45); padding: 2.5rem 2rem 1.5rem; margin-top: 3rem; }
   .footer-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 1rem; }
   .footer-logo-wrap { display: flex; align-items: center; gap: 0.65rem; margin-bottom: 0.6rem; }
-  .footer-logo-wrap img.logo-img { height: 38px; width: 38px; object-fit: contain; }
+  .footer-logo-wrap img { height: 38px; width: 38px; object-fit: contain; }
   .footer-brand { font-family: 'Poppins', sans-serif; font-size: 1rem; font-weight: 700; color: #fff; letter-spacing: 0.05em; }
   .footer-brand span { color: var(--gold); font-weight: 500; }
   .footer-tagline { font-size: 0.72rem; line-height: 1.6; }
@@ -186,16 +214,14 @@
   .footer-bottom { max-width: 1280px; margin: 0 auto; display: flex; justify-content: space-between; font-size: 0.65rem; flex-wrap: wrap; gap: 0.5rem; }
   .footer-bottom a { color: rgba(255,255,255,0.4); text-decoration: none; margin-left: 1rem; }
 
-  @media (max-width: 768px) {
+  @media (max-width: 860px) {
+    .about-container, .meet-coral-inner { grid-template-columns: 1fr; }
     .main { grid-template-columns: 1fr; }
     .sidebar { position: static; }
-    .stat { padding: 0.8rem 1.2rem; }
-    .stat-num { font-size: 1.2rem; }
-    .modal-details-grid { grid-template-columns: 1fr; }
-    .nav-links { display: none; }
     .footer-inner { grid-template-columns: 1fr 1fr; }
-    .meet-coral-inner { grid-template-columns: 1fr; }
-    .coral-photo { max-height: 280px; }
+    .nav-links { display: none; }
+    .stat { padding: 0.8rem 1.2rem; }
+    .modal-details-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -205,16 +231,15 @@
 <nav>
   <div class="nav-left">
     <div class="nav-logo">
-      <img src="https://raw.githubusercontent.com/Marauder67/Pronoia-Realty/main/%20Pronoia%20Logo%20NO%20SLOGAN%20Fondo%20Transparente%20.png" alt="Pronoia Realty Logo">
+      <img src="https://raw.githubusercontent.com/Marauder67/Pronoia-Realty/main/%20Pronoia%20Logo%20NO%20SLOGAN%20Fondo%20Transparente%20.png" alt="Pronoia Realty">
     </div>
     <div class="nav-logo-text">PRONOIA <span>REALTY</span></div>
   </div>
   <div class="nav-links">
-    <a href="#">Buy</a>
-    <a href="#">Rent</a>
-    <a href="#">Sell</a>
-    <a href="#">Market Reports</a>
-    <a href="#">About</a>
+    <a href="#about">About Coral</a>
+    <a href="#services">Services</a>
+    <a href="#listings">MLS Search</a>
+    <a href="#act60">Act 60</a>
   </div>
   <div class="nav-right">
     <img src="https://raw.githubusercontent.com/Marauder67/Pronoia-Realty/main/IMG_2351.jpeg" alt="Coral Santiago" class="nav-coral-img">
@@ -225,11 +250,11 @@
           <img src="https://raw.githubusercontent.com/Marauder67/Pronoia-Realty/main/IMG_2351.jpeg" alt="Coral Santiago" class="contact-pop-avatar">
           <div>
             <div class="contact-pop-name">Coral Santiago</div>
-            <div class="contact-pop-role">Licensed Real Estate Broker · Pronoia Realty</div>
+            <div class="contact-pop-role">Founder & Licensed Broker · Pronoia Realty</div>
           </div>
         </div>
-        <a class="contact-pop-link" href="tel:+17875013992"><span class="contact-pop-ico">&#9742;</span>(787) 501-3992</a>
-        <a class="contact-pop-link" href="mailto:c.santiago@pronoiarealty.com?subject=Inquiry%20from%20PronoiaRealty.com"><span class="contact-pop-ico">&#9993;</span>c.santiago@pronoiarealty.com</a>
+        <a class="contact-pop-link" href="tel:+17875013992">📞 (787) 501-3992</a>
+        <a class="contact-pop-link" href="mailto:c.santiago@pronoiarealty.com?subject=Inquiry%20from%20PronoiaRealty.com">✉ c.santiago@pronoiarealty.com</a>
       </div>
     </div>
   </div>
@@ -238,9 +263,9 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
-    <div class="hero-eyebrow">Stellar MLS · Puerto Rico</div>
-    <h1>Find your place<br>in <em>La Isla del Encanto</em></h1>
-    <p class="hero-sub">Curated listings across every municipio — from Beachfront Lifestyle, Historic Old San Juan Charm, Urban Oasis to Mountain Estates.</p>
+    <div class="hero-eyebrow">Boutique Buyer Representation · Puerto Rico</div>
+    <h1>Your Native Gateway to<br><em>Island Living & Investment</em></h1>
+    <p class="hero-sub">Concierge-level buyer representation, Act 60 relocation expertise, and a trusted local network — from search to property renovation.</p>
     <div class="search-bar">
       <div class="search-field">
         <label>Municipio</label>
@@ -263,7 +288,7 @@
         </select>
       </div>
       <div class="search-field">
-        <label>Max Price</label>
+        <label>Max Budget</label>
         <select id="heroPrice">
           <option value="">No Limit</option>
           <option value="300000">$300,000</option>
@@ -273,7 +298,71 @@
           <option value="2000000">$2,000,000+</option>
         </select>
       </div>
-      <button class="search-btn" onclick="applyHeroSearch()">Search</button>
+      <button class="search-btn" onclick="applyHeroSearch()">Search Properties</button>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT CORAL -->
+<section class="about-section" id="about">
+  <div class="about-container">
+    <div>
+      <div class="about-badge">Boutique & Dedicated</div>
+      <h2 class="about-title">Meet Coral Santiago</h2>
+      <p class="about-p">Raised on Puerto Rico's vibrant north coast, Coral Santiago established Pronoia Realty to offer an alternative to high-volume corporate brokerages. With a Master's degree, entrepreneurial background, and deep roots across the island, she brings a warm, highly personal, and strategic approach to buyer representation.</p>
+      <p class="about-p">Fluent in English and Spanish, Coral specializes in helping mainlanders, investors, and Act 60 decree holders seamlessly navigate cultural transitions, legal systems, and property customization.</p>
+      <div class="about-highlights">
+        <div class="highlight-card">
+          <h4>Deep Island Roots</h4>
+          <p>Born into a family of local entrepreneurs with an extensive network of contractors & trades.</p>
+        </div>
+        <div class="highlight-card">
+          <h4>Act 60 Navigator</h4>
+          <p>Expert guidance through tax incentive relocations, short-term landing leases, and permitting.</p>
+        </div>
+      </div>
+    </div>
+    <div class="geo-card">
+      <h3>Geographic Expertise</h3>
+      <p>Coral provides intimate, boots-on-the-ground knowledge across Puerto Rico's most coveted coastal corridors:</p>
+      <ul class="geo-list">
+        <li>📍 <strong>Northern Corridor:</strong> Luxury living in Dorado & Vega Alta.</li>
+        <li>📍 <strong>Western Coast:</strong> Coastal lifestyle & investment in Aguadilla & Arecibo.</li>
+        <li>📍 <strong>Eastern Hub:</strong> Marina & boating culture in Fajardo and surrounding cays.</li>
+        <li>📍 <strong>Metro San Juan:</strong> Urban condos, historic Old San Juan, and Condado.</li>
+        <li>📍 <strong>Mountain Highlands:</strong> Off-grid estates and coffee country in Jayuya & surrounds.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-section" id="services">
+  <div class="section-head">
+    <div class="section-eyebrow">What We Offer</div>
+    <h2>Boutique Concierge Services</h2>
+    <p>A trusted partnership extending far beyond the initial purchase agreement.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <span class="service-icon">🤝</span>
+      <h3>Buyer Representation</h3>
+      <p>Exclusive representation tailored strictly to your goals, protecting your interests in every negotiation and transaction.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🇵🇷</span>
+      <h3>Act 60 Relocation</h3>
+      <p>Bilingual administrative and logistical support to make your island tax incentive transition smooth and stress-free.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🛠️</span>
+      <h3>Contractors & Permitting</h3>
+      <p>Direct access to Coral's trusted network of builders, architects, hardware suppliers, and licensed tradespeople.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🔑</span>
+      <h3>Landing Rentals</h3>
+      <p>Assistance securing long-term leases or short stays so you can experience neighborhoods before committing to buy.</p>
     </div>
   </div>
 </section>
@@ -286,8 +375,8 @@
   <div class="stat"><div class="stat-num">62</div><div class="stat-label">Avg Days on Market</div></div>
 </div>
 
-<!-- MAIN -->
-<div class="main">
+<!-- MAIN SEARCH -->
+<div class="main" id="listings">
   <aside class="sidebar">
     <div class="sidebar-title">Filter Listings</div>
     <div class="filter-group">
@@ -368,7 +457,7 @@
 </div>
 
 <!-- MEET CORAL -->
-<div class="meet-coral">
+<div class="meet-coral" id="act60">
   <div class="meet-coral-inner">
     <div>
       <img src="https://raw.githubusercontent.com/Marauder67/Pronoia-Realty/main/IMG_2351.jpeg" alt="Coral Santiago" class="coral-photo">
@@ -376,8 +465,8 @@
     <div>
       <div class="coral-eyebrow">Your Broker</div>
       <div class="coral-name">Coral Santiago</div>
-      <div class="coral-title">Licensed Real Estate Broker · Pronoia Realty · Puerto Rico</div>
-      <p class="coral-bio">With deep roots in Puerto Rico's real estate market, Coral brings expertise, integrity, and a personal touch to every transaction. Whether you're searching for a beachfront escape in Rincón, a luxury estate in Dorado, or your first home in Guaynabo, Coral guides you every step of the way — from first showing to closing day.</p>
+      <div class="coral-title">Founder & Licensed Real Estate Broker · Pronoia Realty · Puerto Rico</div>
+      <p class="coral-bio">With deep roots in Puerto Rico's real estate market, Coral brings expertise, integrity, and a personal touch to every transaction. Whether you're searching for a beachfront escape in Rincón, a luxury estate in Dorado, or navigating an Act 60 relocation, Coral guides you every step of the way — from first showing to closing day and beyond.</p>
       <div class="coral-contact">
         <a href="tel:+17875013992" class="coral-btn coral-btn-primary">📞 (787) 501-3992</a>
         <a href="mailto:c.santiago@pronoiarealty.com" class="coral-btn coral-btn-secondary">✉ Send Email</a>
@@ -412,20 +501,25 @@
   <div class="footer-inner">
     <div>
       <div class="footer-logo-wrap">
-        <img class="logo-img" src="https://raw.githubusercontent.com/Marauder67/Pronoia-Realty/main/%20Pronoia%20Logo%20NO%20SLOGAN%20Fondo%20Transparente%20.png" alt="Pronoia Realty">
+        <img src="https://raw.githubusercontent.com/Marauder67/Pronoia-Realty/main/%20Pronoia%20Logo%20NO%20SLOGAN%20Fondo%20Transparente%20.png" alt="Pronoia Realty">
         <div class="footer-brand">PRONOIA <span>REALTY</span></div>
       </div>
-      <div class="footer-tagline">Elevating real estate through high-integrity guidance and exceptional properties across Puerto Rico.</div>
+      <div class="footer-tagline">Boutique buyer representation & concierge relocation across Puerto Rico. Guided by integrity, native expertise, and trusted community connections.</div>
     </div>
     <div class="footer-col">
-      <h4>Quick Links</h4>
-      <a href="#">Buy</a><a href="#">Rent</a><a href="#">Sell</a>
-      <a href="#">Market Reports</a><a href="#">About</a>
+      <h4>Navigation</h4>
+      <a href="#about">About Coral</a>
+      <a href="#services">Concierge Services</a>
+      <a href="#listings">Property Search</a>
+      <a href="#act60">Act 60 Relocation</a>
     </div>
     <div class="footer-col">
-      <h4>Property Types</h4>
-      <a href="#">Single Family</a><a href="#">Condos</a>
-      <a href="#">Beachfront</a><a href="#">Mountain Estates</a><a href="#">Land</a>
+      <h4>Focus Areas</h4>
+      <a href="#">Dorado & North Coast</a>
+      <a href="#">Aguadilla & West</a>
+      <a href="#">Fajardo & Marinas</a>
+      <a href="#">San Juan Metro</a>
+      <a href="#">Mountain Highlands</a>
     </div>
     <div class="footer-col">
       <h4>Contact Coral</h4>
@@ -460,31 +554,31 @@ const PHOTOS = [
 ];
 
 const LISTINGS = [
-  {ListingKey:"PR-240001",ListingId:"PR24001",ListPrice:1850000,PropertyType:"Single Family",BedroomsTotal:5,BathroomsTotalInteger:4,LivingArea:4800,LotSizeAcres:0.85,City:"Dorado",StreetNumber:"18",StreetName:"Calle Palma Real",SubdivisionName:"Dorado Beach Resort",PublicRemarks:"Stunning resort-style estate within the prestigious Dorado Beach community. This fully renovated home features soaring ceilings, a chef's kitchen, and a wraparound terrace overlooking a private pool and manicured gardens. Walk to the beach, golf courses, and the Ritz-Carlton Reserve.",YearBuilt:2018,GarageSpaces:2,StandardStatus:"Active",DaysOnMarket:14,features:["Pool","Ocean View","Gated Community","Beachfront"],emoji:"🏡",pricePerSqft:385},
-  {ListingKey:"PR-240002",ListingId:"PR24002",ListPrice:425000,PropertyType:"Condo / Apartment",BedroomsTotal:2,BathroomsTotalInteger:2,LivingArea:1240,LotSizeAcres:null,City:"San Juan",StreetNumber:"1055",StreetName:"Ave Ashford",SubdivisionName:"Condado Lagoon",PublicRemarks:"Modern condo in the heart of Condado with spectacular lagoon views. Open floor plan, floor-to-ceiling windows, updated kitchen with quartz countertops, and a private balcony. Building amenities include pool, gym, and 24-hour concierge. Steps to restaurants, boutiques, and the beach.",YearBuilt:2015,GarageSpaces:1,StandardStatus:"Active",DaysOnMarket:28,features:["Pool","Ocean View"],emoji:"🏢",pricePerSqft:342},
-  {ListingKey:"PR-240003",ListingId:"PR24003",ListPrice:2750000,PropertyType:"Single Family",BedroomsTotal:6,BathroomsTotalInteger:6,LivingArea:7200,LotSizeAcres:1.2,City:"Guaynabo",StreetNumber:"34",StreetName:"Camino del Rey",SubdivisionName:"Bairoa Park",PublicRemarks:"Grand estate on a private acre in sought-after Guaynabo. Six en-suite bedrooms, a home theatre, wine cellar, full outdoor kitchen, and a resort pool with waterfall. Gated entrance, generator, and cistern. Ideal for the discerning buyer seeking privacy and luxury without compromise.",YearBuilt:2012,GarageSpaces:3,StandardStatus:"Active",DaysOnMarket:45,features:["Pool","Gated Community","Mountain View"],emoji:"🏰",pricePerSqft:381},
-  {ListingKey:"PR-240004",ListingId:"PR24004",ListPrice:320000,PropertyType:"Single Family",BedroomsTotal:3,BathroomsTotalInteger:2,LivingArea:1850,LotSizeAcres:0.22,City:"Bayamón",StreetNumber:"77",StreetName:"Calle Cedro",SubdivisionName:"Urb. Villa del Rey",PublicRemarks:"Well-maintained family home in a quiet, established neighborhood. Tile floors throughout, updated bathrooms, covered carport, and a large backyard with mature fruit trees. Minutes from shopping centers, schools, and the expressway. Solid concrete construction with recent roof.",YearBuilt:1998,GarageSpaces:1,StandardStatus:"Active",DaysOnMarket:62,features:[],emoji:"🏠",pricePerSqft:173},
-  {ListingKey:"PR-240005",ListingId:"PR24005",ListPrice:895000,PropertyType:"Single Family",BedroomsTotal:4,BathroomsTotalInteger:3,LivingArea:3100,LotSizeAcres:0.35,City:"Rincón",StreetNumber:"88",StreetName:"Calle Sandy Beach",SubdivisionName:"Puntas",PublicRemarks:"Surfer's paradise meets luxury living. This oceanfront property in Rincón's coveted Puntas area boasts panoramic Caribbean sunsets, a rooftop deck, three en-suite bedrooms, and an income-generating casita. Fully furnished and turnkey. Steps from Sandy Beach and world-class surf breaks.",YearBuilt:2019,GarageSpaces:0,StandardStatus:"Active",DaysOnMarket:9,features:["Ocean View","Beachfront","Pool"],emoji:"🌊",pricePerSqft:288},
-  {ListingKey:"PR-240006",ListingId:"PR24006",ListPrice:185000,PropertyType:"Land",BedroomsTotal:0,BathroomsTotalInteger:0,LivingArea:0,LotSizeAcres:2.4,City:"Isabela",StreetNumber:"",StreetName:"PR-4466 Km 1.2",SubdivisionName:"",PublicRemarks:"Exceptional 2.4-acre parcel in Isabela with unobstructed ocean views from every angle. Flat buildable terrain with access road, utilities at street, and preliminary topographic study available. Ideal for a private estate, boutique resort, or vacation rental development. Just minutes from Jobos Beach.",YearBuilt:null,GarageSpaces:0,StandardStatus:"Active",DaysOnMarket:103,features:["Ocean View"],emoji:"🌿",pricePerSqft:0},
-  {ListingKey:"PR-240007",ListingId:"PR24007",ListPrice:560000,PropertyType:"Condo / Apartment",BedroomsTotal:3,BathroomsTotalInteger:3,LivingArea:1890,LotSizeAcres:null,City:"Carolina",StreetNumber:"1 Ave",StreetName:"Los Gobernadores",SubdivisionName:"El Conquistador Resort Residences",PublicRemarks:"Rare three-bedroom unit at the exclusive El Conquistador resort community in Fajardo. Furnished with high-end finishes, private terrace, and access to five pools, marina, private island ferry, golf, and spa. Robust rental income history. Owner financing considered.",YearBuilt:2008,GarageSpaces:1,StandardStatus:"Active",DaysOnMarket:37,features:["Pool","Ocean View","Gated Community"],emoji:"🏖️",pricePerSqft:296},
-  {ListingKey:"PR-240008",ListingId:"PR24008",ListPrice:1200000,PropertyType:"Single Family",BedroomsTotal:5,BathroomsTotalInteger:4,LivingArea:4100,LotSizeAcres:0.6,City:"Ponce",StreetNumber:"200",StreetName:"Calle Luna",SubdivisionName:"El Vigía",PublicRemarks:"Architectural masterpiece perched on a hilltop in El Vigía with sweeping views of the southern coast and the Caribbean. Custom stone construction, vaulted ceilings, tropical courtyard with fountain, infinity pool, and a two-bedroom guest quarters. An extraordinary property in Puerto Rico's second city.",YearBuilt:2003,GarageSpaces:2,StandardStatus:"Active",DaysOnMarket:78,features:["Pool","Ocean View","Mountain View"],emoji:"🏛️",pricePerSqft:292},
-  {ListingKey:"PR-240009",ListingId:"PR24009",ListPrice:275000,PropertyType:"Townhouse",BedroomsTotal:3,BathroomsTotalInteger:2,LivingArea:1680,LotSizeAcres:0.08,City:"Guaynabo",StreetNumber:"12",StreetName:"Calle Roble",SubdivisionName:"Urb. Montehiedra",PublicRemarks:"Move-in ready townhouse in gated Montehiedra. Three bedrooms, updated kitchen, private patio, and two assigned parking spaces. Community pool and playground. Excellent location minutes from Las Catalinas mall, top schools, and major highways.",YearBuilt:2005,GarageSpaces:0,StandardStatus:"Active",DaysOnMarket:19,features:["Pool","Gated Community"],emoji:"🏘️",pricePerSqft:163},
-  {ListingKey:"PR-240010",ListingId:"PR24010",ListPrice:3900000,PropertyType:"Single Family",BedroomsTotal:7,BathroomsTotalInteger:7,LivingArea:9500,LotSizeAcres:3.1,City:"Dorado",StreetNumber:"5",StreetName:"Camino Playa Dorado",SubdivisionName:"Dorado Beach East",PublicRemarks:"Iconic beachfront compound on three acres of private oceanfront in Dorado Beach East. Ten-thousand square foot main residence plus two guest houses, a private gym, screening room, tennis court, and 160 feet of direct beach access. One of Puerto Rico's most significant private estates.",YearBuilt:2021,GarageSpaces:4,StandardStatus:"Active",DaysOnMarket:5,features:["Pool","Ocean View","Gated Community","Beachfront"],emoji:"🌴",pricePerSqft:410},
-  {ListingKey:"PR-240011",ListingId:"PR24011",ListPrice:149000,PropertyType:"Condo / Apartment",BedroomsTotal:1,BathroomsTotalInteger:1,LivingArea:720,LotSizeAcres:null,City:"San Juan",StreetNumber:"350",StreetName:"Ave de Diego",SubdivisionName:"Urb. Puerto Nuevo",PublicRemarks:"Affordable studio apartment in a well-maintained building in Puerto Nuevo. Fully renovated interior with ceramic floors, modern kitchen, and split AC. Building includes laundry facility and parking. Great for a first home or investment rental property in a central San Juan location.",YearBuilt:1985,GarageSpaces:1,StandardStatus:"Active",DaysOnMarket:44,features:[],emoji:"🏢",pricePerSqft:206},
-  {ListingKey:"PR-240012",ListingId:"PR24012",ListPrice:680000,PropertyType:"Single Family",BedroomsTotal:4,BathroomsTotalInteger:3,LivingArea:2900,LotSizeAcres:0.45,City:"Humacao",StreetNumber:"40",StreetName:"Calle Palmas",SubdivisionName:"Palmas del Mar",PublicRemarks:"Resort lifestyle in prestigious Palmas del Mar. This beautifully landscaped home features an open kitchen, formal dining, a private pool, and a large deck with tropical garden views. Access to 20+ amenities including golf, tennis, marina, beach club, and equestrian center. 24-hour security.",YearBuilt:2000,GarageSpaces:2,StandardStatus:"Active",DaysOnMarket:55,features:["Pool","Gated Community","Ocean View"],emoji:"⛳",pricePerSqft:234},
-  {ListingKey:"PR-240013",ListingId:"PR24013",ListPrice:495000,PropertyType:"Single Family",BedroomsTotal:3,BathroomsTotalInteger:3,LivingArea:2200,LotSizeAcres:0.28,City:"Aguadilla",StreetNumber:"22",StreetName:"Calle Coral",SubdivisionName:"Urb. Borinquen Beach",PublicRemarks:"Contemporary beach home steps from Borinquen Beach and the former Ramey Air Force Base. Three full suites, a chef's kitchen, wrap-around terrace, and an oversized lot with room for a pool. Walking distance to the Golf Club, Crash Boat Beach, and Rafael Hernandez Airport.",YearBuilt:2016,GarageSpaces:1,StandardStatus:"Active",DaysOnMarket:31,features:["Ocean View","Beachfront"],emoji:"🏄",pricePerSqft:225},
-  {ListingKey:"PR-240014",ListingId:"PR24014",ListPrice:220000,PropertyType:"Single Family",BedroomsTotal:3,BathroomsTotalInteger:2,LivingArea:1450,LotSizeAcres:0.18,City:"Mayagüez",StreetNumber:"55",StreetName:"Calle Dr. Loyola",SubdivisionName:"Urb. Santa María",PublicRemarks:"Charming home in a quiet residential neighborhood near the University of Puerto Rico, Mayagüez campus. Renovated kitchen and baths, tile floors, enclosed garage, and a covered patio. Excellent value in the heart of Puerto Rico's west coast hub.",YearBuilt:1992,GarageSpaces:1,StandardStatus:"Active",DaysOnMarket:88,features:[],emoji:"🏠",pricePerSqft:151},
-  {ListingKey:"PR-240015",ListingId:"PR24015",ListPrice:1450000,PropertyType:"Multi-Family",BedroomsTotal:8,BathroomsTotalInteger:8,LivingArea:5600,LotSizeAcres:0.32,City:"San Juan",StreetNumber:"222",StreetName:"Calle Loíza",SubdivisionName:"Ocean Park",PublicRemarks:"Four-unit income property one block from Ocean Park beach. Each unit is 2BR/2BA, individually metered, fully renovated with high-end finishes, and currently rented with excellent rental history. Cap rate 6.8%. Ideal for an investor seeking strong cash flow in one of San Juan's most desirable neighborhoods.",YearBuilt:1974,GarageSpaces:4,StandardStatus:"Active",DaysOnMarket:22,features:["Ocean View","Beachfront"],emoji:"🏗️",pricePerSqft:258},
-  {ListingKey:"PR-240016",ListingId:"PR24016",ListPrice:750000,PropertyType:"Single Family",BedroomsTotal:4,BathroomsTotalInteger:3,LivingArea:3400,LotSizeAcres:5.0,City:"Jayuya",StreetNumber:"10",StreetName:"Ruta Panorámica",SubdivisionName:"",PublicRemarks:"Breathtaking mountain estate on five acres in Puerto Rico's highlands. Dramatic valley and cloud forest views, spring-fed stream, coffee plantation, and a fully self-sufficient property with solar, rainwater collection, and a generator. A true sanctuary for nature lovers and those seeking off-grid luxury.",YearBuilt:2010,GarageSpaces:2,StandardStatus:"Active",DaysOnMarket:67,features:["Mountain View"],emoji:"⛰️",pricePerSqft:220},
-  {ListingKey:"PR-240017",ListingId:"PR24017",ListPrice:385000,PropertyType:"Condo / Apartment",BedroomsTotal:2,BathroomsTotalInteger:2,LivingArea:1380,LotSizeAcres:null,City:"Fajardo",StreetNumber:"100",StreetName:"Calle Marina",SubdivisionName:"Isleta Marina",PublicRemarks:"Stunning marina-front condo at Isleta Marina with direct views of Fajardo's sailboat harbor and the islands of Culebra and Vieques on the horizon. Two full suites, an open-concept living area, and a large terrace perfect for watching the sunset. Boat slip available separately.",YearBuilt:2011,GarageSpaces:1,StandardStatus:"Active",DaysOnMarket:41,features:["Ocean View","Pool"],emoji:"⛵",pricePerSqft:278},
-  {ListingKey:"PR-240018",ListingId:"PR24018",ListPrice:580000,PropertyType:"Single Family",BedroomsTotal:4,BathroomsTotalInteger:3,LivingArea:2600,LotSizeAcres:0.3,City:"Carolina",StreetNumber:"8",StreetName:"Calle Flamboyan",SubdivisionName:"Urb. Nuevo San Juan",PublicRemarks:"Spacious family home in a prime Carolina location minutes from Luis Muñoz Marín International Airport and the beaches of Isla Verde. Updated throughout with a modern kitchen, quartz baths, and a heated pool. Gated entrance, two-car garage, and mature tropical landscaping.",YearBuilt:2001,GarageSpaces:2,StandardStatus:"Active",DaysOnMarket:16,features:["Pool","Gated Community"],emoji:"🌺",pricePerSqft:223}
+  {ListingKey:"PR-240001",ListingId:"PR24001",ListPrice:1850000,PropertyType:"Single Family",BedroomsTotal:5,BathroomsTotalInteger:4,LivingArea:4800,LotSizeAcres:0.85,City:"Dorado",StreetNumber:"18",StreetName:"Calle Palma Real",SubdivisionName:"Dorado Beach Resort",PublicRemarks:"Stunning resort-style estate within the prestigious Dorado Beach community. This fully renovated home features soaring ceilings, a chef's kitchen, and a wraparound terrace overlooking a private pool and manicured gardens. Walk to the beach, golf courses, and the Ritz-Carlton Reserve.",YearBuilt:2018,GarageSpaces:2,StandardStatus:"Active",DaysOnMarket:14,features:["Pool","Ocean View","Gated Community","Beachfront"],pricePerSqft:385,emoji:"🏡"},
+  {ListingKey:"PR-240002",ListingId:"PR24002",ListPrice:425000,PropertyType:"Condo / Apartment",BedroomsTotal:2,BathroomsTotalInteger:2,LivingArea:1240,LotSizeAcres:null,City:"San Juan",StreetNumber:"1055",StreetName:"Ave Ashford",SubdivisionName:"Condado Lagoon",PublicRemarks:"Modern condo in the heart of Condado with spectacular lagoon views. Open floor plan, floor-to-ceiling windows, updated kitchen with quartz countertops, and a private balcony. Building amenities include pool, gym, and 24-hour concierge. Steps to restaurants, boutiques, and the beach.",YearBuilt:2015,GarageSpaces:1,StandardStatus:"Active",DaysOnMarket:28,features:["Pool","Ocean View"],pricePerSqft:342,emoji:"🏢"},
+  {ListingKey:"PR-240003",ListingId:"PR24003",ListPrice:2750000,PropertyType:"Single Family",BedroomsTotal:6,BathroomsTotalInteger:6,LivingArea:7200,LotSizeAcres:1.2,City:"Guaynabo",StreetNumber:"34",StreetName:"Camino del Rey",SubdivisionName:"Bairoa Park",PublicRemarks:"Grand estate on a private acre in sought-after Guaynabo. Six en-suite bedrooms, a home theatre, wine cellar, full outdoor kitchen, and a resort pool with waterfall. Gated entrance, generator, and cistern. Ideal for the discerning buyer seeking privacy and luxury without compromise.",YearBuilt:2012,GarageSpaces:3,StandardStatus:"Active",DaysOnMarket:45,features:["Pool","Gated Community","Mountain View"],pricePerSqft:381,emoji:"🏰"},
+  {ListingKey:"PR-240004",ListingId:"PR24004",ListPrice:320000,PropertyType:"Single Family",BedroomsTotal:3,BathroomsTotalInteger:2,LivingArea:1850,LotSizeAcres:0.22,City:"Bayamón",StreetNumber:"77",StreetName:"Calle Cedro",SubdivisionName:"Urb. Villa del Rey",PublicRemarks:"Well-maintained family home in a quiet, established neighborhood. Tile floors throughout, updated bathrooms, covered carport, and a large backyard with mature fruit trees. Minutes from shopping centers, schools, and the expressway. Solid concrete construction with recent roof.",YearBuilt:1998,GarageSpaces:1,StandardStatus:"Active",DaysOnMarket:62,features:[],pricePerSqft:173,emoji:"🏠"},
+  {ListingKey:"PR-240005",ListingId:"PR24005",ListPrice:895000,PropertyType:"Single Family",BedroomsTotal:4,BathroomsTotalInteger:3,LivingArea:3100,LotSizeAcres:0.35,City:"Rincón",StreetNumber:"88",StreetName:"Calle Sandy Beach",SubdivisionName:"Puntas",PublicRemarks:"Surfer's paradise meets luxury living. This oceanfront property in Rincón's coveted Puntas area boasts panoramic Caribbean sunsets, a rooftop deck, three en-suite bedrooms, and an income-generating casita. Fully furnished and turnkey. Steps from Sandy Beach and world-class surf breaks.",YearBuilt:2019,GarageSpaces:0,StandardStatus:"Active",DaysOnMarket:9,features:["Ocean View","Beachfront","Pool"],pricePerSqft:288,emoji:"🌊"},
+  {ListingKey:"PR-240006",ListingId:"PR24006",ListPrice:185000,PropertyType:"Land",BedroomsTotal:0,BathroomsTotalInteger:0,LivingArea:0,LotSizeAcres:2.4,City:"Isabela",StreetNumber:"",StreetName:"PR-4466 Km 1.2",SubdivisionName:"",PublicRemarks:"Exceptional 2.4-acre parcel in Isabela with unobstructed ocean views from every angle. Flat buildable terrain with access road, utilities at street, and preliminary topographic study available. Ideal for a private estate, boutique resort, or vacation rental development. Just minutes from Jobos Beach.",YearBuilt:null,GarageSpaces:0,StandardStatus:"Active",DaysOnMarket:103,features:["Ocean View"],pricePerSqft:0,emoji:"🌿"},
+  {ListingKey:"PR-240007",ListingId:"PR24007",ListPrice:560000,PropertyType:"Condo / Apartment",BedroomsTotal:3,BathroomsTotalInteger:3,LivingArea:1890,LotSizeAcres:null,City:"Carolina",StreetNumber:"1 Ave",StreetName:"Los Gobernadores",SubdivisionName:"El Conquistador Resort Residences",PublicRemarks:"Rare three-bedroom unit at the exclusive El Conquistador resort community in Fajardo. Furnished with high-end finishes, private terrace, and access to five pools, marina, private island ferry, golf, and spa. Robust rental income history. Owner financing considered.",YearBuilt:2008,GarageSpaces:1,StandardStatus:"Active",DaysOnMarket:37,features:["Pool","Ocean View","Gated Community"],pricePerSqft:296,emoji:"🏖️"},
+  {ListingKey:"PR-240008",ListingId:"PR24008",ListPrice:1200000,PropertyType:"Single Family",BedroomsTotal:5,BathroomsTotalInteger:4,LivingArea:4100,LotSizeAcres:0.6,City:"Ponce",StreetNumber:"200",StreetName:"Calle Luna",SubdivisionName:"El Vigía",PublicRemarks:"Architectural masterpiece perched on a hilltop in El Vigía with sweeping views of the southern coast and the Caribbean. Custom stone construction, vaulted ceilings, tropical courtyard with fountain, infinity pool, and a two-bedroom guest quarters. An extraordinary property in Puerto Rico's second city.",YearBuilt:2003,GarageSpaces:2,StandardStatus:"Active",DaysOnMarket:78,features:["Pool","Ocean View","Mountain View"],pricePerSqft:292,emoji:"🏛️"},
+  {ListingKey:"PR-240009",ListingId:"PR24009",ListPrice:275000,PropertyType:"Townhouse",BedroomsTotal:3,BathroomsTotalInteger:2,LivingArea:1680,LotSizeAcres:0.08,City:"Guaynabo",StreetNumber:"12",StreetName:"Calle Roble",SubdivisionName:"Urb. Montehiedra",PublicRemarks:"Move-in ready townhouse in gated Montehiedra. Three bedrooms, updated kitchen, private patio, and two assigned parking spaces. Community pool and playground. Excellent location minutes from Las Catalinas mall, top schools, and major highways.",YearBuilt:2005,GarageSpaces:0,StandardStatus:"Active",DaysOnMarket:19,features:["Pool","Gated Community"],pricePerSqft:163,emoji:"🏘️"},
+  {ListingKey:"PR-240010",ListingId:"PR24010",ListPrice:3900000,PropertyType:"Single Family",BedroomsTotal:7,BathroomsTotalInteger:7,LivingArea:9500,LotSizeAcres:3.1,City:"Dorado",StreetNumber:"5",StreetName:"Camino Playa Dorado",SubdivisionName:"Dorado Beach East",PublicRemarks:"Iconic beachfront compound on three acres of private oceanfront in Dorado Beach East. Ten-thousand square foot main residence plus two guest houses, a private gym, screening room, tennis court, and 160 feet of direct beach access. One of Puerto Rico's most significant private estates.",YearBuilt:2021,GarageSpaces:4,StandardStatus:"Active",DaysOnMarket:5,features:["Pool","Ocean View","Gated Community","Beachfront"],pricePerSqft:410,emoji:"🌴"},
+  {ListingKey:"PR-240011",ListingId:"PR24011",ListPrice:149000,PropertyType:"Condo / Apartment",BedroomsTotal:1,BathroomsTotalInteger:1,LivingArea:720,LotSizeAcres:null,City:"San Juan",StreetNumber:"350",StreetName:"Ave de Diego",SubdivisionName:"Urb. Puerto Nuevo",PublicRemarks:"Affordable studio apartment in a well-maintained building in Puerto Nuevo. Fully renovated interior with ceramic floors, modern kitchen, and split AC. Building includes laundry facility and parking. Great for a first home or investment rental property in a central San Juan location.",YearBuilt:1985,GarageSpaces:1,StandardStatus:"Active",DaysOnMarket:44,features:[],pricePerSqft:206,emoji:"🏢"},
+  {ListingKey:"PR-240012",ListingId:"PR24012",ListPrice:680000,PropertyType:"Single Family",BedroomsTotal:4,BathroomsTotalInteger:3,LivingArea:2900,LotSizeAcres:0.45,City:"Humacao",StreetNumber:"40",StreetName:"Calle Palmas",SubdivisionName:"Palmas del Mar",PublicRemarks:"Resort lifestyle in prestigious Palmas del Mar. This beautifully landscaped home features an open kitchen, formal dining, a private pool, and a large deck with tropical garden views. Access to 20+ amenities including golf, tennis, marina, beach club, and equestrian center. 24-hour security.",YearBuilt:2000,GarageSpaces:2,StandardStatus:"Active",DaysOnMarket:55,features:["Pool","Gated Community","Ocean View"],pricePerSqft:234,emoji:"⛳"},
+  {ListingKey:"PR-240013",ListingId:"PR24013",ListPrice:495000,PropertyType:"Single Family",BedroomsTotal:3,BathroomsTotalInteger:3,LivingArea:2200,LotSizeAcres:0.28,City:"Aguadilla",StreetNumber:"22",StreetName:"Calle Coral",SubdivisionName:"Urb. Borinquen Beach",PublicRemarks:"Contemporary beach home steps from Borinquen Beach and the former Ramey Air Force Base. Three full suites, a chef's kitchen, wrap-around terrace, and an oversized lot with room for a pool. Walking distance to the Golf Club, Crash Boat Beach, and Rafael Hernandez Airport.",YearBuilt:2016,GarageSpaces:1,StandardStatus:"Active",DaysOnMarket:31,features:["Ocean View","Beachfront"],pricePerSqft:225,emoji:"🏄"},
+  {ListingKey:"PR-240014",ListingId:"PR24014",ListPrice:220000,PropertyType:"Single Family",BedroomsTotal:3,BathroomsTotalInteger:2,LivingArea:1450,LotSizeAcres:0.18,City:"Mayagüez",StreetNumber:"55",StreetName:"Calle Dr. Loyola",SubdivisionName:"Urb. Santa María",PublicRemarks:"Charming home in a quiet residential neighborhood near the University of Puerto Rico, Mayagüez campus. Renovated kitchen and baths, tile floors, enclosed garage, and a covered patio. Excellent value in the heart of Puerto Rico's west coast hub.",YearBuilt:1992,GarageSpaces:1,StandardStatus:"Active",DaysOnMarket:88,features:[],pricePerSqft:151,emoji:"🏠"},
+  {ListingKey:"PR-240015",ListingId:"PR24015",ListPrice:1450000,PropertyType:"Multi-Family",BedroomsTotal:8,BathroomsTotalInteger:8,LivingArea:5600,LotSizeAcres:0.32,City:"San Juan",StreetNumber:"222",StreetName:"Calle Loíza",SubdivisionName:"Ocean Park",PublicRemarks:"Four-unit income property one block from Ocean Park beach. Each unit is 2BR/2BA, individually metered, fully renovated with high-end finishes, and currently rented with excellent rental history. Cap rate 6.8%. Ideal for an investor seeking strong cash flow in one of San Juan's most desirable neighborhoods.",YearBuilt:1974,GarageSpaces:4,StandardStatus:"Active",DaysOnMarket:22,features:["Ocean View","Beachfront"],pricePerSqft:258,emoji:"🏗️"},
+  {ListingKey:"PR-240016",ListingId:"PR24016",ListPrice:750000,PropertyType:"Single Family",BedroomsTotal:4,BathroomsTotalInteger:3,LivingArea:3400,LotSizeAcres:5.0,City:"Jayuya",StreetNumber:"10",StreetName:"Ruta Panorámica",SubdivisionName:"",PublicRemarks:"Breathtaking mountain estate on five acres in Puerto Rico's highlands. Dramatic valley and cloud forest views, spring-fed stream, coffee plantation, and a fully self-sufficient property with solar, rainwater collection, and a generator. A true sanctuary for nature lovers and those seeking off-grid luxury.",YearBuilt:2010,GarageSpaces:2,StandardStatus:"Active",DaysOnMarket:67,features:["Mountain View"],pricePerSqft:220,emoji:"⛰️"},
+  {ListingKey:"PR-240017",ListingId:"PR24017",ListPrice:385000,PropertyType:"Condo / Apartment",BedroomsTotal:2,BathroomsTotalInteger:2,LivingArea:1380,LotSizeAcres:null,City:"Fajardo",StreetNumber:"100",StreetName:"Calle Marina",SubdivisionName:"Isleta Marina",PublicRemarks:"Stunning marina-front condo at Isleta Marina with direct views of Fajardo's sailboat harbor and the islands of Culebra and Vieques on the horizon. Two full suites, an open-concept living area, and a large terrace perfect for watching the sunset. Boat slip available separately.",YearBuilt:2011,GarageSpaces:1,StandardStatus:"Active",DaysOnMarket:41,features:["Ocean View","Pool"],pricePerSqft:278,emoji:"⛵"},
+  {ListingKey:"PR-240018",ListingId:"PR24018",ListPrice:580000,PropertyType:"Single Family",BedroomsTotal:4,BathroomsTotalInteger:3,LivingArea:2600,LotSizeAcres:0.3,City:"Carolina",StreetNumber:"8",StreetName:"Calle Flamboyan",SubdivisionName:"Urb. Nuevo San Juan",PublicRemarks:"Spacious family home in a prime Carolina location minutes from Luis Muñoz Marín International Airport and the beaches of Isla Verde. Updated throughout with a modern kitchen, quartz baths, and a heated pool. Gated entrance, two-car garage, and mature tropical landscaping.",YearBuilt:2001,GarageSpaces:2,StandardStatus:"Active",DaysOnMarket:16,features:["Pool","Gated Community"],pricePerSqft:223,emoji:"🌺"}
 ];
 
 let filtered = [...LISTINGS];
 let currentView = 'grid';
 
 function fmt(n) { return '$' + n.toLocaleString(); }
-function statusColor(s) { if(s==='Active') return ''; if(s==='Pending') return 'pending'; return 'sold'; }
+function statusColor(s) { if(s==='Pending') return 'pending'; if(s!=='Active') return 'sold'; return ''; }
 
 function toggleSave(btn, key) {
   btn.classList.toggle('saved');
@@ -501,12 +595,11 @@ function renderListings() {
   document.getElementById('countDisplay').textContent = data.length;
   const grid = document.getElementById('listingsGrid');
   grid.style.gridTemplateColumns = currentView==='list' ? '1fr' : 'repeat(auto-fill, minmax(280px, 1fr))';
-  grid.innerHTML = data.map((p, i) => {
+  grid.innerHTML = data.map((p,i) => {
     const imgSrc = PHOTOS[i % PHOTOS.length];
-    return `
-    <div class="card" onclick="openModal('${p.ListingKey}')">
+    return `<div class="card" onclick="openModal('${p.ListingKey}')">
       <div style="position:relative">
-        <img src="${imgSrc}" alt="${p.StreetName}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" class="card-img" />
+        <img src="${imgSrc}" alt="${p.StreetName}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" class="card-img"/>
         <div class="card-img-placeholder" style="display:none">${p.emoji}</div>
         <div class="card-badge ${statusColor(p.StandardStatus)}">${p.StandardStatus}</div>
         <button class="card-save" onclick="event.stopPropagation();toggleSave(this,'${p.ListingKey}')">♡</button>
@@ -526,7 +619,7 @@ function renderListings() {
         <span class="card-mls">MLS# ${p.ListingId}</span>
         <span class="card-type">${p.PropertyType}</span>
       </div>
-    </div>`; 
+    </div>`;
   }).join('');
 }
 
@@ -605,14 +698,12 @@ function applyFilters() {
 }
 
 function resetFilters() {
-  ['filtMunicipio','filtType','filtBeds','filtBaths','heroMunicipio','heroType','heroPrice'].forEach(id => {
-    const el = document.getElementById(id);
-    if(el) el.value = '';
+  ['filtMunicipio','filtType','filtBeds','filtBaths','heroMunicipio','heroType','heroPrice'].forEach(id=>{
+    const el=document.getElementById(id); if(el) el.value='';
   });
-  ['filtPriceMin','filtPriceMax'].forEach(id => document.getElementById(id).value = '');
-  ['chkPool','chkOcean','chkGated','chkBeach','chkMtn'].forEach(id => document.getElementById(id).checked = false);
-  filtered = [...LISTINGS];
-  renderListings();
+  ['filtPriceMin','filtPriceMax'].forEach(id=>document.getElementById(id).value='');
+  ['chkPool','chkOcean','chkGated','chkBeach','chkMtn'].forEach(id=>document.getElementById(id).checked=false);
+  filtered=[...LISTINGS]; renderListings();
 }
 
 function applyHeroSearch() {
@@ -623,7 +714,7 @@ function applyHeroSearch() {
   if(type) document.getElementById('filtType').value=type;
   if(maxP<Infinity) document.getElementById('filtPriceMax').value=maxP;
   applyFilters();
-  document.getElementById('listingsGrid').scrollIntoView({behavior:'smooth'});
+  document.getElementById('listings').scrollIntoView({behavior:'smooth'});
 }
 
 function setView(v,btn) {
