@@ -525,7 +525,7 @@
   </div>
 
   <!-- MEET CORAL -->
-  <div class="meet-coral">
+  <div class="meet-coral" id="meet-coral">
     <div class="meet-coral-inner">
       <div>
         <img src="https://raw.githubusercontent.com/Marauder67/Pronoia-Realty/main/IMG_2351.jpeg" alt="Coral Santiago" class="coral-photo">
@@ -588,13 +588,49 @@
       <div class="advisory-card"><span class="advisory-card-icon">📋</span><h3>Permitting & Legal Navigation</h3><p>Puerto Rico's permitting process has its own rhythm. We connect you with experienced local attorneys and permitting specialists to ensure your renovations, additions, and new builds are properly documented and approved.</p></div>
       <div class="advisory-card"><span class="advisory-card-icon">🌐</span><h3>Cultural & Community Integration</h3><p>Moving to an island is a lifestyle shift. Coral personally introduces clients to local community groups, expat networks, island events, and neighborhood connections — helping you feel at home from day one.</p></div>
     </div>
-    <div class="cta-banner">
-      <h2>Ready to Start Your Island Journey?</h2>
-      <p>Schedule a free consultation with Coral to discuss your relocation goals, timeline, and how we can help make the transition seamless.</p>
-      <div class="cta-banner-btns">
-        <a href="mailto:c.santiago@pronoiarealty.com?subject=Relocation%20Consultation%20Request" class="cta-btn-gold">Schedule a Free Consultation</a>
-        <a href="tel:+17875013992" class="cta-btn-outline">📞 (787) 501-3992</a>
+    <div class="cta-banner" style="text-align:left;padding:2.5rem;">
+      <h2 style="text-align:center;margin-bottom:0.5rem;">Ready to Start Your Island Journey?</h2>
+      <p style="text-align:center;margin-bottom:2rem;">Send Coral a message and she will be in touch shortly.</p>
+      <div id="fs-success" style="display:none;background:#F0FDF4;border:1px solid #86EFAC;border-radius:8px;padding:1.2rem;text-align:center;margin-bottom:1rem;">
+        <div style="font-size:1.5rem;margin-bottom:0.3rem;">&#10003;</div>
+        <div style="font-family:'Poppins',sans-serif;font-weight:600;color:#166534;">Message sent!</div>
+        <div style="font-size:0.8rem;color:#15803D;margin-top:0.2rem;">Coral will be in touch shortly.</div>
       </div>
+      <form id="contactForm" action="https://formspree.io/f/mdenwepa" method="POST" style="max-width:640px;margin:0 auto;">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+          <div>
+            <label style="display:block;font-size:0.65rem;font-family:'Poppins',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.7);margin-bottom:0.35rem;">Full Name</label>
+            <input type="text" name="name" placeholder="Your Name" required style="width:100%;padding:0.65rem 0.9rem;border:1px solid rgba(255,255,255,0.2);border-radius:6px;font-size:0.88rem;color:#1A1D20;background:#fff;outline:none;">
+          </div>
+          <div>
+            <label style="display:block;font-size:0.65rem;font-family:'Poppins',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.7);margin-bottom:0.35rem;">Email Address</label>
+            <input type="email" name="email" placeholder="email@example.com" required style="width:100%;padding:0.65rem 0.9rem;border:1px solid rgba(255,255,255,0.2);border-radius:6px;font-size:0.88rem;color:#1A1D20;background:#fff;outline:none;">
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+          <div>
+            <label style="display:block;font-size:0.65rem;font-family:'Poppins',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.7);margin-bottom:0.35rem;">Phone Number</label>
+            <input type="tel" name="phone" placeholder="(787) 000-0000" style="width:100%;padding:0.65rem 0.9rem;border:1px solid rgba(255,255,255,0.2);border-radius:6px;font-size:0.88rem;color:#1A1D20;background:#fff;outline:none;">
+          </div>
+          <div>
+            <label style="display:block;font-size:0.65rem;font-family:'Poppins',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.7);margin-bottom:0.35rem;">Service Needed</label>
+            <select name="service" style="width:100%;padding:0.65rem 0.9rem;border:1px solid rgba(255,255,255,0.2);border-radius:6px;font-size:0.88rem;color:#1A1D20;background:#fff;outline:none;">
+              <option>Buyer Representation</option>
+              <option>Act 60 Relocation Support</option>
+              <option>First-Time Homebuyer Guidance</option>
+              <option>Drone Scouting &amp; Neighborhood Report</option>
+              <option>Contractor Referral &amp; Project Oversight</option>
+              <option>Full Relocation &amp; Concierge Package</option>
+            </select>
+          </div>
+        </div>
+        <div style="margin-bottom:1rem;">
+          <label style="display:block;font-size:0.65rem;font-family:'Poppins',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.7);margin-bottom:0.35rem;">Message</label>
+          <textarea name="message" rows="3" placeholder="Tell us about your goals, timeline, or questions..." style="width:100%;padding:0.65rem 0.9rem;border:1px solid rgba(255,255,255,0.2);border-radius:6px;font-size:0.88rem;color:#1A1D20;background:#fff;outline:none;resize:vertical;"></textarea>
+        </div>
+        <button type="submit" id="fs-btn" style="width:100%;background:var(--gold);color:#fff;border:none;padding:0.9rem;border-radius:6px;font-family:'Poppins',sans-serif;font-size:0.9rem;font-weight:600;cursor:pointer;transition:background 0.2s;">Send Message to Coral</button>
+        <div style="text-align:center;font-size:0.75rem;color:rgba(255,255,255,0.55);margin-top:0.8rem;">Or call directly at <a href="tel:+17875013992" style="color:var(--gold);font-weight:600;">(787) 501-3992</a></div>
+      </form>
     </div>
   </div>
 </div>
@@ -817,6 +853,32 @@ function setView(v,btn){
 
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModalDirect();});
 renderListings();
+</script>
+<script>
+// Formspree AJAX
+var fsForm=document.getElementById('contactForm');
+if(fsForm){
+  fsForm.addEventListener('submit',function(e){
+    e.preventDefault();
+    var btn=document.getElementById('fs-btn');
+    btn.textContent='Sending...';btn.disabled=true;
+    fetch('https://formspree.io/f/mdenwepa',{method:'POST',body:new FormData(fsForm),headers:{Accept:'application/json'}})
+    .then(function(r){
+      if(r.ok){fsForm.style.display='none';document.getElementById('fs-success').style.display='block';}
+      else{btn.textContent='Send Message to Coral';btn.disabled=false;alert('Something went wrong. Please call Coral directly at (787) 501-3992');}
+    })
+    .catch(function(){btn.textContent='Send Message to Coral';btn.disabled=false;alert('Something went wrong. Please call Coral directly at (787) 501-3992');});
+  });
+}
+// Contact Coral button — scroll to Meet Coral section
+var navCta=document.getElementById('navContactBtn');
+if(navCta){
+  navCta.addEventListener('click',function(e){
+    e.stopPropagation();
+    var pop=document.getElementById('contactPop');
+    if(pop){var open=pop.classList.toggle('open');navCta.setAttribute('aria-expanded',open);}
+  });
+}
 </script>
 </body>
 </html>
