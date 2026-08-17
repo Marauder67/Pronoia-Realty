@@ -365,16 +365,24 @@ footer{background:#1E293B;color:#fff;padding:3rem 2rem 2rem;margin-top:3rem;}
     <div class="form-card">
       <h3>Request Advisory or Contractor Support</h3>
       <div class="form-sub">Tell us about your home purchase, relocation plan, or renovation needs.</div>
-      <div class="form-row">
-        <div class="form-group"><label>Full Name</label><input type="text" placeholder="Your Name"></div>
-        <div class="form-group"><label>Email Address</label><input type="email" placeholder="email@example.com"></div>
+      <div data-fs-success style="display:none;background:#F0FDF4;border:1px solid #86EFAC;border-radius:8px;padding:1.2rem;text-align:center;margin-bottom:1rem;">
+        <div style="font-size:1.5rem;margin-bottom:0.4rem;">&#10003;</div>
+        <div style="font-family:'Poppins',sans-serif;font-weight:600;color:#166534;">Message sent!</div>
+        <div style="font-size:0.8rem;color:#15803D;margin-top:0.2rem;">Coral will be in touch shortly.</div>
       </div>
-      <div class="form-row">
-        <div class="form-group"><label>Phone Number</label><input type="tel" placeholder="(787) 000-0000"></div>
-        <div class="form-group"><label>Service Needed</label><select><option>First-Time Homebuyer Guidance</option><option>Drone Scouting &amp; Neighborhood Report</option><option>Contractor Referral &amp; Project Oversight</option><option>Act 60 Relocation Support</option><option>Full Relocation &amp; Concierge Package</option></select></div>
-      </div>
-      <div class="form-group"><label>Project or Move Details</label><textarea rows="4" placeholder="Share your timeline, target neighborhoods, or trade requirements..."></textarea></div>
-      <button type="button" class="form-submit">Submit Advisory Request</button>
+      <div data-fs-error style="display:none;background:#FEF2F2;border:1px solid #FECACA;border-radius:8px;padding:1rem;text-align:center;margin-bottom:1rem;font-size:0.82rem;color:#DC2626;"></div>
+      <form id="contactForm" action="https://formspree.io/f/mdenwepa" method="POST">
+        <div class="form-row">
+          <div class="form-group"><label>Full Name</label><input type="text" name="name" placeholder="Your Name" required data-fs-field></div>
+          <div class="form-group"><label>Email Address</label><input type="email" name="email" placeholder="email@example.com" required data-fs-field></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>Phone Number</label><input type="tel" name="phone" placeholder="(787) 000-0000" data-fs-field></div>
+          <div class="form-group"><label>Service Needed</label><select name="service"><option>First-Time Homebuyer Guidance</option><option>Drone Scouting &amp; Neighborhood Report</option><option>Contractor Referral &amp; Project Oversight</option><option>Act 60 Relocation Support</option><option>Full Relocation &amp; Concierge Package</option></select></div>
+        </div>
+        <div class="form-group"><label>Project or Move Details</label><textarea name="message" rows="4" placeholder="Share your timeline, target neighborhoods, or trade requirements..." data-fs-field></textarea></div>
+        <button type="submit" class="form-submit" data-fs-submit-btn>Submit Advisory Request</button>
+      </form>
       <div class="form-note">Or call Coral directly at <a href="tel:+17875013992" style="color:#1E293B;font-weight:600;">(787) 501-3992</a></div>
     </div>
   </div>
@@ -579,5 +587,10 @@ function setView(v,btn){
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModalDirect();});
 renderListings();
 </script>
+<script>
+window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+formspree('initForm', { formElement: '#contactForm', formId: 'mdenwepa' });
+</script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </body>
 </html>
