@@ -220,7 +220,7 @@ footer{background:#1E293B;color:#fff;padding:3rem 2rem 2rem;margin-top:3rem;}
   <div class="nav-right">
     <img class="nav-coral" src="https://raw.githubusercontent.com/Marauder67/Pronoia-Realty/main/IMG_2351.jpeg" alt="Coral Santiago">
     <div class="nav-contact">
-      <button class="nav-cta" id="navContactBtn" onclick="toggleContact(event)" aria-expanded="false">Contact Coral</button>
+      <button class="nav-cta" onclick="contactCoral()">Contact Coral</button>
       <div class="contact-pop" id="contactPop">
         <div class="contact-pop-header">
           <img src="https://raw.githubusercontent.com/Marauder67/Pronoia-Realty/main/IMG_2351.jpeg" alt="Coral Santiago" class="contact-pop-avatar">
@@ -264,7 +264,7 @@ footer{background:#1E293B;color:#fff;padding:3rem 2rem 2rem;margin-top:3rem;}
       <div class="pillar"><div class="pillar-icon">&#128295;</div><h3>Concierge &amp; Vetted Trades</h3><p>From language support to trusted electricians, plumbers, masons, and painters &mdash; we coordinate trades for you.</p><button class="pillar-link" onclick="showTab('concierge')">Explore Services &rarr;</button></div>
     </div>
   </div>
-  <div class="meet-coral">
+  <div class="meet-coral" id="meet-coral">
     <div class="meet-coral-inner">
       <div><img src="https://raw.githubusercontent.com/Marauder67/Pronoia-Realty/main/IMG_2351.jpeg" alt="Coral Santiago" class="coral-photo"></div>
       <div>
@@ -563,6 +563,13 @@ function applyFilters(){
     return true;
   });
   renderListings();
+function contactCoral(){
+  showTab('home');
+  setTimeout(function(){
+    const el=document.getElementById('meet-coral');
+    if(el)el.scrollIntoView({behavior:'smooth'});
+  },100);
+}
 }
 function resetFilters(){
   ['filtMunicipio','filtType','filtBeds','filtBaths','heroMunicipio','heroType'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});
