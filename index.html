@@ -3,308 +3,922 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pronoia Realty — Boutique Buyer Representation & Relocation | Puerto Rico</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<title>Pronoia Realty — Puerto Rico Real Estate, Personally Represented</title>
+<meta name="description" content="Boutique buyer & seller representation across Puerto Rico. Coral Santiago — licensed real estate broker, bilingual, Act 60 specialist. Personally guided from first conversation through closing and beyond.">
+<meta property="og:title" content="Pronoia Realty — Puerto Rico Real Estate, Personally Represented">
+<meta property="og:description" content="Boutique buyer & seller representation across Puerto Rico. Personally guided from first conversation through closing and beyond.">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --navy:    #1D2D50;
-    --navy2:   #162240;
-    --gold:    #C59B27;
-    --gold2:   #b08920;
-    --sage:    #9EA396;
-    --sand:    #F8F9F6;
-    --white:   #FFFFFF;
-    --text:    #1A1D20;
-    --subtext: #666;
-    --border:  #E8EAE5;
-    --mist:    #F0F1EE;
+    /* Warm boutique palette — deep ocean, terracotta, cream, gold */
+    --ocean:      #123B4F;   /* primary deep ocean navy */
+    --ocean-2:    #0D2B3B;
+    --ocean-soft: #E6EEF1;
+    --terracotta: #C05A3F;   /* warm coral accent */
+    --terracotta-2:#A9432B;
+    --gold:       #B88A3E;   /* muted antique gold */
+    --gold-2:     #9C7229;
+    --sage:       #7C8B7C;
+    --cream:      #FAF6EF;   /* main page bg — warm */
+    --cream-2:    #F4EDE1;   /* offset surfaces */
+    --paper:      #FFFFFF;
+    --ink:        #1F2933;
+    --ink-2:      #4A5560;
+    --muted:      #8B9199;
+    --line:       #E4DBCB;
+    --line-2:     #EEE4D2;
+
+    --shadow-sm:  0 2px 6px rgba(18,59,79,0.06);
+    --shadow-md:  0 8px 24px rgba(18,59,79,0.08);
+    --shadow-lg:  0 20px 60px rgba(18,59,79,0.14);
+
+    --radius-sm:  6px;
+    --radius:     10px;
+    --radius-lg:  16px;
+
+    --f-display: 'Fraunces', 'Georgia', serif;
+    --f-body:    'Inter', -apple-system, sans-serif;
+    --f-mono:    'DM Mono', ui-monospace, monospace;
   }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Inter', sans-serif; background: var(--sand); color: var(--text); min-height: 100vh; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; scroll-behavior: smooth; scroll-padding-top: 84px; }
+  body { font-family: var(--f-body); background: var(--cream); color: var(--ink); line-height: 1.6; font-size: 16px; overflow-x: hidden; }
+  img { display: block; max-width: 100%; height: auto; }
+  a { color: inherit; }
+  h1, h2, h3, h4 { font-family: var(--f-display); font-weight: 500; letter-spacing: -0.01em; line-height: 1.12; color: var(--ocean); text-wrap: balance; }
+  p { text-wrap: pretty; }
+  button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+  ::selection { background: rgba(192,90,63,0.25); color: var(--ocean); }
 
-  /* NAV */
-  nav { position: sticky; top: 0; z-index: 100; background: var(--navy); display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; height: 72px; border-bottom: 1px solid rgba(255,255,255,0.07); }
-  .nav-left { display: flex; align-items: center; cursor: pointer; }
-  .nav-logo img { height: 58px; width: 58px; object-fit: contain; filter: drop-shadow(0 2px 8px rgba(197,155,39,0.3)); transition: transform 0.2s; }
-  .nav-logo img:hover { transform: scale(1.05); }
-  .nav-tabs { display: flex; gap: 0.3rem; }
-  .nav-tab { background: none; border: none; color: rgba(255,255,255,0.6); font-family: 'Poppins', sans-serif; font-size: 0.78rem; font-weight: 500; padding: 0.5rem 0.9rem; border-radius: 6px; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 0.4rem; white-space: nowrap; }
-  .nav-tab:hover { color: var(--gold); background: rgba(255,255,255,0.05); }
-  .nav-tab.active { color: var(--gold); background: rgba(197,155,39,0.12); }
-  .nav-right { display: flex; align-items: center; gap: 0.8rem; }
-  .nav-coral-img { width: 38px; height: 38px; border-radius: 50%; object-fit: cover; border: 2px solid var(--gold); }
-  .nav-cta { background: var(--gold); color: #fff; border: none; padding: 0.5rem 1.2rem; border-radius: 6px; font-size: 0.78rem; cursor: pointer; font-family: 'Poppins', sans-serif; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; transition: background 0.2s; white-space: nowrap; }
-  .nav-cta:hover { background: var(--gold2); }
+  /* ═════ NAV ═════ */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(250,246,239,0.88);
+    backdrop-filter: saturate(180%) blur(14px);
+    -webkit-backdrop-filter: saturate(180%) blur(14px);
+    border-bottom: 1px solid var(--line);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 clamp(1rem, 3vw, 2.5rem);
+    height: 76px;
+  }
+  .nav-left { display: flex; align-items: center; gap: 0.8rem; cursor: pointer; }
+  .nav-logo img { height: 52px; width: 52px; object-fit: contain; transition: transform 0.3s; }
+  .nav-logo img:hover { transform: rotate(-6deg) scale(1.05); }
+  .nav-wordmark { font-family: var(--f-display); font-weight: 500; font-size: 1.2rem; letter-spacing: 0.02em; color: var(--ocean); line-height: 1; }
+  .nav-wordmark span { display: block; font-family: var(--f-body); font-size: 0.55rem; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold); margin-top: 4px; font-weight: 500; }
 
-  /* NAV CONTACT POPOVER */
+  .nav-tabs { display: flex; gap: 0.15rem; }
+  .nav-tab {
+    background: none; border: none;
+    color: var(--ink-2);
+    font-family: var(--f-body); font-size: 0.78rem; font-weight: 500;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 0.6rem 0.95rem; border-radius: 999px;
+    cursor: pointer; transition: all 0.2s;
+    display: flex; align-items: center; gap: 0.4rem;
+  }
+  .nav-tab:hover { color: var(--ocean); background: var(--cream-2); }
+  .nav-tab.active { color: var(--paper); background: var(--ocean); }
+
+  .nav-right { display: flex; align-items: center; gap: 0.75rem; }
+  .nav-coral-img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 2px solid var(--gold); }
+  .nav-cta {
+    background: var(--terracotta); color: #fff;
+    padding: 0.6rem 1.15rem; border-radius: 999px;
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+    transition: background 0.2s, transform 0.2s;
+    white-space: nowrap;
+  }
+  .nav-cta:hover { background: var(--terracotta-2); transform: translateY(-1px); }
+
   .nav-contact { position: relative; }
-  .contact-pop { position: absolute; top: calc(100% + 0.6rem); right: 0; width: 280px; background: #fff; border: 1px solid var(--border); border-radius: 8px; box-shadow: 0 12px 32px rgba(0,0,0,0.14); padding: 1rem 1.1rem; z-index: 200; opacity: 0; visibility: hidden; transform: translateY(-6px); transition: opacity 0.18s, transform 0.18s, visibility 0.18s; }
+  .contact-pop {
+    position: absolute; top: calc(100% + 0.8rem); right: 0; width: 300px;
+    background: var(--paper); border: 1px solid var(--line);
+    border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);
+    padding: 1.2rem; z-index: 200;
+    opacity: 0; visibility: hidden; transform: translateY(-6px);
+    transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
+  }
   .contact-pop.open { opacity: 1; visibility: visible; transform: translateY(0); }
-  .contact-pop::before { content: ''; position: absolute; top: -6px; right: 22px; width: 11px; height: 11px; background: #fff; border-left: 1px solid var(--border); border-top: 1px solid var(--border); transform: rotate(45deg); }
-  .contact-pop-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; }
-  .contact-pop-avatar { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 2px solid var(--gold); flex-shrink: 0; }
-  .contact-pop-name { font-size: 0.92rem; font-weight: 600; color: var(--navy); font-family: 'Poppins', sans-serif; }
-  .contact-pop-role { font-size: 0.7rem; color: var(--subtext); line-height: 1.4; }
-  .contact-pop-link { display: flex; align-items: center; gap: 0.5rem; font-size: 0.82rem; color: var(--navy); text-decoration: none; padding: 0.42rem 0.5rem; margin: 0 -0.5rem; border-radius: 4px; transition: background 0.15s; }
-  .contact-pop-link:hover { background: var(--mist); }
+  .contact-pop::before { content: ''; position: absolute; top: -6px; right: 24px; width: 11px; height: 11px; background: var(--paper); border-left: 1px solid var(--line); border-top: 1px solid var(--line); transform: rotate(45deg); }
+  .contact-pop-header { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.9rem; padding-bottom: 0.9rem; border-bottom: 1px solid var(--line-2); }
+  .contact-pop-avatar { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; border: 2px solid var(--gold); flex-shrink: 0; }
+  .contact-pop-name { font-family: var(--f-display); font-size: 1rem; font-weight: 500; color: var(--ocean); }
+  .contact-pop-role { font-size: 0.7rem; color: var(--ink-2); line-height: 1.5; margin-top: 2px; }
+  .contact-pop-link { display: flex; align-items: center; gap: 0.6rem; font-size: 0.85rem; color: var(--ocean); text-decoration: none; padding: 0.55rem 0.6rem; margin: 0 -0.6rem; border-radius: 6px; transition: background 0.15s; }
+  .contact-pop-link:hover { background: var(--cream-2); }
+  .contact-pop-link .ic { color: var(--terracotta); }
 
-  /* TAB CONTENT */
+  /* Mobile nav */
+  .nav-mobile-btn { display: none; background: none; padding: 0.4rem; border-radius: 6px; color: var(--ocean); }
+  .nav-mobile-btn svg { width: 24px; height: 24px; }
+  .nav-mobile-panel { display: none; position: fixed; inset: 76px 0 0 0; background: var(--cream); padding: 2rem; z-index: 90; flex-direction: column; gap: 0.4rem; }
+  .nav-mobile-panel.open { display: flex; }
+  .nav-mobile-panel .nav-tab { width: 100%; justify-content: flex-start; font-size: 0.95rem; padding: 0.9rem 1rem; border-radius: 10px; }
+
+  /* Tab content */
   .tab-content { display: none; }
   .tab-content.active { display: block; }
 
-  /* ── HERO — SPLIT LAYOUT ── */
+  /* ═════ HERO ═════ */
   .hero {
-    background: var(--navy);
-    min-height: 540px;
-    display: grid;
-    grid-template-columns: 1fr 420px;
-    align-items: stretch;
-    position: relative; overflow: hidden;
+    position: relative;
+    background: var(--ocean);
+    color: var(--paper);
+    overflow: hidden;
+    min-height: 640px;
   }
-  .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 80% at 20% 50%, rgba(29,45,80,0.4) 0%, transparent 70%); pointer-events: none; }
-  .hero-text { padding: 4rem 3rem 3.5rem 3rem; display: flex; flex-direction: column; justify-content: center; position: relative; }
-  .hero-eyebrow { display: inline-block; background: rgba(158,163,150,0.2); border: 1px solid rgba(158,163,150,0.35); font-family: 'Poppins', sans-serif; font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sage); margin-bottom: 1.2rem; padding: 0.35rem 1.1rem; border-radius: 20px; align-self: flex-start; }
-  .hero h1 { font-family: 'Poppins', sans-serif; font-size: clamp(1.9rem, 3.5vw, 3.2rem); font-weight: 700; color: var(--white); line-height: 1.15; margin-bottom: 1rem; }
-  .hero h1 em { font-style: italic; color: var(--gold); }
-  .hero-sub { color: rgba(255,255,255,0.7); font-size: 0.97rem; max-width: 520px; line-height: 1.65; margin-bottom: 1.8rem; }
-  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2.2rem; }
-  .hero-btn-gold { background: var(--gold); color: #fff; border: none; padding: 0.75rem 1.5rem; border-radius: 6px; font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 0.88rem; cursor: pointer; transition: background 0.2s; }
-  .hero-btn-gold:hover { background: var(--gold2); }
-  .hero-btn-outline { background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.25); padding: 0.75rem 1.5rem; border-radius: 6px; font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 0.88rem; cursor: pointer; transition: background 0.2s; }
-  .hero-btn-outline:hover { background: rgba(255,255,255,0.2); }
-
-  /* HERO SEARCH — inside hero text column */
-  .hero-search { background: var(--white); border-radius: 10px; display: flex; flex-wrap: wrap; overflow: hidden; box-shadow: 0 12px 40px rgba(0,0,0,0.3); }
-  .hero-search .search-field { flex: 1; min-width: 120px; border-right: 1px solid var(--border); padding: 0.75rem 1rem; }
-  .hero-search .search-field label { display: block; font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--subtext); margin-bottom: 0.15rem; font-family: 'Poppins', sans-serif; font-weight: 600; }
-  .hero-search .search-field select { width: 100%; border: none; outline: none; font-family: 'Inter', sans-serif; font-size: 0.82rem; color: var(--text); background: transparent; cursor: pointer; }
-  .hero-search .search-btn { background: var(--gold); color: #fff; border: none; padding: 0 1.2rem; font-size: 0.78rem; font-weight: 600; cursor: pointer; font-family: 'Poppins', sans-serif; text-transform: uppercase; transition: background 0.2s; min-width: 100px; }
-  .hero-search .search-btn:hover { background: var(--gold2); }
-
-  /* HERO CORAL PHOTO */
-  .hero-photo-col { position: relative; overflow: hidden; }
-  .hero-photo-col img {
-    width: 100%; height: 100%;
-    object-fit: cover; object-position: top center;
+  .hero-bg { position: absolute; inset: 0; z-index: 1; }
+  .hero-bg img { width: 100%; height: 100%; object-fit: cover; opacity: 0.55; }
+  .hero-bg::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(13,43,59,0.4) 0%, rgba(13,43,59,0.65) 50%, rgba(13,43,59,0.92) 100%),
+                linear-gradient(90deg, rgba(13,43,59,0.7) 0%, rgba(13,43,59,0.15) 60%, rgba(13,43,59,0.4) 100%);
+  }
+  .hero-inner {
+    position: relative; z-index: 2;
+    max-width: 1300px; margin: 0 auto;
+    padding: clamp(3.5rem, 8vw, 6.5rem) clamp(1.25rem, 4vw, 3rem) clamp(3rem, 6vw, 5rem);
+    display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(2rem, 5vw, 5rem);
+    align-items: end;
+  }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    font-family: var(--f-body); font-size: 0.68rem; letter-spacing: 0.28em;
+    text-transform: uppercase; color: rgba(255,255,255,0.7);
+    padding: 0.35rem 0; margin-bottom: 1.5rem;
+    align-self: flex-start;
+  }
+  .hero-eyebrow::before, .hero-eyebrow::after {
+    content: ''; width: 32px; height: 1px; background: var(--gold);
+    display: inline-block;
+  }
+  .hero-eyebrow::after { display: none; }
+  .hero h1 {
+    color: var(--paper);
+    font-family: var(--f-display);
+    font-weight: 400;
+    font-size: clamp(2.4rem, 6vw, 5rem);
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 .em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--gold);
     display: block;
   }
-  .hero-photo-overlay {
-    position: absolute; bottom: 0; left: 0; right: 0;
-    background: linear-gradient(to top, rgba(29,45,80,0.85) 0%, transparent 60%);
-    padding: 1.5rem 1.5rem 1.2rem;
+  .hero-sub {
+    font-size: clamp(0.98rem, 1.4vw, 1.15rem);
+    color: rgba(255,255,255,0.85);
+    max-width: 560px;
+    line-height: 1.65;
+    margin-bottom: 2.25rem;
+    font-weight: 300;
   }
-  .hero-photo-name { font-family: 'Poppins', sans-serif; font-size: 1.2rem; font-weight: 700; color: #fff; }
-  .hero-photo-title { font-size: 0.75rem; color: rgba(255,255,255,0.7); margin-top: 0.15rem; }
-  .hero-photo-creds { display: flex; gap: 0.5rem; margin-top: 0.6rem; flex-wrap: wrap; }
-  .hero-cred-pill { background: rgba(197,155,39,0.25); border: 1px solid rgba(197,155,39,0.4); color: var(--gold); font-size: 0.62rem; font-family: 'Poppins', sans-serif; font-weight: 600; letter-spacing: 0.06em; padding: 0.2rem 0.6rem; border-radius: 20px; }
+  .hero-sub strong { color: var(--paper); font-weight: 500; }
 
-  /* CONNECTION BANNER */
-  .connection-banner { background: var(--white); border-bottom: 1px solid var(--border); padding: 3rem 1.5rem; text-align: center; }
-  .connection-banner .icon-wrap { width: 48px; height: 48px; background: var(--sand); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.4rem; }
-  .connection-banner h2 { font-family: 'Poppins', sans-serif; font-size: 1.6rem; font-weight: 700; color: var(--navy); margin-bottom: 0.75rem; }
-  .connection-banner p { font-size: 0.9rem; color: var(--subtext); max-width: 600px; margin: 0 auto; line-height: 1.7; }
+  .hero-btns { display: flex; gap: 0.85rem; flex-wrap: wrap; margin-bottom: 2.75rem; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.9rem 1.6rem;
+    border-radius: 999px;
+    font-size: 0.82rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    text-decoration: none; cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    white-space: nowrap;
+  }
+  .btn-primary   { background: var(--terracotta); color: #fff; }
+  .btn-primary:hover { background: var(--terracotta-2); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(192,90,63,0.35); }
+  .btn-gold      { background: var(--gold); color: #fff; }
+  .btn-gold:hover { background: var(--gold-2); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(184,138,62,0.35); }
+  .btn-outline-light { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.35); }
+  .btn-outline-light:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.7); }
+  .btn-ocean     { background: var(--ocean); color: #fff; }
+  .btn-ocean:hover { background: var(--ocean-2); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+  .btn-outline-dark  { background: transparent; color: var(--ocean); border: 1px solid var(--ocean); }
+  .btn-outline-dark:hover { background: var(--ocean); color: #fff; }
 
-  /* ABOUT SECTION */
-  .about-section { background: var(--white); border-bottom: 1px solid var(--border); padding: 4rem 1.5rem; }
-  .about-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.1fr; gap: 3.5rem; align-items: center; }
-  .about-badge { color: var(--gold); font-family: 'Poppins', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.5rem; }
-  .about-title { font-family: 'Poppins', sans-serif; font-size: 2rem; font-weight: 700; color: var(--navy); line-height: 1.2; margin-bottom: 1.2rem; }
-  .about-p { font-size: 0.92rem; line-height: 1.7; color: var(--text); margin-bottom: 1rem; }
-  .about-highlights { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
-  .highlight-card { background: var(--sand); border: 1px solid var(--border); padding: 1rem; border-radius: 8px; }
-  .highlight-card h4 { font-family: 'Poppins', sans-serif; font-size: 0.85rem; font-weight: 600; color: var(--navy); margin-bottom: 0.25rem; }
-  .highlight-card p { font-size: 0.76rem; color: var(--subtext); line-height: 1.4; }
-  .geo-card { background: var(--sand); padding: 2rem; border-radius: 12px; border: 1px solid var(--border); }
-  .geo-card h3 { font-family: 'Poppins', sans-serif; color: var(--navy); margin-bottom: 1rem; font-size: 1.15rem; font-weight: 600; }
-  .geo-card p { font-size: 0.85rem; color: var(--subtext); margin-bottom: 1.2rem; line-height: 1.6; }
-  .geo-list { list-style: none; font-size: 0.85rem; color: var(--text); }
-  .geo-list li { margin-bottom: 0.8rem; }
+  /* Trust bar under hero copy */
+  .hero-trust {
+    display: flex; align-items: center; gap: 1.5rem;
+    padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.15);
+    flex-wrap: wrap;
+  }
+  .hero-trust-item { display: flex; align-items: center; gap: 0.55rem; font-size: 0.78rem; color: rgba(255,255,255,0.72); letter-spacing: 0.06em; }
+  .hero-trust-item .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); }
 
-  /* SERVICES */
-  .services-section { max-width: 1280px; margin: 0 auto; padding: 3.5rem 1.5rem; }
-  .section-head { text-align: center; margin-bottom: 2rem; }
-  .section-eyebrow { font-family: 'Poppins', sans-serif; font-size: 0.65rem; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.5rem; }
-  .section-head h2 { font-family: 'Poppins', sans-serif; font-size: 1.8rem; color: var(--navy); font-weight: 700; }
-  .section-head p { font-size: 0.88rem; color: var(--subtext); max-width: 540px; margin: 0.3rem auto 0; }
-  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; }
-  .service-card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 1.4rem; transition: transform 0.2s, box-shadow 0.2s; }
-  .service-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(29,45,80,0.1); }
-  .service-icon { font-size: 1.8rem; margin-bottom: 0.8rem; display: block; }
-  .service-card h3 { font-family: 'Poppins', sans-serif; font-size: 1rem; font-weight: 600; color: var(--navy); margin-bottom: 0.4rem; }
-  .service-card p { font-size: 0.78rem; color: var(--subtext); line-height: 1.55; }
+  /* Coral card in hero */
+  .hero-card {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.18);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-radius: var(--radius-lg);
+    padding: 1.6rem;
+    max-width: 380px;
+    justify-self: end;
+  }
+  .hero-card-photo { position: relative; width: 100%; aspect-ratio: 4/5; border-radius: var(--radius); overflow: hidden; margin-bottom: 1rem; }
+  .hero-card-photo img { width: 100%; height: 100%; object-fit: cover; }
+  .hero-card-photo::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, rgba(13,43,59,0.7) 100%); }
+  .hero-card-label { font-size: 0.62rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.35rem; }
+  .hero-card-name { font-family: var(--f-display); font-size: 1.4rem; color: #fff; font-weight: 500; margin-bottom: 0.15rem; }
+  .hero-card-title { font-size: 0.8rem; color: rgba(255,255,255,0.65); margin-bottom: 1rem; line-height: 1.5; }
+  .hero-card-creds { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+  .cred-pill {
+    background: rgba(184,138,62,0.18);
+    border: 1px solid rgba(184,138,62,0.4);
+    color: var(--gold); font-size: 0.62rem; font-weight: 500;
+    letter-spacing: 0.1em; padding: 0.3rem 0.7rem; border-radius: 999px;
+  }
 
-  /* STATS */
-  .stats-strip { background: var(--navy2); display: flex; justify-content: center; gap: 0; }
-  .stat { padding: 1.1rem 2.5rem; text-align: center; border-right: 1px solid rgba(255,255,255,0.08); }
-  .stat:last-child { border-right: none; }
-  .stat-num { font-family: 'Poppins', sans-serif; font-size: 1.6rem; font-weight: 700; color: var(--gold); line-height: 1; }
-  .stat-label { font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-top: 0.2rem; }
+  /* ═════ SEARCH BAR STRIP ═════ */
+  .search-strip {
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+    padding: 1.5rem clamp(1rem, 3vw, 2rem);
+    box-shadow: var(--shadow-sm);
+    position: relative; z-index: 3;
+    margin-top: -60px;
+    margin-left: auto; margin-right: auto;
+    max-width: 1180px;
+    border-radius: var(--radius-lg);
+    display: grid; grid-template-columns: repeat(4, 1fr) auto;
+    gap: 0; align-items: center;
+  }
+  .search-field { padding: 0.4rem 1.1rem; border-right: 1px solid var(--line-2); }
+  .search-field:last-of-type { border-right: none; }
+  .search-field label {
+    display: block; font-size: 0.58rem; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--muted);
+    margin-bottom: 0.3rem; font-weight: 600;
+  }
+  .search-field select, .search-field input {
+    width: 100%; border: none; outline: none;
+    font-family: var(--f-body); font-size: 0.88rem;
+    color: var(--ocean); background: transparent; cursor: pointer;
+    font-weight: 500;
+  }
+  .search-strip .search-btn {
+    background: var(--ocean); color: #fff;
+    padding: 0.85rem 1.6rem; margin-left: 1rem;
+    border-radius: 999px;
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em;
+    text-transform: uppercase;
+    transition: background 0.2s;
+    white-space: nowrap;
+  }
+  .search-strip .search-btn:hover { background: var(--ocean-2); }
 
-  /* MAIN LAYOUT */
-  .main { max-width: 1280px; margin: 0 auto; padding: 2.5rem 1.5rem; display: grid; grid-template-columns: 280px 1fr; gap: 2rem; align-items: start; }
-  .sidebar { background: var(--white); border-radius: 10px; border: 1px solid var(--border); padding: 1.5rem; position: sticky; top: 84px; }
-  .sidebar-title { font-family: 'Poppins', sans-serif; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--subtext); margin-bottom: 1.2rem; padding-bottom: 0.8rem; border-bottom: 1px solid var(--border); }
-  .filter-group { margin-bottom: 1.4rem; }
-  .filter-label { font-size: 0.72rem; font-weight: 500; color: var(--text); margin-bottom: 0.5rem; display: block; font-family: 'Poppins', sans-serif; }
-  .filter-select, .filter-input { width: 100%; padding: 0.5rem 0.7rem; border: 1px solid var(--border); border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 0.85rem; color: var(--text); background: var(--sand); outline: none; cursor: pointer; }
-  .filter-select:focus, .filter-input:focus { border-color: var(--navy); }
+  /* ═════ INTRO / STATEMENT ═════ */
+  .statement {
+    padding: clamp(4rem, 9vw, 7rem) clamp(1.25rem, 3vw, 2rem) clamp(3rem, 6vw, 5rem);
+    text-align: center;
+    max-width: 900px; margin: 0 auto;
+  }
+  .kicker {
+    display: inline-block;
+    font-family: var(--f-body); font-size: 0.68rem;
+    letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--terracotta); font-weight: 600;
+    margin-bottom: 1.2rem;
+  }
+  .kicker::before { content: '— '; }
+  .kicker::after  { content: ' —'; }
+  .statement h2 {
+    font-size: clamp(1.9rem, 4vw, 3.2rem);
+    color: var(--ocean); font-weight: 400;
+    letter-spacing: -0.015em; line-height: 1.15;
+    margin-bottom: 1.4rem;
+  }
+  .statement h2 em { color: var(--terracotta); font-style: italic; font-weight: 400; }
+  .statement p {
+    font-size: 1.1rem; color: var(--ink-2);
+    line-height: 1.75; max-width: 720px; margin: 0 auto;
+  }
+
+  /* ═════ DUAL PATHS: BUY / SELL ═════ */
+  .paths {
+    padding: 0 clamp(1.25rem, 3vw, 2rem) clamp(4rem, 8vw, 7rem);
+    max-width: 1280px; margin: 0 auto;
+  }
+  .paths-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1rem, 3vw, 2rem); }
+  .path-card {
+    position: relative;
+    background: var(--paper);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s;
+    text-decoration: none; color: inherit;
+    display: block;
+  }
+  .path-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+  .path-img { position: relative; aspect-ratio: 16/10; overflow: hidden; }
+  .path-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
+  .path-card:hover .path-img img { transform: scale(1.05); }
+  .path-img::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 40%, rgba(13,43,59,0.55) 100%); }
+  .path-label {
+    position: absolute; top: 1.25rem; left: 1.25rem;
+    background: rgba(255,255,255,0.92);
+    color: var(--ocean); font-family: var(--f-body);
+    font-size: 0.62rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase;
+    padding: 0.4rem 0.9rem; border-radius: 999px;
+    backdrop-filter: blur(8px);
+  }
+  .path-body { padding: 2rem 1.75rem 1.75rem; }
+  .path-body h3 {
+    font-size: 1.75rem; color: var(--ocean); font-weight: 500;
+    margin-bottom: 0.75rem; letter-spacing: -0.01em;
+  }
+  .path-body p { color: var(--ink-2); font-size: 0.95rem; line-height: 1.65; margin-bottom: 1.5rem; }
+  .path-arrow {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--terracotta);
+    transition: gap 0.25s;
+  }
+  .path-card:hover .path-arrow { gap: 0.8rem; }
+  .path-arrow svg { width: 16px; height: 16px; }
+
+  /* ═════ ABOUT CORAL — EDITORIAL SPREAD ═════ */
+  .about {
+    background: var(--cream-2);
+    padding: clamp(4rem, 9vw, 8rem) clamp(1.25rem, 3vw, 2rem);
+    position: relative;
+  }
+  .about-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(2rem, 5vw, 5rem);
+    align-items: center;
+  }
+  .about-visual { position: relative; }
+  .about-visual .main-img {
+    width: 100%; aspect-ratio: 4/5;
+    object-fit: cover; border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+  }
+  .about-visual .accent-img {
+    position: absolute; bottom: -2rem; right: -2rem;
+    width: 45%; aspect-ratio: 4/3;
+    object-fit: cover; border-radius: var(--radius-lg);
+    border: 6px solid var(--cream-2);
+    box-shadow: var(--shadow-md);
+    display: block;
+  }
+  .about-visual .badge-stamp {
+    position: absolute; top: 1.25rem; left: 1.25rem;
+    background: var(--terracotta); color: #fff;
+    font-family: var(--f-display); font-style: italic;
+    font-size: 0.95rem; padding: 0.85rem 1.15rem;
+    border-radius: 999px;
+    box-shadow: var(--shadow-md);
+  }
+  .about h2 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    margin-bottom: 1.25rem;
+  }
+  .about h2 em { color: var(--terracotta); font-style: italic; font-weight: 400; }
+  .about p { font-size: 1.02rem; color: var(--ink-2); line-height: 1.75; margin-bottom: 1.1rem; }
+  .about p strong { color: var(--ocean); font-weight: 600; }
+
+  .about-quote {
+    font-family: var(--f-display); font-style: italic;
+    font-size: 1.35rem; line-height: 1.4;
+    color: var(--ocean); margin: 1.75rem 0;
+    padding-left: 1.5rem; border-left: 3px solid var(--gold);
+  }
+
+  .about-highlights {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+    margin-top: 2rem;
+  }
+  .hl-card {
+    background: var(--paper); border-radius: var(--radius);
+    padding: 1.25rem; border: 1px solid var(--line-2);
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+  .hl-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+  .hl-card .num {
+    font-family: var(--f-display); font-size: 2rem; color: var(--terracotta);
+    font-weight: 500; line-height: 1; margin-bottom: 0.35rem;
+  }
+  .hl-card .lbl { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-2); font-weight: 500; }
+
+  /* ═════ SERVICES GRID ═════ */
+  .services {
+    padding: clamp(4rem, 9vw, 7rem) clamp(1.25rem, 3vw, 2rem);
+    max-width: 1280px; margin: 0 auto;
+  }
+  .section-head { text-align: center; margin-bottom: clamp(2rem, 5vw, 4rem); }
+  .section-head h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 0.85rem; }
+  .section-head h2 em { color: var(--terracotta); font-style: italic; font-weight: 400; }
+  .section-head p { color: var(--ink-2); font-size: 1.02rem; max-width: 620px; margin: 0 auto; line-height: 1.7; }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+  }
+  .service-card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: 1.75rem 1.5rem 1.6rem;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s, border-color 0.3s;
+    position: relative; overflow: hidden;
+  }
+  .service-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: var(--terracotta);
+    transform: scaleX(0); transform-origin: left; transition: transform 0.4s;
+  }
+  .service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: transparent; }
+  .service-card:hover::before { transform: scaleX(1); }
+  .service-icon {
+    width: 46px; height: 46px; border-radius: 12px;
+    background: linear-gradient(135deg, var(--cream-2), var(--cream));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.35rem; margin-bottom: 1.1rem;
+    border: 1px solid var(--line-2);
+  }
+  .service-card h3 { font-size: 1.2rem; font-weight: 500; margin-bottom: 0.5rem; letter-spacing: -0.005em; }
+  .service-card p { font-size: 0.88rem; color: var(--ink-2); line-height: 1.65; }
+
+  /* ═════ REGIONS ═════ */
+  .regions {
+    background: var(--ocean);
+    color: var(--paper);
+    padding: clamp(4rem, 8vw, 7rem) clamp(1.25rem, 3vw, 2rem);
+    position: relative; overflow: hidden;
+  }
+  .regions::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 60% at 15% 25%, rgba(184,138,62,0.12), transparent 60%);
+    pointer-events: none;
+  }
+  .regions-inner { max-width: 1280px; margin: 0 auto; position: relative; z-index: 2; }
+  .regions .section-head h2 { color: var(--paper); }
+  .regions .section-head h2 em { color: var(--gold); }
+  .regions .section-head p { color: rgba(255,255,255,0.7); }
+  .regions .kicker { color: var(--gold); }
+
+  .regions-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem; margin-top: clamp(2rem, 5vw, 3rem);
+  }
+  .region-card {
+    position: relative; aspect-ratio: 3/4;
+    border-radius: var(--radius-lg); overflow: hidden;
+    background: var(--ocean-2);
+    cursor: pointer;
+  }
+  .region-card img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .region-card:hover img { transform: scale(1.08); }
+  .region-card::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(13,43,59,0.25) 0%, rgba(13,43,59,0.85) 100%);
+  }
+  .region-body {
+    position: absolute; inset: auto 0 0 0; padding: 1.4rem 1.4rem 1.6rem;
+    z-index: 2;
+  }
+  .region-body h3 {
+    color: var(--paper); font-size: 1.4rem; font-weight: 500;
+    margin-bottom: 0.3rem; letter-spacing: -0.005em;
+  }
+  .region-body h3 em { color: var(--gold); font-style: italic; font-weight: 400; font-size: 0.75em; display: block; margin-bottom: 0.2rem; }
+  .region-body p { color: rgba(255,255,255,0.75); font-size: 0.83rem; line-height: 1.55; }
+
+  /* ═════ STATS ═════ */
+  .stats {
+    background: var(--cream-2);
+    padding: clamp(2.5rem, 5vw, 4rem) clamp(1.25rem, 3vw, 2rem);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .stats-grid {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;
+  }
+  .stat-item { text-align: center; padding: 1rem; }
+  .stat-num {
+    font-family: var(--f-display); font-size: clamp(2.2rem, 4vw, 3.4rem);
+    color: var(--terracotta); font-weight: 500; line-height: 1;
+    margin-bottom: 0.5rem; letter-spacing: -0.01em;
+  }
+  .stat-lbl { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-2); font-weight: 500; }
+
+  /* ═════ LISTINGS SECTION ═════ */
+  .listings-wrap {
+    max-width: 1300px; margin: 0 auto;
+    padding: clamp(3.5rem, 6vw, 5.5rem) clamp(1.25rem, 3vw, 2rem);
+  }
+  .listings-head {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    margin-bottom: 2.5rem; gap: 2rem; flex-wrap: wrap;
+  }
+  .listings-head-left h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); margin-bottom: 0.5rem; }
+  .listings-head-left h2 em { color: var(--terracotta); font-style: italic; font-weight: 400; }
+  .listings-head-left p { color: var(--ink-2); font-size: 0.95rem; }
+
+  .listings-layout { display: grid; grid-template-columns: 280px 1fr; gap: 2rem; align-items: start; }
+
+  .sidebar {
+    background: var(--paper);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--line);
+    padding: 1.5rem; position: sticky; top: 100px;
+  }
+  .sidebar-title {
+    font-family: var(--f-display); font-size: 1.05rem;
+    color: var(--ocean); font-weight: 500;
+    margin-bottom: 1.25rem; padding-bottom: 0.9rem;
+    border-bottom: 1px solid var(--line-2);
+  }
+  .filter-group { margin-bottom: 1.35rem; }
+  .filter-label { font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-2); font-weight: 600; margin-bottom: 0.45rem; display: block; }
+  .filter-select, .filter-input {
+    width: 100%; padding: 0.6rem 0.75rem;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    font-family: var(--f-body); font-size: 0.85rem;
+    color: var(--ink); background: var(--cream);
+    outline: none; transition: border-color 0.2s;
+  }
+  .filter-select:focus, .filter-input:focus { border-color: var(--ocean); background: var(--paper); }
   .price-range { display: flex; gap: 0.5rem; align-items: center; }
-  .price-range span { color: var(--subtext); font-size: 0.8rem; }
-  .checkbox-group { display: flex; flex-direction: column; gap: 0.4rem; }
-  .checkbox-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.83rem; color: var(--text); cursor: pointer; }
-  .checkbox-item input { accent-color: var(--navy); }
-  .apply-btn { width: 100%; background: var(--navy); color: #fff; border: none; padding: 0.7rem; border-radius: 6px; font-family: 'Poppins', sans-serif; font-size: 0.82rem; font-weight: 600; cursor: pointer; letter-spacing: 0.04em; text-transform: uppercase; transition: background 0.2s; margin-top: 0.5rem; }
-  .apply-btn:hover { background: #162240; }
-  .reset-link { display: block; text-align: center; margin-top: 0.6rem; font-size: 0.78rem; color: var(--subtext); cursor: pointer; text-decoration: underline; }
+  .price-range span { color: var(--muted); }
+  .checkbox-group { display: flex; flex-direction: column; gap: 0.55rem; }
+  .checkbox-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: var(--ink); cursor: pointer; }
+  .checkbox-item input { accent-color: var(--terracotta); width: 15px; height: 15px; }
+  .apply-btn {
+    width: 100%; background: var(--ocean); color: #fff;
+    padding: 0.85rem; border-radius: 999px;
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+    transition: background 0.2s; margin-top: 0.5rem;
+  }
+  .apply-btn:hover { background: var(--ocean-2); }
+  .reset-link { display: block; text-align: center; margin-top: 0.7rem; font-size: 0.78rem; color: var(--terracotta); cursor: pointer; text-decoration: underline; }
 
-  /* LISTINGS */
-  .listings-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.2rem; }
-  .listings-count { font-size: 0.82rem; color: var(--subtext); }
-  .listings-count strong { color: var(--text); }
-  .sort-select { border: 1px solid var(--border); border-radius: 6px; padding: 0.4rem 0.7rem; font-family: 'Inter', sans-serif; font-size: 0.82rem; color: var(--text); background: var(--white); outline: none; cursor: pointer; }
-  .view-toggle { display: flex; gap: 0.3rem; margin-left: 0.8rem; }
-  .view-btn { border: 1px solid var(--border); background: var(--white); padding: 0.35rem 0.55rem; border-radius: 6px; cursor: pointer; color: var(--subtext); font-size: 0.9rem; transition: all 0.15s; }
-  .view-btn.active { background: var(--navy); color: #fff; border-color: var(--navy); }
-  .listings-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.2rem; }
+  /* Listings controls */
+  .listings-controls {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 1.5rem; flex-wrap: wrap; gap: 0.75rem;
+  }
+  .listings-count { font-size: 0.85rem; color: var(--ink-2); }
+  .listings-count strong { color: var(--ocean); font-weight: 600; }
+  .controls-right { display: flex; align-items: center; gap: 0.6rem; }
+  .sort-select {
+    border: 1px solid var(--line); border-radius: 999px;
+    padding: 0.5rem 1rem; font-family: var(--f-body); font-size: 0.82rem;
+    color: var(--ink); background: var(--paper); outline: none;
+  }
+  .view-toggle { display: flex; gap: 0.25rem; }
+  .view-btn { border: 1px solid var(--line); background: var(--paper); padding: 0.4rem 0.6rem; border-radius: 6px; color: var(--muted); font-size: 0.9rem; transition: all 0.15s; }
+  .view-btn.active { background: var(--ocean); color: #fff; border-color: var(--ocean); }
 
-  /* CARDS */
-  .card { background: var(--white); border-radius: 12px; border: 1px solid var(--border); overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer; }
-  .card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(29,45,80,0.12); }
-  .card-img { width: 100%; height: 190px; object-fit: cover; display: block; }
-  .card-img-placeholder { width: 100%; height: 190px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; background: linear-gradient(135deg, var(--mist) 0%, #C8DDE8 100%); }
-  .card-badge { position: absolute; top: 0.7rem; left: 0.7rem; background: var(--sage); color: #fff; font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.2rem 0.55rem; border-radius: 4px; font-weight: 600; font-family: 'Poppins', sans-serif; }
-  .card-badge.pending { background: var(--gold); }
-  .card-badge.sold { background: var(--subtext); }
-  .card-save { position: absolute; top: 0.7rem; right: 0.7rem; background: rgba(255,255,255,0.9); border: none; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 0.85rem; transition: background 0.2s; }
-  .card-save:hover { background: #fff; }
-  .card-save.saved { color: #e03; }
-  .card-body { padding: 1rem 1.1rem; }
-  .card-price { font-family: 'Poppins', sans-serif; font-size: 1.35rem; font-weight: 700; color: var(--gold); margin-bottom: 0.2rem; }
-  .card-address { font-size: 0.82rem; color: var(--text); font-weight: 500; margin-bottom: 0.15rem; font-family: 'Poppins', sans-serif; }
-  .card-location { font-size: 0.75rem; color: var(--subtext); margin-bottom: 0.7rem; }
-  .card-specs { display: flex; gap: 1rem; padding-top: 0.7rem; border-top: 1px solid var(--mist); }
-  .spec { display: flex; align-items: center; gap: 0.3rem; font-size: 0.75rem; color: var(--subtext); }
-  .spec strong { color: var(--text); font-size: 0.82rem; }
-  .card-footer { padding: 0.6rem 1.1rem; border-top: 1px solid var(--mist); display: flex; justify-content: space-between; align-items: center; }
-  .card-mls { font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--subtext); letter-spacing: 0.04em; }
-  .card-type { font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--subtext); }
+  .listings-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
 
-  /* MEET CORAL */
-  .meet-coral { background: var(--white); border-top: 1px solid var(--border); padding: 3rem 1.5rem; }
-  .meet-coral-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 320px 1fr; gap: 3rem; align-items: center; }
-  .coral-photo { width: 100%; border-radius: 12px; object-fit: cover; max-height: 420px; display: block; border: 3px solid var(--gold); box-shadow: 0 16px 48px rgba(29,45,80,0.15); }
-  .coral-eyebrow { font-family: 'Poppins', sans-serif; font-size: 0.65rem; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.5rem; }
-  .coral-name { font-family: 'Poppins', sans-serif; font-size: 2rem; font-weight: 700; color: var(--navy); margin-bottom: 0.3rem; }
-  .coral-title { font-size: 0.88rem; color: var(--sage); margin-bottom: 1rem; font-weight: 500; }
-  .coral-bio { font-size: 0.9rem; line-height: 1.8; color: var(--subtext); margin-bottom: 1.2rem; }
-  .coral-contact { display: flex; gap: 1rem; flex-wrap: wrap; }
-  .coral-btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.75rem 1.5rem; border-radius: 6px; font-family: 'Poppins', sans-serif; font-size: 0.85rem; font-weight: 600; text-decoration: none; transition: all 0.2s; }
-  .coral-btn-primary { background: var(--navy); color: #fff; border: none; cursor: pointer; }
-  .coral-btn-primary:hover { background: var(--navy2); }
-  .coral-btn-secondary { background: transparent; color: var(--navy); border: 1.5px solid var(--navy); }
-  .coral-btn-secondary:hover { background: var(--mist); }
+  /* Listing card */
+  .lcard {
+    background: var(--paper); border-radius: var(--radius-lg);
+    overflow: hidden; border: 1px solid var(--line);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s;
+    cursor: pointer;
+  }
+  .lcard:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+  .lcard-img-wrap { position: relative; aspect-ratio: 4/3; overflow: hidden; }
+  .lcard-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+  .lcard:hover .lcard-img { transform: scale(1.06); }
+  .lcard-img-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; background: linear-gradient(135deg, var(--cream-2), var(--ocean-soft)); }
+  .lcard-badge {
+    position: absolute; top: 0.85rem; left: 0.85rem;
+    background: var(--sage); color: #fff;
+    font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase;
+    padding: 0.28rem 0.7rem; border-radius: 999px; font-weight: 600;
+  }
+  .lcard-badge.pending { background: var(--gold); }
+  .lcard-badge.sold { background: var(--muted); }
+  .source-badge {
+    position: absolute; bottom: 0.85rem; left: 0.85rem;
+    font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 0.25rem 0.7rem; border-radius: 999px; font-weight: 600;
+  }
+  .source-badge.exclusive { background: var(--terracotta); color: #fff; }
+  .source-badge.mls { background: rgba(13,43,59,0.85); color: #fff; backdrop-filter: blur(6px); }
+  .source-badge.direct { background: rgba(31,41,51,0.85); color: #fff; }
+  .lcard-save {
+    position: absolute; top: 0.85rem; right: 0.85rem;
+    background: rgba(255,255,255,0.92); width: 34px; height: 34px;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 1rem; color: var(--terracotta);
+    transition: background 0.2s, transform 0.2s;
+  }
+  .lcard-save:hover { transform: scale(1.1); background: #fff; }
+  .lcard-body { padding: 1.15rem 1.25rem 1rem; }
+  .lcard-price { font-family: var(--f-display); font-size: 1.5rem; color: var(--ocean); font-weight: 500; margin-bottom: 0.25rem; letter-spacing: -0.01em; }
+  .lcard-address { font-size: 0.88rem; color: var(--ink); font-weight: 500; margin-bottom: 0.1rem; }
+  .lcard-loc { font-size: 0.78rem; color: var(--ink-2); margin-bottom: 0.85rem; }
+  .lcard-specs { display: flex; gap: 1rem; padding-top: 0.85rem; border-top: 1px solid var(--line-2); }
+  .spec { display: flex; align-items: center; gap: 0.3rem; font-size: 0.78rem; color: var(--ink-2); }
+  .spec strong { color: var(--ocean); font-size: 0.85rem; font-weight: 600; }
+  .lcard-footer { padding: 0.7rem 1.25rem; background: var(--cream); display: flex; justify-content: space-between; align-items: center; }
+  .lcard-mls { font-family: var(--f-mono); font-size: 0.68rem; color: var(--muted); letter-spacing: 0.05em; }
+  .lcard-type { font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--terracotta); font-weight: 600; }
 
-  /* TAB PAGES */
-  .tab-page { max-width: 1100px; margin: 0 auto; padding: 4rem 1.5rem; }
-  .tab-page-head { text-align: center; margin-bottom: 3rem; }
-  .tab-page-head .eyebrow { display: inline-block; background: rgba(197,155,39,0.1); color: var(--gold); font-family: 'Poppins', sans-serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.3rem 1rem; border-radius: 20px; margin-bottom: 1rem; }
-  .tab-page-head h1 { font-family: 'Poppins', sans-serif; font-size: clamp(1.8rem, 3.5vw, 3rem); font-weight: 700; color: var(--navy); margin-bottom: 0.75rem; line-height: 1.2; }
-  .tab-page-head p { font-size: 0.95rem; color: var(--subtext); max-width: 620px; margin: 0 auto; line-height: 1.7; }
-  .feature-grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
-  .feature-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 1.8rem; transition: transform 0.2s, box-shadow 0.2s; }
-  .feature-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(29,45,80,0.1); }
-  .feature-card-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
-  .feature-card h3 { font-family: 'Poppins', sans-serif; font-size: 1.05rem; font-weight: 600; color: var(--navy); margin-bottom: 0.5rem; }
-  .feature-card p { font-size: 0.82rem; color: var(--subtext); line-height: 1.6; }
-  .advisory-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
-  .advisory-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; transition: transform 0.2s, box-shadow 0.2s; }
-  .advisory-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(29,45,80,0.1); }
-  .advisory-card-icon { font-size: 2.2rem; margin-bottom: 1rem; display: block; }
-  .advisory-card h3 { font-family: 'Poppins', sans-serif; font-size: 1.15rem; font-weight: 700; color: var(--navy); margin-bottom: 0.75rem; }
-  .advisory-card p { font-size: 0.85rem; color: var(--subtext); line-height: 1.7; }
-  .cta-banner { background: var(--navy); border-radius: 12px; padding: 2.5rem; text-align: center; }
-  .cta-banner h2 { font-family: 'Poppins', sans-serif; font-size: 1.5rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem; }
-  .cta-banner p { color: rgba(255,255,255,0.65); font-size: 0.88rem; margin-bottom: 1.5rem; }
-  .cta-banner-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-  .cta-btn-gold { background: var(--gold); color: #fff; border: none; padding: 0.75rem 1.6rem; border-radius: 6px; font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 0.88rem; cursor: pointer; text-decoration: none; transition: background 0.2s; }
-  .cta-btn-gold:hover { background: var(--gold2); }
-  .cta-btn-outline { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.35); padding: 0.75rem 1.6rem; border-radius: 6px; font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 0.88rem; cursor: pointer; text-decoration: none; transition: background 0.2s; }
-  .cta-btn-outline:hover { background: rgba(255,255,255,0.1); }
+  /* ═════ TESTIMONIAL ═════ */
+  .testimonial {
+    padding: clamp(4rem, 8vw, 6.5rem) clamp(1.25rem, 3vw, 2rem);
+    background: var(--cream-2);
+    border-top: 1px solid var(--line);
+  }
+  .testimonial-inner {
+    max-width: 900px; margin: 0 auto; text-align: center;
+  }
+  .quote-mark {
+    font-family: var(--f-display); font-style: italic;
+    font-size: 5rem; color: var(--terracotta); line-height: 0.5;
+    display: block; margin-bottom: 1rem;
+  }
+  .quote-text {
+    font-family: var(--f-display); font-style: italic;
+    font-size: clamp(1.4rem, 2.6vw, 2rem); line-height: 1.4;
+    color: var(--ocean); font-weight: 400; margin-bottom: 1.5rem;
+    letter-spacing: -0.005em;
+  }
+  .quote-attr { display: flex; align-items: center; justify-content: center; gap: 1rem; }
+  .quote-attr .avatar { width: 48px; height: 48px; border-radius: 50%; background: var(--gold); display: flex; align-items: center; justify-content: center; color: #fff; font-family: var(--f-display); font-weight: 500; font-size: 1.1rem; }
+  .quote-attr .who { text-align: left; }
+  .quote-attr .name { font-family: var(--f-display); font-size: 1rem; color: var(--ocean); font-weight: 500; }
+  .quote-attr .loc { font-size: 0.78rem; color: var(--ink-2); letter-spacing: 0.06em; }
 
-  /* MODAL */
-  .modal-overlay { position: fixed; inset: 0; z-index: 500; background: rgba(22,34,64,0.8); display: none; align-items: flex-start; justify-content: center; padding: 2rem 1rem; overflow-y: auto; }
+  /* ═════ MEET CORAL FULL SECTION ═════ */
+  .meet {
+    padding: clamp(4rem, 8vw, 7rem) clamp(1.25rem, 3vw, 2rem);
+  }
+  .meet-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 380px 1fr; gap: clamp(2rem, 5vw, 5rem);
+    align-items: center;
+  }
+  .meet-photo {
+    width: 100%; aspect-ratio: 4/5;
+    object-fit: cover; border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+  }
+  .meet-content .kicker { color: var(--gold); }
+  .meet-content h2 { font-size: clamp(2rem, 4vw, 3.2rem); margin-bottom: 0.35rem; }
+  .meet-content .role { font-size: 0.95rem; color: var(--terracotta); font-weight: 500; margin-bottom: 1.5rem; letter-spacing: 0.02em; }
+  .meet-content p { font-size: 1rem; color: var(--ink-2); line-height: 1.75; margin-bottom: 1.1rem; }
+  .meet-actions { display: flex; gap: 0.85rem; flex-wrap: wrap; margin-top: 2rem; }
+
+  /* ═════ CTA BAND ═════ */
+  .cta-band {
+    padding: clamp(3.5rem, 7vw, 6rem) clamp(1.25rem, 3vw, 2rem);
+    background: var(--ocean);
+    color: var(--paper);
+    position: relative; overflow: hidden;
+  }
+  .cta-band::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 80% at 80% 30%, rgba(192,90,63,0.2), transparent 60%);
+    pointer-events: none;
+  }
+  .cta-band-inner {
+    max-width: 900px; margin: 0 auto; text-align: center;
+    position: relative; z-index: 2;
+  }
+  .cta-band .kicker { color: var(--gold); }
+  .cta-band h2 { color: var(--paper); font-size: clamp(2rem, 4vw, 3rem); font-weight: 400; margin-bottom: 1rem; }
+  .cta-band h2 em { color: var(--gold); font-style: italic; }
+  .cta-band p { color: rgba(255,255,255,0.75); font-size: 1.05rem; line-height: 1.7; margin-bottom: 2rem; max-width: 640px; margin-left: auto; margin-right: auto; }
+  .cta-band-btns { display: flex; gap: 0.85rem; justify-content: center; flex-wrap: wrap; }
+
+  /* ═════ TAB PAGES (Sellers / Advisory / Scouting) ═════ */
+  .tab-hero {
+    background: var(--ocean); color: var(--paper);
+    padding: clamp(4rem, 8vw, 7rem) clamp(1.25rem, 3vw, 2rem);
+    text-align: center; position: relative; overflow: hidden;
+  }
+  .tab-hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse 70% 90% at 50% 100%, rgba(192,90,63,0.28), transparent 60%);
+    pointer-events: none;
+  }
+  .tab-hero-inner { max-width: 900px; margin: 0 auto; position: relative; z-index: 2; }
+  .tab-hero .kicker { color: var(--gold); }
+  .tab-hero h1 {
+    color: var(--paper); font-size: clamp(2.2rem, 5vw, 4rem); font-weight: 400;
+    line-height: 1.08; letter-spacing: -0.015em; margin-bottom: 1.2rem;
+  }
+  .tab-hero h1 em { color: var(--gold); font-style: italic; }
+  .tab-hero p { font-size: 1.1rem; color: rgba(255,255,255,0.8); line-height: 1.65; max-width: 680px; margin: 0 auto; }
+
+  .tab-body { max-width: 1200px; margin: 0 auto; padding: clamp(3.5rem, 6vw, 5.5rem) clamp(1.25rem, 3vw, 2rem); }
+
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem; margin-bottom: 3rem;
+  }
+  .feature-card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: 1.9rem 1.7rem;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s;
+  }
+  .feature-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+  .feature-card .icon {
+    width: 52px; height: 52px; border-radius: 14px;
+    background: linear-gradient(135deg, var(--cream-2), var(--cream));
+    border: 1px solid var(--line-2);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem; margin-bottom: 1.2rem;
+  }
+  .feature-card h3 { font-size: 1.25rem; margin-bottom: 0.6rem; font-weight: 500; letter-spacing: -0.005em; }
+  .feature-card p { font-size: 0.9rem; color: var(--ink-2); line-height: 1.7; }
+
+  /* ═════ FORM ═════ */
+  .form-card {
+    background: var(--paper);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow-md);
+    padding: clamp(2rem, 4vw, 3.5rem);
+    max-width: 720px; margin: 0 auto;
+  }
+  .form-card .kicker { color: var(--terracotta); margin-bottom: 0.6rem; }
+  .form-card h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); text-align: center; margin-bottom: 0.5rem; }
+  .form-card h2 em { color: var(--terracotta); font-style: italic; }
+  .form-card > p { text-align: center; color: var(--ink-2); margin-bottom: 2rem; font-size: 0.95rem; }
+  .form-success {
+    display: none;
+    background: #F0FDF4; border: 1px solid #86EFAC;
+    border-radius: var(--radius); padding: 1.3rem; text-align: center; margin-bottom: 1rem;
+  }
+  .form-success .check { font-size: 1.5rem; margin-bottom: 0.3rem; color: #166534; }
+  .form-success .title { font-family: var(--f-display); font-weight: 500; color: #166534; }
+  .form-success .sub { font-size: 0.8rem; color: #15803D; margin-top: 0.2rem; }
+  .fld { margin-bottom: 1.1rem; }
+  .fld-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.1rem; }
+  .fld label {
+    display: block; font-size: 0.66rem; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--ink-2); margin-bottom: 0.4rem;
+  }
+  .fld input, .fld select, .fld textarea {
+    width: 100%; padding: 0.75rem 0.95rem;
+    border: 1px solid var(--line); border-radius: var(--radius-sm);
+    font-family: var(--f-body); font-size: 0.92rem;
+    color: var(--ink); background: var(--cream);
+    outline: none; transition: border-color 0.2s, background 0.2s;
+  }
+  .fld input:focus, .fld select:focus, .fld textarea:focus { border-color: var(--ocean); background: var(--paper); }
+  .fld textarea { resize: vertical; min-height: 90px; }
+  .form-submit {
+    width: 100%; background: var(--terracotta); color: #fff;
+    padding: 0.95rem; border-radius: 999px;
+    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+    transition: background 0.2s;
+  }
+  .form-submit:hover { background: var(--terracotta-2); }
+  .form-tel { text-align: center; font-size: 0.85rem; color: var(--ink-2); margin-top: 1rem; }
+  .form-tel a { color: var(--terracotta); font-weight: 600; text-decoration: none; }
+
+  /* ═════ MODAL ═════ */
+  .modal-overlay { position: fixed; inset: 0; z-index: 500; background: rgba(13,43,59,0.75); backdrop-filter: blur(6px); display: none; align-items: flex-start; justify-content: center; padding: 2rem 1rem; overflow-y: auto; }
   .modal-overlay.open { display: flex; }
-  .modal { background: var(--white); border-radius: 12px; max-width: 860px; width: 100%; overflow: hidden; position: relative; margin: auto; }
-  .modal-close { position: absolute; top: 1rem; right: 1rem; z-index: 10; background: rgba(255,255,255,0.9); border: none; width: 36px; height: 36px; border-radius: 50%; font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; }
-  .modal-gallery { width: 100%; height: 320px; display: flex; align-items: center; justify-content: center; font-size: 5rem; overflow: hidden; background: linear-gradient(135deg, var(--mist) 0%, #C8DDE8 100%); }
+  .modal { background: var(--paper); border-radius: var(--radius-lg); max-width: 880px; width: 100%; overflow: hidden; position: relative; margin: auto; box-shadow: var(--shadow-lg); }
+  .modal-close { position: absolute; top: 1rem; right: 1rem; z-index: 10; background: rgba(255,255,255,0.95); width: 40px; height: 40px; border-radius: 50%; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; color: var(--ocean); }
+  .modal-gallery { width: 100%; height: 380px; display: flex; align-items: center; justify-content: center; font-size: 5rem; overflow: hidden; background: linear-gradient(135deg, var(--cream-2), var(--ocean-soft)); }
   .modal-gallery img { width: 100%; height: 100%; object-fit: cover; }
-  .modal-body { padding: 1.8rem 2rem; }
-  .modal-price { font-family: 'Poppins', sans-serif; font-size: 2rem; font-weight: 700; color: var(--gold); }
-  .modal-address { font-size: 1rem; color: var(--text); font-weight: 500; margin-bottom: 0.2rem; font-family: 'Poppins', sans-serif; }
-  .modal-loc { font-size: 0.85rem; color: var(--subtext); margin-bottom: 1.2rem; }
-  .modal-specs { display: flex; gap: 1.5rem; flex-wrap: wrap; padding: 1rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-bottom: 1.2rem; }
+  .modal-body { padding: 2rem clamp(1.5rem, 3vw, 2.5rem); }
+  .modal-price { font-family: var(--f-display); font-size: 2.4rem; color: var(--ocean); font-weight: 500; }
+  .modal-address { font-size: 1.05rem; color: var(--ink); font-weight: 500; margin-bottom: 0.25rem; margin-top: 0.15rem; }
+  .modal-loc { font-size: 0.85rem; color: var(--ink-2); margin-bottom: 1.5rem; letter-spacing: 0.02em; }
+  .modal-specs { display: flex; gap: 1.5rem; flex-wrap: wrap; padding: 1.2rem 0; border-top: 1px solid var(--line-2); border-bottom: 1px solid var(--line-2); margin-bottom: 1.5rem; }
   .modal-spec { text-align: center; }
-  .modal-spec-val { font-family: 'Poppins', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--navy); }
-  .modal-spec-key { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--subtext); }
-  .modal-desc { font-size: 0.88rem; line-height: 1.7; color: var(--text); margin-bottom: 1.4rem; }
-  .modal-details-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 2rem; margin-bottom: 1.4rem; }
-  .detail-row { display: flex; justify-content: space-between; font-size: 0.82rem; padding: 0.35rem 0; border-bottom: 1px solid var(--mist); }
-  .detail-row span:first-child { color: var(--subtext); }
-  .detail-row span:last-child { font-weight: 500; }
+  .modal-spec-val { font-family: var(--f-display); font-size: 1.6rem; color: var(--ocean); font-weight: 500; }
+  .modal-spec-key { font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-2); font-weight: 500; }
+  .modal-desc { font-size: 0.95rem; line-height: 1.75; color: var(--ink); margin-bottom: 1.5rem; }
+  .modal-details-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.35rem 2rem; margin-bottom: 1.6rem; }
+  .detail-row { display: flex; justify-content: space-between; font-size: 0.85rem; padding: 0.5rem 0; border-bottom: 1px solid var(--line-2); }
+  .detail-row span:first-child { color: var(--ink-2); }
+  .detail-row span:last-child { color: var(--ocean); font-weight: 500; }
   .modal-actions { display: flex; gap: 0.8rem; }
-  .btn-primary { flex: 1; background: var(--navy); color: #fff; border: none; padding: 0.85rem; border-radius: 6px; font-family: 'Poppins', sans-serif; font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: background 0.2s; text-transform: uppercase; letter-spacing: 0.04em; display: block; text-align: center; text-decoration: none; }
-  .btn-primary:hover { background: #162240; }
-  .btn-secondary { flex: 1; background: transparent; color: var(--navy); border: 1.5px solid var(--navy); padding: 0.85rem; border-radius: 6px; font-family: 'Poppins', sans-serif; font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: all 0.2s; text-transform: uppercase; letter-spacing: 0.04em; display: block; text-align: center; text-decoration: none; }
-  .btn-secondary:hover { background: var(--mist); }
-  .modal-call { text-align: center; font-size: 0.78rem; color: var(--subtext); margin-top: 0.9rem; }
-  .modal-call a { color: var(--navy); font-weight: 500; text-decoration: none; }
+  .modal-actions .btn { flex: 1; justify-content: center; }
+  .modal-call { text-align: center; font-size: 0.83rem; color: var(--ink-2); margin-top: 1rem; }
+  .modal-call a { color: var(--terracotta); font-weight: 600; text-decoration: none; }
 
-  /* FOOTER */
-  footer { background: var(--navy); color: rgba(255,255,255,0.45); padding: 2.5rem 2rem 1.5rem; margin-top: 3rem; }
-  .footer-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 1rem; }
-  .footer-logo-wrap { display: flex; align-items: center; gap: 0.65rem; margin-bottom: 0.6rem; }
-  .footer-logo-wrap img { height: 48px; width: 48px; object-fit: contain; }
-  .footer-brand { font-family: 'Poppins', sans-serif; font-size: 1rem; font-weight: 700; color: #fff; letter-spacing: 0.05em; }
-  .footer-brand span { color: var(--gold); font-weight: 500; }
-  .footer-tagline { font-size: 0.72rem; line-height: 1.6; }
-  .footer-col h4 { font-family: 'Poppins', sans-serif; font-size: 0.62rem; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.8rem; }
-  .footer-col a { display: block; font-size: 0.72rem; color: rgba(255,255,255,0.5); text-decoration: none; margin-bottom: 0.4rem; cursor: pointer; }
+  /* ═════ FOOTER ═════ */
+  footer {
+    background: var(--ocean-2); color: rgba(255,255,255,0.55);
+    padding: clamp(3rem, 6vw, 5rem) clamp(1.25rem, 3vw, 2rem) 2rem;
+    position: relative;
+  }
+  .footer-inner {
+    max-width: 1280px; margin: 0 auto;
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1.4fr;
+    gap: 2.5rem; padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    margin-bottom: 1.5rem;
+  }
+  .footer-logo-wrap { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
+  .footer-logo-wrap img { height: 54px; width: 54px; }
+  .footer-brand { font-family: var(--f-display); font-size: 1.2rem; color: #fff; font-weight: 500; letter-spacing: 0.02em; line-height: 1; }
+  .footer-brand span { display: block; font-family: var(--f-body); font-size: 0.58rem; color: var(--gold); letter-spacing: 0.28em; margin-top: 6px; text-transform: uppercase; }
+  .footer-tagline { font-size: 0.85rem; color: rgba(255,255,255,0.6); line-height: 1.7; max-width: 340px; margin-bottom: 1.25rem; }
+  .footer-social { display: flex; gap: 0.5rem; }
+  .footer-social a { width: 34px; height: 34px; border-radius: 50%; background: rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.7); font-size: 0.85rem; transition: background 0.2s; }
+  .footer-social a:hover { background: var(--gold); color: var(--ocean-2); }
+  .footer-col h4 { font-family: var(--f-body); font-size: 0.68rem; font-weight: 600; color: var(--gold); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1.1rem; }
+  .footer-col a { display: block; font-size: 0.85rem; color: rgba(255,255,255,0.55); text-decoration: none; margin-bottom: 0.55rem; cursor: pointer; transition: color 0.2s; }
   .footer-col a:hover { color: #fff; }
-  .footer-contact { font-size: 0.72rem; margin-bottom: 0.4rem; }
-  .footer-coral { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.75rem; }
-  .footer-coral img { width: 46px; height: 46px; border-radius: 50%; object-fit: cover; border: 2px solid var(--gold); }
-  .footer-coral-name { font-family: 'Poppins', sans-serif; font-size: 0.85rem; font-weight: 600; color: #fff; }
-  .footer-coral-title { font-size: 0.68rem; color: rgba(255,255,255,0.5); }
-  .footer-bottom { max-width: 1280px; margin: 0 auto; display: flex; justify-content: space-between; font-size: 0.65rem; flex-wrap: wrap; gap: 0.5rem; }
-  .footer-bottom a { color: rgba(255,255,255,0.4); text-decoration: none; margin-left: 1rem; }
+  .footer-coral { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 1rem; }
+  .footer-coral img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--gold); }
+  .footer-coral-name { font-family: var(--f-display); font-size: 1rem; color: #fff; font-weight: 500; }
+  .footer-coral-title { font-size: 0.72rem; color: rgba(255,255,255,0.55); }
+  .footer-contact-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; margin-bottom: 0.55rem; color: rgba(255,255,255,0.65); }
+  .footer-contact-item a { color: rgba(255,255,255,0.75); text-decoration: none; }
+  .footer-contact-item a:hover { color: var(--gold); }
+  .footer-bottom {
+    max-width: 1280px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 0.72rem; color: rgba(255,255,255,0.4); flex-wrap: wrap; gap: 0.5rem;
+  }
+  .footer-bottom a { color: rgba(255,255,255,0.4); text-decoration: none; margin-left: 1.5rem; transition: color 0.2s; }
+  .footer-bottom a:hover { color: #fff; }
 
-  @media (max-width: 900px) {
-    .hero { grid-template-columns: 1fr; min-height: auto; }
-    .hero-photo-col { height: 340px; }
-    .hero-text { padding: 2.5rem 1.5rem; }
-    .about-container, .meet-coral-inner { grid-template-columns: 1fr; }
-    .main { grid-template-columns: 1fr; }
+  /* ═════ ANIMATIONS ═════ */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .reveal { opacity: 0; }
+  .reveal.in { animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+  .reveal.d1 { animation-delay: 0.1s; }
+  .reveal.d2 { animation-delay: 0.2s; }
+  .reveal.d3 { animation-delay: 0.3s; }
+  .reveal.d4 { animation-delay: 0.4s; }
+
+  /* ═════ RESPONSIVE ═════ */
+  @media (max-width: 1000px) {
+    .listings-layout { grid-template-columns: 1fr; }
     .sidebar { position: static; }
+    .about-inner, .meet-inner, .hero-inner { grid-template-columns: 1fr; }
+    .about-visual .accent-img { display: none; }
+    .hero-card { justify-self: start; max-width: 100%; }
+    .hero-card-photo { aspect-ratio: 16/10; }
+    .search-strip { grid-template-columns: 1fr; margin-top: -30px; }
+    .search-field { border-right: none; border-bottom: 1px solid var(--line-2); padding: 0.85rem 1rem; }
+    .search-strip .search-btn { margin: 0.5rem 1rem; }
+    .paths-grid { grid-template-columns: 1fr; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
     .footer-inner { grid-template-columns: 1fr 1fr; }
+    .fld-row { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 768px) {
     .nav-tabs { display: none; }
-    .stat { padding: 0.8rem 1.2rem; }
+    .nav-mobile-btn { display: block; }
+    .nav-cta { display: none; }
+    .nav-wordmark { font-size: 1rem; }
+    .footer-inner { grid-template-columns: 1fr; }
+    .stats-grid { grid-template-columns: 1fr 1fr; gap: 0; }
+    .stat-item { padding: 0.8rem 0.5rem; }
+    .stat-num { font-size: 2rem; }
+    .about-highlights { grid-template-columns: 1fr; }
     .modal-details-grid { grid-template-columns: 1fr; }
+    .hero-eyebrow::before { display: none; }
   }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
+<!-- ═════ NAV ═════ -->
 <nav>
   <div class="nav-left" onclick="showTab('home')">
     <div class="nav-logo">
       <img src="https://raw.githubusercontent.com/Marauder67/Pronoia-Realty/main/%20Pronoia%20Logo%20NO%20SLOGAN%20Fondo%20Transparente%20.png" alt="Pronoia Realty">
     </div>
+    <div class="nav-wordmark">
+      Pronoia<br><span>Realty · Puerto Rico</span>
+    </div>
   </div>
   <div class="nav-tabs">
-    <button class="nav-tab active" id="tab-home" onclick="showTab('home')">🏠 Properties</button>
-    <button class="nav-tab" id="tab-advisory" onclick="showTab('advisory')">✨ Relocation & Advisory</button>
-    <button class="nav-tab" id="tab-scouting" onclick="showTab('scouting')">🎥 Drone & Scouting</button>
+    <button class="nav-tab active" id="tab-home" onclick="showTab('home')">Home</button>
+    <button class="nav-tab" id="tab-buyers" onclick="showTab('buyers')">For Buyers</button>
+    <button class="nav-tab" id="tab-sellers" onclick="showTab('sellers')">For Sellers</button>
+    <button class="nav-tab" id="tab-advisory" onclick="showTab('advisory')">Relocation</button>
+    <button class="nav-tab" id="tab-scouting" onclick="showTab('scouting')">Drone Tours</button>
   </div>
   <div class="nav-right">
     <img src="https://raw.githubusercontent.com/Marauder67/Pronoia-Realty/main/IMG_2351.jpeg" alt="Coral Santiago" class="nav-coral-img">
@@ -315,33 +929,308 @@
           <img src="https://raw.githubusercontent.com/Marauder67/Pronoia-Realty/main/IMG_2351.jpeg" alt="Coral Santiago" class="contact-pop-avatar">
           <div>
             <div class="contact-pop-name">Coral Santiago</div>
-            <div class="contact-pop-role">Founder & Licensed Broker · Pronoia Realty</div>
+            <div class="contact-pop-role">Founder & Licensed Broker<br>Pronoia Realty</div>
           </div>
         </div>
-        <a class="contact-pop-link" href="tel:+17875013992">📞 (787) 501-3992</a>
-        <a class="contact-pop-link" href="mailto:c.santiago@pronoiarealty.com?subject=Inquiry%20from%20PronoiaRealty.com">✉ c.santiago@pronoiarealty.com</a>
+        <a class="contact-pop-link" href="tel:+17875013992"><span class="ic">📞</span> (787) 501-3992</a>
+        <a class="contact-pop-link" href="mailto:c.santiago@pronoiarealty.com?subject=Inquiry%20from%20PronoiaRealty.com"><span class="ic">✉</span> c.santiago@pronoiarealty.com</a>
       </div>
     </div>
+    <button class="nav-mobile-btn" onclick="toggleMobileNav()" aria-label="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+    </button>
   </div>
 </nav>
+<div class="nav-mobile-panel" id="navMobilePanel">
+  <button class="nav-tab" onclick="showTab('home')">Home</button>
+  <button class="nav-tab" onclick="showTab('buyers')">For Buyers</button>
+  <button class="nav-tab" onclick="showTab('sellers')">For Sellers</button>
+  <button class="nav-tab" onclick="showTab('advisory')">Relocation & Advisory</button>
+  <button class="nav-tab" onclick="showTab('scouting')">Drone & Scouting</button>
+  <a class="btn btn-primary" style="justify-content:center;margin-top:1rem" href="tel:+17875013992">Call Coral (787) 501-3992</a>
+</div>
 
-<!-- ══ HOME TAB ══ -->
+<!-- ═════════════════════ HOME TAB ═════════════════════ -->
 <div class="tab-content active" id="content-home">
 
-  <!-- HERO — SPLIT -->
+  <!-- HERO -->
   <section class="hero">
-    <div class="hero-text">
-      <div class="hero-eyebrow">Boutique Buyer Representation · Puerto Rico</div>
-      <h1>More Than Real Estate.<br><em>Your Personal Island Ambassador.</em></h1>
-      <p class="hero-sub">From drone neighborhood flyovers and private financing guidance to vetted local trades and white-glove relocation support — Pronoia Realty is your trusted first step to island living.</p>
-      <div class="hero-btns">
-        <button class="hero-btn-gold" onclick="showTab('advisory')">Explore Relocation Services</button>
-        <button class="hero-btn-outline" onclick="showTab('scouting')">Request Drone Tour</button>
+    <div class="hero-bg"><img src="images/hero-coastline.png" alt="Puerto Rico coastline at golden hour"></div>
+    <div class="hero-inner">
+      <div class="reveal in">
+        <div class="hero-eyebrow">Boutique Buyer & Seller Representation</div>
+        <h1>
+          Puerto Rico Real Estate,
+          <span class="em">personally represented.</span>
+        </h1>
+        <p class="hero-sub">
+          Buying, selling, or relocating in Puerto Rico is more than a transaction — it's a major life decision. You deserve a licensed broker who <strong>understands the island, listens to your goals, and personally guides you</strong> from the first conversation through closing and beyond.
+        </p>
+        <div class="hero-btns">
+          <a href="#buy-path" class="btn btn-primary" onclick="event.preventDefault();document.getElementById('paths').scrollIntoView({behavior:'smooth'});">I want to buy →</a>
+          <button class="btn btn-outline-light" onclick="showTab('sellers')">I want to sell</button>
+        </div>
+        <div class="hero-trust">
+          <div class="hero-trust-item"><span class="dot"></span> Licensed PR Broker</div>
+          <div class="hero-trust-item"><span class="dot"></span> Act 60 Specialist</div>
+          <div class="hero-trust-item"><span class="dot"></span> Bilingual (EN / ES)</div>
+          <div class="hero-trust-item"><span class="dot"></span> Native Puerto Rican</div>
+        </div>
       </div>
-      <div class="hero-search">
-        <div class="search-field">
-          <label>Municipio</label>
-          <select id="heroMunicipio">
+      <div class="hero-card reveal in d2">
+        <div class="hero-card-photo">
+          <img src="https://raw.githubusercontent.com/Marauder67/Pronoia-Realty/main/IMG_2351.jpeg" alt="Coral Santiago">
+        </div>
+        <div class="hero-card-label">Your Broker</div>
+        <div class="hero-card-name">Coral Santiago</div>
+        <div class="hero-card-title">Founder & Licensed Real Estate Broker<br>Pronoia Realty · Puerto Rico</div>
+        <div class="hero-card-creds">
+          <span class="cred-pill">Act 60</span>
+          <span class="cred-pill">Bilingual</span>
+          <span class="cred-pill">Master's Degree</span>
+          <span class="cred-pill">Native</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEARCH STRIP -->
+  <div class="search-strip" id="searchStrip">
+    <div class="search-field">
+      <label>Municipio</label>
+      <select id="heroMunicipio">
+        <option value="">All of Puerto Rico</option>
+        <option>San Juan</option><option>Dorado</option><option>Guaynabo</option>
+        <option>Bayamón</option><option>Carolina</option><option>Ponce</option>
+        <option>Humacao</option><option>Rincón</option><option>Isabela</option>
+        <option>Aguadilla</option><option>Mayagüez</option><option>Jayuya</option>
+        <option>Fajardo</option><option>Culebra</option><option>Vieques</option>
+      </select>
+    </div>
+    <div class="search-field">
+      <label>Property Type</label>
+      <select id="heroType">
+        <option value="">Any Type</option>
+        <option>Single Family</option><option>Condo / Apartment</option>
+        <option>Townhouse</option><option>Land</option><option>Multi-Family</option>
+      </select>
+    </div>
+    <div class="search-field">
+      <label>Max Budget</label>
+      <select id="heroPrice">
+        <option value="">No Limit</option>
+        <option value="300000">Up to $300K</option>
+        <option value="500000">Up to $500K</option>
+        <option value="750000">Up to $750K</option>
+        <option value="1000000">Up to $1M</option>
+        <option value="2000000">$2M+</option>
+      </select>
+    </div>
+    <div class="search-field">
+      <label>Bedrooms</label>
+      <select id="heroBeds">
+        <option value="0">Any</option>
+        <option value="1">1+</option><option value="2">2+</option>
+        <option value="3">3+</option><option value="4">4+</option><option value="5">5+</option>
+      </select>
+    </div>
+    <button class="search-btn" onclick="applyHeroSearch()">Search Homes</button>
+  </div>
+
+  <!-- STATEMENT -->
+  <section class="statement">
+    <div class="kicker">Built on connection, heart, and community</div>
+    <h2>Puerto Rico deserves a broker who <em>knows it by heart</em>.</h2>
+    <p>
+      Pronoia Realty combines deep local expertise, strategic representation, and warm concierge care — an alternative to high-volume corporate brokerages built for people who see a home as a life, not a listing.
+    </p>
+  </section>
+
+  <!-- DUAL PATHS -->
+  <section class="paths" id="paths">
+    <div class="paths-grid">
+      <a class="path-card" onclick="event.preventDefault();showTab('buyers');" href="#">
+        <div class="path-img">
+          <img src="images/dorado-estate.png" alt="Luxury oceanfront estate">
+          <div class="path-label">For Buyers</div>
+        </div>
+        <div class="path-body">
+          <h3>Find a home that feels like the island</h3>
+          <p>Exclusive buyer representation for mainlanders, investors, and Act 60 relocators — including drone flyovers, landing rentals, financing connections, and vetted local trades.</p>
+          <span class="path-arrow">Explore buyer services
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </div>
+      </a>
+      <a class="path-card" onclick="event.preventDefault();showTab('sellers');" href="#">
+        <div class="path-img">
+          <img src="images/interior-warmth.png" alt="Bright coastal interior">
+          <div class="path-label">For Sellers</div>
+        </div>
+        <div class="path-body">
+          <h3>Sell for what your home is truly worth</h3>
+          <p>Matterport 3D twins, 4K drone showcases, and dual-market campaigns that reach local buyers and qualified mainland Act 60 relocators simultaneously.</p>
+          <span class="path-arrow">See seller services
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ABOUT CORAL -->
+  <section class="about">
+    <div class="about-inner">
+      <div class="about-visual">
+        <img class="main-img" src="https://raw.githubusercontent.com/Marauder67/Pronoia-Realty/main/IMG_2351.jpeg" alt="Coral Santiago">
+        <img class="accent-img" src="images/rincon-cottage.png" alt="Puerto Rico coastal life">
+        <div class="badge-stamp">Boutique &amp; Dedicated</div>
+      </div>
+      <div>
+        <div class="kicker">Meet your broker</div>
+        <h2>Coral Santiago — an <em>island native</em> at your side.</h2>
+        <p>Raised on Puerto Rico's vibrant north coast, Coral founded Pronoia Realty as an alternative to high-volume corporate brokerages. With a <strong>Master's degree, an entrepreneurial family background,</strong> and deep roots across the island, she brings a warm, personal, and strategic approach to every client — buyer or seller.</p>
+        <p>Fluent in English and Spanish, Coral helps mainlanders, investors, and Act 60 decree holders seamlessly navigate cultural transitions, legal systems, permitting, and property customization.</p>
+        <blockquote class="about-quote">"Real estate on the island is more than a transaction — it's a life. My job is to protect it, and make it feel like home."</blockquote>
+        <div class="about-highlights">
+          <div class="hl-card">
+            <div class="num">15+</div>
+            <div class="lbl">Municipios Covered</div>
+          </div>
+          <div class="hl-card">
+            <div class="num">Bilingual</div>
+            <div class="lbl">Every Conversation</div>
+          </div>
+          <div class="hl-card">
+            <div class="num">Native</div>
+            <div class="lbl">Local Network</div>
+          </div>
+          <div class="hl-card">
+            <div class="num">Act 60</div>
+            <div class="lbl">Relocation Specialist</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services">
+    <div class="section-head">
+      <div class="kicker">What we offer</div>
+      <h2>Boutique concierge, <em>beyond the closing table</em></h2>
+      <p>A trusted partnership that extends well past the purchase agreement — designed for people who want a real advocate on the island.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🤝</div>
+        <h3>Buyer Representation</h3>
+        <p>Exclusive representation tailored strictly to your goals — protecting your interests in every negotiation and transaction.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🏷️</div>
+        <h3>Seller Representation</h3>
+        <p>Full-service listings with immersive Matterport tours, 4K drone media, and dual-market exposure to local and Act 60 buyers.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🇵🇷</div>
+        <h3>Act 60 Relocation</h3>
+        <p>Bilingual administrative and logistical support to make your island tax incentive transition smooth and stress-free.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🎥</div>
+        <h3>Drone & Neighborhood Tours</h3>
+        <p>4K aerial flyovers and street walk-throughs for off-island buyers who can't visit in person before making an offer.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🛠️</div>
+        <h3>Contractors & Permitting</h3>
+        <p>Direct access to Coral's trusted network of builders, architects, hardware suppliers, and licensed tradespeople.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🛋️</div>
+        <h3>Interior Design & Staging</h3>
+        <p>Vetted local designers, furniture sourcing, and full move-in staging — so your island home feels like home from day one.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔑</div>
+        <h3>Landing Rentals</h3>
+        <p>Long-term leases or curated short stays so you can experience neighborhoods before committing to buy.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">💰</div>
+        <h3>Financing Guidance</h3>
+        <p>Connections to trusted mortgage specialists, private financing options, and local banks for first-time island buyers.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- REGIONS -->
+  <section class="regions">
+    <div class="regions-inner">
+      <div class="section-head">
+        <div class="kicker">Geographic expertise</div>
+        <h2>Puerto Rico's <em>most coveted</em> corridors</h2>
+        <p>Boots-on-the-ground knowledge across the island's most sought-after coastal, urban, and mountain neighborhoods.</p>
+      </div>
+      <div class="regions-grid">
+        <div class="region-card">
+          <img src="images/dorado-estate.png" alt="Dorado luxury coast">
+          <div class="region-body">
+            <h3><em>North Coast</em>Dorado & Vega Alta</h3>
+            <p>Resort living, luxury estates, and gated communities.</p>
+          </div>
+        </div>
+        <div class="region-card">
+          <img src="images/rincon-cottage.png" alt="Rincón coastline">
+          <div class="region-body">
+            <h3><em>West Coast</em>Rincón & Aguadilla</h3>
+            <p>Beach cottages, surf culture, and investment opportunity.</p>
+          </div>
+        </div>
+        <div class="region-card">
+          <img src="images/old-san-juan.png" alt="Old San Juan pastel colonial">
+          <div class="region-body">
+            <h3><em>Metro</em>San Juan & Condado</h3>
+            <p>Historic Old San Juan and urban high-rise condos.</p>
+          </div>
+        </div>
+        <div class="region-card">
+          <img src="images/hero-coastline.png" alt="East coast marina">
+          <div class="region-body">
+            <h3><em>East Coast</em>Fajardo & Cays</h3>
+            <p>Marina life, boating culture, and offshore islands.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stats-grid">
+      <div class="stat-item"><div class="stat-num">847</div><div class="stat-lbl">Active Listings</div></div>
+      <div class="stat-item"><div class="stat-num">$485K</div><div class="stat-lbl">Median Price</div></div>
+      <div class="stat-item"><div class="stat-num">23</div><div class="stat-lbl">Municipios</div></div>
+      <div class="stat-item"><div class="stat-num">62</div><div class="stat-lbl">Avg Days on Market</div></div>
+    </div>
+  </div>
+
+  <!-- LISTINGS -->
+  <section class="listings-wrap" id="listings">
+    <div class="listings-head">
+      <div class="listings-head-left">
+        <div class="kicker">Featured properties</div>
+        <h2>Homes on the market <em>right now</em></h2>
+        <p>Stellar MLS listings, Pronoia exclusives, and direct-seller opportunities across Puerto Rico.</p>
+      </div>
+    </div>
+    <div class="listings-layout">
+      <aside class="sidebar">
+        <div class="sidebar-title">Refine your search</div>
+        <div class="filter-group">
+          <label class="filter-label">Municipio</label>
+          <select class="filter-select" id="filtMunicipio">
             <option value="">All Puerto Rico</option>
             <option>San Juan</option><option>Dorado</option><option>Guaynabo</option>
             <option>Bayamón</option><option>Carolina</option><option>Ponce</option>
@@ -350,292 +1239,310 @@
             <option>Fajardo</option><option>Culebra</option><option>Vieques</option>
           </select>
         </div>
-        <div class="search-field">
-          <label>Property Type</label>
-          <select id="heroType">
+        <div class="filter-group">
+          <label class="filter-label">Property Type</label>
+          <select class="filter-select" id="filtType">
             <option value="">Any Type</option>
             <option>Single Family</option><option>Condo / Apartment</option>
-            <option>Townhouse</option><option>Land</option><option>Multi-Family</option>
+            <option>Townhouse</option><option>Land</option><option>Commercial</option>
+            <option>Multi-Family</option>
           </select>
         </div>
-        <div class="search-field">
-          <label>Max Budget</label>
-          <select id="heroPrice">
-            <option value="">No Limit</option>
-            <option value="300000">$300K</option>
-            <option value="500000">$500K</option>
-            <option value="750000">$750K</option>
-            <option value="1000000">$1M</option>
-            <option value="2000000">$2M+</option>
-          </select>
-        </div>
-        <button class="search-btn" onclick="applyHeroSearch()">Search</button>
-      </div>
-    </div>
-    <div class="hero-photo-col">
-      <img src="https://raw.githubusercontent.com/Marauder67/Pronoia-Realty/main/IMG_2351.jpeg" alt="Coral Santiago — Licensed Real Estate Broker, Pronoia Realty">
-      <div class="hero-photo-overlay">
-        <div class="hero-photo-name">Coral Santiago</div>
-        <div class="hero-photo-title">Founder & Licensed Real Estate Broker · Puerto Rico</div>
-        <div class="hero-photo-creds">
-          <span class="hero-cred-pill">Act 60 Specialist</span>
-          <span class="hero-cred-pill">Bilingual</span>
-          <span class="hero-cred-pill">Native Expert</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONNECTION BANNER -->
-  <div class="connection-banner">
-    <div class="icon-wrap">❤️</div>
-    <h2>Built On Connection, Heart, and Community</h2>
-    <p>We believe moving to an island is a life-changing milestone. Whether you are a first-time homebuyer looking for local mortgages or an off-island family needing a trusted local guide, we treat your journey with genuine care and deep local expertise.</p>
-  </div>
-
-  <!-- ABOUT CORAL -->
-  <section class="about-section" id="about">
-    <div class="about-container">
-      <div>
-        <div class="about-badge">Boutique & Dedicated</div>
-        <h2 class="about-title">Meet Coral Santiago</h2>
-        <p class="about-p">Raised on Puerto Rico's vibrant north coast, Coral Santiago established Pronoia Realty to offer an alternative to high-volume corporate brokerages. With a Master's degree, entrepreneurial background, and deep roots across the island, she brings a warm, highly personal, and strategic approach to buyer representation.</p>
-        <p class="about-p">Fluent in English and Spanish, Coral specializes in helping mainlanders, investors, and Act 60 decree holders seamlessly navigate cultural transitions, legal systems, and property customization.</p>
-        <div class="about-highlights">
-          <div class="highlight-card"><h4>Deep Island Roots</h4><p>Born into a family of local entrepreneurs with an extensive network of contractors & trades.</p></div>
-          <div class="highlight-card"><h4>Act 60 Navigator</h4><p>Expert guidance through tax incentive relocations, short-term landing leases, and permitting.</p></div>
-        </div>
-      </div>
-      <div class="geo-card">
-        <h3>Geographic Expertise</h3>
-        <p>Coral provides intimate, boots-on-the-ground knowledge across Puerto Rico's most coveted coastal corridors:</p>
-        <ul class="geo-list">
-          <li>📍 <strong>Northern Corridor:</strong> Luxury living in Dorado & Vega Alta.</li>
-          <li>📍 <strong>Western Coast:</strong> Coastal lifestyle & investment in Aguadilla & Arecibo.</li>
-          <li>📍 <strong>Eastern Hub:</strong> Marina & boating culture in Fajardo and surrounding cays.</li>
-          <li>📍 <strong>Metro San Juan:</strong> Urban condos, historic Old San Juan, and Condado.</li>
-          <li>📍 <strong>Mountain Highlands:</strong> Off-grid estates and coffee country in Jayuya.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section class="services-section">
-    <div class="section-head">
-      <div class="section-eyebrow">What We Offer</div>
-      <h2>Boutique Concierge Services</h2>
-      <p>A trusted partnership extending far beyond the initial purchase agreement.</p>
-    </div>
-    <div class="services-grid">
-      <div class="service-card"><span class="service-icon">🤝</span><h3>Buyer Representation</h3><p>Exclusive representation tailored strictly to your goals, protecting your interests in every negotiation and transaction.</p></div>
-      <div class="service-card"><span class="service-icon">🇵🇷</span><h3>Act 60 Relocation</h3><p>Bilingual administrative and logistical support to make your island tax incentive transition smooth and stress-free.</p></div>
-      <div class="service-card"><span class="service-icon">🛠️</span><h3>Contractors & Permitting</h3><p>Direct access to Coral's trusted network of builders, architects, hardware suppliers, and licensed tradespeople.</p></div>
-      <div class="service-card"><span class="service-icon">🔑</span><h3>Landing Rentals</h3><p>Assistance securing long-term leases or short stays so you can experience neighborhoods before committing to buy.</p></div>
-      <div class="service-card"><span class="service-icon">🎥</span><h3>Drone & Neighborhood Tours</h3><p>4K aerial flyovers and street walk-throughs for off-island buyers who can't visit in person before making an offer.</p></div>
-      <div class="service-card"><span class="service-icon">💰</span><h3>Financing Guidance</h3><p>Connections to trusted mortgage specialists, private financing options, and local banks for first-time island buyers.</p></div>
-    </div>
-  </section>
-
-  <!-- STATS -->
-  <div class="stats-strip">
-    <div class="stat"><div class="stat-num">847</div><div class="stat-label">Active Listings</div></div>
-    <div class="stat"><div class="stat-num">$485K</div><div class="stat-label">Median Price</div></div>
-    <div class="stat"><div class="stat-num">23</div><div class="stat-label">Municipios</div></div>
-    <div class="stat"><div class="stat-num">62</div><div class="stat-label">Avg Days on Market</div></div>
-  </div>
-
-  <!-- MLS SEARCH -->
-  <div class="main" id="listings">
-    <aside class="sidebar">
-      <div class="sidebar-title">Filter Listings</div>
-      <div class="filter-group">
-        <label class="filter-label">Municipio</label>
-        <select class="filter-select" id="filtMunicipio">
-          <option value="">All Puerto Rico</option>
-          <option>San Juan</option><option>Dorado</option><option>Guaynabo</option>
-          <option>Bayamón</option><option>Carolina</option><option>Ponce</option>
-          <option>Humacao</option><option>Rincón</option><option>Isabela</option>
-          <option>Aguadilla</option><option>Mayagüez</option><option>Jayuya</option>
-          <option>Fajardo</option><option>Culebra</option><option>Vieques</option>
-        </select>
-      </div>
-      <div class="filter-group">
-        <label class="filter-label">Property Type</label>
-        <select class="filter-select" id="filtType">
-          <option value="">Any Type</option>
-          <option>Single Family</option><option>Condo / Apartment</option>
-          <option>Townhouse</option><option>Land</option><option>Commercial</option>
-          <option>Multi-Family</option>
-        </select>
-      </div>
-      <div class="filter-group">
-        <label class="filter-label">Price Range</label>
-        <div class="price-range">
-          <input class="filter-input" type="number" id="filtPriceMin" placeholder="Min $" style="width:48%">
-          <span>–</span>
-          <input class="filter-input" type="number" id="filtPriceMax" placeholder="Max $" style="width:48%">
-        </div>
-      </div>
-      <div class="filter-group">
-        <label class="filter-label">Bedrooms (min)</label>
-        <select class="filter-select" id="filtBeds">
-          <option value="0">Any</option><option value="1">1+</option><option value="2">2+</option>
-          <option value="3">3+</option><option value="4">4+</option><option value="5">5+</option>
-        </select>
-      </div>
-      <div class="filter-group">
-        <label class="filter-label">Bathrooms (min)</label>
-        <select class="filter-select" id="filtBaths">
-          <option value="0">Any</option><option value="1">1+</option>
-          <option value="2">2+</option><option value="3">3+</option>
-        </select>
-      </div>
-      <div class="filter-group">
-        <label class="filter-label">Features</label>
-        <div class="checkbox-group">
-          <label class="checkbox-item"><input type="checkbox" id="chkPool"> Pool</label>
-          <label class="checkbox-item"><input type="checkbox" id="chkOcean"> Ocean View</label>
-          <label class="checkbox-item"><input type="checkbox" id="chkGated"> Gated Community</label>
-          <label class="checkbox-item"><input type="checkbox" id="chkBeach"> Beachfront</label>
-          <label class="checkbox-item"><input type="checkbox" id="chkMtn"> Mountain View</label>
-        </div>
-      </div>
-      <button class="apply-btn" onclick="applyFilters()">Apply Filters</button>
-      <span class="reset-link" onclick="resetFilters()">Reset all filters</span>
-    </aside>
-    <div>
-      <div class="listings-header">
-        <div class="listings-count">Showing <strong id="countDisplay">18</strong> listings</div>
-        <div style="display:flex;align-items:center;gap:0.5rem">
-          <select class="sort-select" id="sortSelect" onchange="renderListings()">
-            <option value="newest">Newest First</option>
-            <option value="price-asc">Price: Low → High</option>
-            <option value="price-desc">Price: High → Low</option>
-            <option value="sqft">Largest First</option>
-          </select>
-          <div class="view-toggle">
-            <button class="view-btn active" onclick="setView('grid',this)">⊞</button>
-            <button class="view-btn" onclick="setView('list',this)">≡</button>
+        <div class="filter-group">
+          <label class="filter-label">Price Range</label>
+          <div class="price-range">
+            <input class="filter-input" type="number" id="filtPriceMin" placeholder="Min $" style="width:48%">
+            <span>–</span>
+            <input class="filter-input" type="number" id="filtPriceMax" placeholder="Max $" style="width:48%">
           </div>
         </div>
+        <div class="filter-group">
+          <label class="filter-label">Bedrooms (min)</label>
+          <select class="filter-select" id="filtBeds">
+            <option value="0">Any</option><option value="1">1+</option><option value="2">2+</option>
+            <option value="3">3+</option><option value="4">4+</option><option value="5">5+</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label class="filter-label">Bathrooms (min)</label>
+          <select class="filter-select" id="filtBaths">
+            <option value="0">Any</option><option value="1">1+</option>
+            <option value="2">2+</option><option value="3">3+</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label class="filter-label">Features</label>
+          <div class="checkbox-group">
+            <label class="checkbox-item"><input type="checkbox" id="chkPool"> Pool</label>
+            <label class="checkbox-item"><input type="checkbox" id="chkOcean"> Ocean View</label>
+            <label class="checkbox-item"><input type="checkbox" id="chkGated"> Gated Community</label>
+            <label class="checkbox-item"><input type="checkbox" id="chkBeach"> Beachfront</label>
+            <label class="checkbox-item"><input type="checkbox" id="chkMtn"> Mountain View</label>
+          </div>
+        </div>
+        <button class="apply-btn" onclick="applyFilters()">Apply Filters</button>
+        <span class="reset-link" onclick="resetFilters()">Reset all filters</span>
+      </aside>
+      <div>
+        <div class="listings-controls">
+          <div class="listings-count">Showing <strong id="countDisplay">18</strong> properties</div>
+          <div class="controls-right">
+            <select class="sort-select" id="sortSelect" onchange="renderListings()">
+              <option value="newest">Newest First</option>
+              <option value="price-asc">Price: Low → High</option>
+              <option value="price-desc">Price: High → Low</option>
+              <option value="sqft">Largest First</option>
+            </select>
+            <div class="view-toggle">
+              <button class="view-btn active" onclick="setView('grid',this)" aria-label="Grid view">⊞</button>
+              <button class="view-btn" onclick="setView('list',this)" aria-label="List view">≡</button>
+            </div>
+          </div>
+        </div>
+        <div class="listings-grid" id="listingsGrid"></div>
       </div>
-      <div class="listings-grid" id="listingsGrid"></div>
     </div>
-  </div>
+  </section>
 
-  <!-- MEET CORAL -->
-  <div class="meet-coral" id="meet-coral">
-    <div class="meet-coral-inner">
-      <div>
-        <img src="https://raw.githubusercontent.com/Marauder67/Pronoia-Realty/main/IMG_2351.jpeg" alt="Coral Santiago" class="coral-photo">
-      </div>
-      <div>
-        <div class="coral-eyebrow">Your Broker</div>
-        <div class="coral-name">Coral Santiago</div>
-        <div class="coral-title">Founder & Licensed Real Estate Broker · Pronoia Realty · Puerto Rico</div>
-        <p class="coral-bio">With deep roots in Puerto Rico's real estate market, Coral brings expertise, integrity, and a personal touch to every transaction. Whether you're searching for a beachfront escape in Rincón, a luxury estate in Dorado, or navigating an Act 60 relocation, Coral guides you every step of the way — from first showing to closing day and beyond.</p>
-        <div class="coral-contact">
-          <a href="tel:+17875013992" class="coral-btn coral-btn-primary">📞 (787) 501-3992</a>
-          <a href="mailto:c.santiago@pronoiarealty.com" class="coral-btn coral-btn-secondary">✉ Send Email</a>
+  <!-- TESTIMONIAL -->
+  <section class="testimonial">
+    <div class="testimonial-inner">
+      <span class="quote-mark">"</span>
+      <p class="quote-text">Coral didn't just find us a house — she introduced us to the island. From the drone tour before we flew down, to the contractor she connected us with the week we closed, she made Puerto Rico feel like home before we'd even unpacked.</p>
+      <div class="quote-attr">
+        <div class="avatar">M</div>
+        <div class="who">
+          <div class="name">The Martinez Family</div>
+          <div class="loc">Relocated from Austin, TX → Dorado</div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
+
+  <!-- MEET CORAL SECTION -->
+  <section class="meet" id="meet-coral">
+    <div class="meet-inner">
+      <img class="meet-photo" src="https://raw.githubusercontent.com/Marauder67/Pronoia-Realty/main/IMG_2351.jpeg" alt="Coral Santiago">
+      <div class="meet-content">
+        <div class="kicker">Personally represented</div>
+        <h2>One broker. Every step.</h2>
+        <div class="role">Coral Santiago · Founder & Licensed Broker</div>
+        <p>Whether you're searching for a beachfront escape in Rincón, a luxury estate in Dorado, a metro condo in Condado, or navigating an Act 60 relocation — Coral personally guides every showing, offer, inspection, and closing.</p>
+        <p>No pass-offs to junior agents. No corporate scripts. Just a licensed broker who answers her phone, walks the streets around your target property, and treats your move as if it were her own.</p>
+        <div class="meet-actions">
+          <a href="tel:+17875013992" class="btn btn-primary">📞 (787) 501-3992</a>
+          <a href="mailto:c.santiago@pronoiarealty.com" class="btn btn-outline-dark">Send Email</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="cta-band">
+    <div class="cta-band-inner">
+      <div class="kicker">Ready when you are</div>
+      <h2>Start the conversation, <em>on your terms</em>.</h2>
+      <p>Whether you're a year away or ready this month, Coral will meet you where you are. No pressure, no hard sell — just an honest first conversation about what island life could look like for you.</p>
+      <div class="cta-band-btns">
+        <button class="btn btn-gold" onclick="showTab('advisory')">Book a Consultation</button>
+        <button class="btn btn-outline-light" onclick="showTab('scouting')">Request a Drone Tour</button>
+      </div>
+    </div>
+  </section>
 
 </div><!-- end home tab -->
 
-<!-- ══ DRONE & SCOUTING TAB ══ -->
-<div class="tab-content" id="content-scouting">
-  <div class="tab-page">
-    <div class="tab-page-head">
-      <div class="eyebrow">Off-Island Buyer Service</div>
-      <h1>Neighborhood Flyovers &<br>Custom Scouting</h1>
-      <p>Can't fly down in person? We provide 4K aerial drone flyovers, street walk-throughs, demographic profiles, local dining reviews, and honest neighborhood assessments — before you make an offer.</p>
+<!-- ═════════════════════ BUYERS TAB ═════════════════════ -->
+<div class="tab-content" id="content-buyers">
+  <section class="tab-hero">
+    <div class="tab-hero-inner">
+      <div class="kicker">For Buyers</div>
+      <h1>The kind of representation<br>that <em>protects your move</em>.</h1>
+      <p>You deserve a licensed broker who works only for you — not the seller, not the listing, not the deal. From your first phone call to the final signature, Coral advocates for your interests, your timeline, and your peace of mind.</p>
     </div>
-    <div class="feature-grid-3">
-      <div class="feature-card"><span class="feature-card-icon">🚁</span><h3>4K Aerial Drone Scans</h3><p>View coastline proximity, surrounding lot conditions, roof integrity, and neighborhood elevation from above. We capture every angle so you see what photos can't show.</p></div>
-      <div class="feature-card"><span class="feature-card-icon">🧭</span><h3>Local Vibe & Demographics</h3><p>Get authentic breakdowns on noise levels, nearby restaurants, school access, safety ratings, and community culture — straight from someone who lives and works there.</p></div>
-      <div class="feature-card"><span class="feature-card-icon">📷</span><h3>Matterport 3D Walkthroughs</h3><p>Virtually walk through home interiors with room-by-room digital twin scans. Measure spaces, inspect finishes, and feel at home before stepping on a plane.</p></div>
-      <div class="feature-card"><span class="feature-card-icon">🍽️</span><h3>Neighborhood Walk & Review</h3><p>We walk the streets around your target property and give you an honest, on-the-ground account — coffee shops, noise, parking, flood zones, and community feel.</p></div>
-      <div class="feature-card"><span class="feature-card-icon">🌊</span><h3>Beach & Water Access Report</h3><p>Detailed assessment of actual beach access, water quality, coastal erosion risk, and seasonal conditions for any oceanfront or near-water property.</p></div>
-      <div class="feature-card"><span class="feature-card-icon">📋</span><h3>Full Scouting Package</h3><p>Combine all of the above into a comprehensive property and neighborhood report delivered within 5 business days — your complete picture before you commit.</p></div>
+  </section>
+  <div class="tab-body">
+    <div class="feature-grid">
+      <div class="feature-card"><div class="icon">🤝</div><h3>Exclusive Buyer Representation</h3><p>You get a dedicated advocate whose only allegiance is to you. Every negotiation, disclosure review, and contract clause is protected end-to-end.</p></div>
+      <div class="feature-card"><div class="icon">🎥</div><h3>Drone & Video Tours Pre-Offer</h3><p>Can't fly in? Coral personally captures 4K aerial and street-level walkthroughs so you see every angle before writing an offer.</p></div>
+      <div class="feature-card"><div class="icon">🇵🇷</div><h3>Act 60 Buyer Navigation</h3><p>From decree qualification through choosing the right municipality and residence, Coral aligns your purchase with your tax and compliance strategy.</p></div>
+      <div class="feature-card"><div class="icon">💰</div><h3>Financing & Loan Connections</h3><p>Direct introductions to trusted mortgage specialists, private lenders, and local banks who understand Puerto Rico's real estate quirks.</p></div>
+      <div class="feature-card"><div class="icon">🔑</div><h3>Landing Rentals First</h3><p>Try neighborhoods before you buy. Coral secures long-term leases or curated short stays so you can live like a local before you commit.</p></div>
+      <div class="feature-card"><div class="icon">🛠️</div><h3>Inspection & Trade Network</h3><p>Full access to Coral's vetted network of inspectors, plumbers, electricians, and contractors — hand-picked, not lifted from Google.</p></div>
+      <div class="feature-card"><div class="icon">📋</div><h3>Permitting & Legal Guidance</h3><p>Introductions to attorneys and permitting specialists who understand PR's rhythm — for renovations, additions, or new builds.</p></div>
+      <div class="feature-card"><div class="icon">🛋️</div><h3>Post-Close Concierge</h3><p>Interior designers, furniture sourcing, staging, utility setup, community integration — the move-in support most brokers don't offer.</p></div>
+      <div class="feature-card"><div class="icon">🌐</div><h3>Cultural Integration</h3><p>Coral personally introduces clients to local community groups, expat networks, and neighborhood connections. You arrive with people already waiting.</p></div>
     </div>
-    <div class="cta-banner">
-      <h2>Ready to Scout Your Future Home?</h2>
-      <p>Tell us which property or neighborhood you'd like explored and we'll put together a custom scouting package.</p>
-      <div class="cta-banner-btns">
-        <a href="mailto:c.santiago@pronoiarealty.com?subject=Drone%20Scouting%20Request" class="cta-btn-gold">Request a Drone Tour</a>
-        <a href="tel:+17875013992" class="cta-btn-outline">📞 Call Coral Directly</a>
+    <div class="form-card">
+      <div class="kicker" style="text-align:center;display:block;">Buyer inquiry</div>
+      <h2>Start a <em>no-pressure</em> conversation</h2>
+      <p>Tell Coral what you're looking for — she'll respond within 24 hours.</p>
+      <div class="form-success" id="buyer-success">
+        <div class="check">✓</div>
+        <div class="title">Message received</div>
+        <div class="sub">Coral will be in touch within 24 hours.</div>
       </div>
-    </div>
-  </div>
-</div>
-
-<!-- ══ ADVISORY TAB ══ -->
-<div class="tab-content" id="content-advisory">
-  <div class="tab-page">
-    <div class="tab-page-head">
-      <div class="eyebrow">Full-Service Island Advisory</div>
-      <h1>Your Complete Relocation<br>& Advisory Partner</h1>
-      <p>Guidance for first-time buyers, Act 60 decree holders, financing connections, contractor referrals, and complete relocation coordination — all under one trusted roof.</p>
-    </div>
-    <div class="advisory-grid">
-      <div class="advisory-card"><span class="advisory-card-icon">🇵🇷</span><h3>Act 60 Tax Incentive Relocation</h3><p>Navigating Puerto Rico's Act 60 incentive program requires local expertise. Coral provides bilingual administrative and logistical support to make your island tax transition smooth and stress-free — from decree application referrals to finding your qualifying residence.</p></div>
-      <div class="advisory-card"><span class="advisory-card-icon">💰</span><h3>First-Time Homebuyers & Financing</h3><p>Island lending can be complex. We connect you directly with trusted mortgage specialists, private financing options, and local banks who understand Puerto Rico's unique real estate market — making homeownership smooth and achievable for first-timers.</p></div>
-      <div class="advisory-card"><span class="advisory-card-icon">🛠️</span><h3>Contractor & Trade Referral Network</h3><p>Gain instant access to our hand-picked network of plumbers, electricians, masons, carpenters, painters, and tile specialists. We can coordinate and oversee renovation work while you settle in from the mainland.</p></div>
-      <div class="advisory-card"><span class="advisory-card-icon">🔑</span><h3>Landing Leases & Temporary Housing</h3><p>Before committing to a purchase, experience the neighborhood. We help secure long-term leases or curated short-term stays so you can live like a local, test your commute, and make a confident buying decision.</p></div>
-      <div class="advisory-card"><span class="advisory-card-icon">📋</span><h3>Permitting & Legal Navigation</h3><p>Puerto Rico's permitting process has its own rhythm. We connect you with experienced local attorneys and permitting specialists to ensure your renovations, additions, and new builds are properly documented and approved.</p></div>
-      <div class="advisory-card"><span class="advisory-card-icon">🌐</span><h3>Cultural & Community Integration</h3><p>Moving to an island is a lifestyle shift. Coral personally introduces clients to local community groups, expat networks, island events, and neighborhood connections — helping you feel at home from day one.</p></div>
-    </div>
-    <div class="cta-banner" style="text-align:left;padding:2.5rem;">
-      <h2 style="text-align:center;margin-bottom:0.5rem;">Ready to Start Your Island Journey?</h2>
-      <p style="text-align:center;margin-bottom:2rem;">Send Coral a message and she will be in touch shortly.</p>
-      <div id="fs-success" style="display:none;background:#F0FDF4;border:1px solid #86EFAC;border-radius:8px;padding:1.2rem;text-align:center;margin-bottom:1rem;">
-        <div style="font-size:1.5rem;margin-bottom:0.3rem;">&#10003;</div>
-        <div style="font-family:'Poppins',sans-serif;font-weight:600;color:#166534;">Message sent!</div>
-        <div style="font-size:0.8rem;color:#15803D;margin-top:0.2rem;">Coral will be in touch shortly.</div>
-      </div>
-      <form id="contactForm" action="https://formspree.io/f/mdenwepa" method="POST" style="max-width:640px;margin:0 auto;">
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
-          <div>
-            <label style="display:block;font-size:0.65rem;font-family:'Poppins',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.7);margin-bottom:0.35rem;">Full Name</label>
-            <input type="text" name="name" placeholder="Your Name" required style="width:100%;padding:0.65rem 0.9rem;border:1px solid rgba(255,255,255,0.2);border-radius:6px;font-size:0.88rem;color:#1A1D20;background:#fff;outline:none;">
-          </div>
-          <div>
-            <label style="display:block;font-size:0.65rem;font-family:'Poppins',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.7);margin-bottom:0.35rem;">Email Address</label>
-            <input type="email" name="email" placeholder="email@example.com" required style="width:100%;padding:0.65rem 0.9rem;border:1px solid rgba(255,255,255,0.2);border-radius:6px;font-size:0.88rem;color:#1A1D20;background:#fff;outline:none;">
-          </div>
+      <form id="buyerForm" action="https://formspree.io/f/mdenwepa" method="POST">
+        <input type="hidden" name="form_type" value="Buyer Inquiry">
+        <div class="fld-row">
+          <div class="fld"><label>Full Name</label><input type="text" name="name" placeholder="Your name" required></div>
+          <div class="fld"><label>Email</label><input type="email" name="email" placeholder="you@example.com" required></div>
         </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
-          <div>
-            <label style="display:block;font-size:0.65rem;font-family:'Poppins',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.7);margin-bottom:0.35rem;">Phone Number</label>
-            <input type="tel" name="phone" placeholder="(787) 000-0000" style="width:100%;padding:0.65rem 0.9rem;border:1px solid rgba(255,255,255,0.2);border-radius:6px;font-size:0.88rem;color:#1A1D20;background:#fff;outline:none;">
-          </div>
-          <div>
-            <label style="display:block;font-size:0.65rem;font-family:'Poppins',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.7);margin-bottom:0.35rem;">Service Needed</label>
-            <select name="service" style="width:100%;padding:0.65rem 0.9rem;border:1px solid rgba(255,255,255,0.2);border-radius:6px;font-size:0.88rem;color:#1A1D20;background:#fff;outline:none;">
-              <option>Buyer Representation</option>
-              <option>Act 60 Relocation Support</option>
-              <option>First-Time Homebuyer Guidance</option>
-              <option>Drone Scouting &amp; Neighborhood Report</option>
-              <option>Contractor Referral &amp; Project Oversight</option>
-              <option>Full Relocation &amp; Concierge Package</option>
+        <div class="fld-row">
+          <div class="fld"><label>Phone</label><input type="tel" name="phone" placeholder="(787) 000-0000"></div>
+          <div class="fld"><label>Timeline</label>
+            <select name="timeline">
+              <option>Ready now</option>
+              <option>Next 3 months</option>
+              <option>Next 6-12 months</option>
+              <option>Just exploring</option>
             </select>
           </div>
         </div>
-        <div style="margin-bottom:1rem;">
-          <label style="display:block;font-size:0.65rem;font-family:'Poppins',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.7);margin-bottom:0.35rem;">Message</label>
-          <textarea name="message" rows="3" placeholder="Tell us about your goals, timeline, or questions..." style="width:100%;padding:0.65rem 0.9rem;border:1px solid rgba(255,255,255,0.2);border-radius:6px;font-size:0.88rem;color:#1A1D20;background:#fff;outline:none;resize:vertical;"></textarea>
+        <div class="fld"><label>What are you looking for?</label>
+          <textarea name="message" rows="4" placeholder="Neighborhoods, budget, must-haves, timeline, Act 60 status, or anything else Coral should know..."></textarea>
         </div>
-        <button type="submit" id="fs-btn" style="width:100%;background:var(--gold);color:#fff;border:none;padding:0.9rem;border-radius:6px;font-family:'Poppins',sans-serif;font-size:0.9rem;font-weight:600;cursor:pointer;transition:background 0.2s;">Send Message to Coral</button>
-        <div style="text-align:center;font-size:0.75rem;color:rgba(255,255,255,0.55);margin-top:0.8rem;">Or call directly at <a href="tel:+17875013992" style="color:var(--gold);font-weight:600;">(787) 501-3992</a></div>
+        <button type="submit" class="form-submit" id="buyer-btn">Send to Coral</button>
+        <div class="form-tel">Or call directly at <a href="tel:+17875013992">(787) 501-3992</a></div>
       </form>
     </div>
   </div>
 </div>
 
-<!-- MODAL -->
+<!-- ═════════════════════ SELLERS TAB ═════════════════════ -->
+<div class="tab-content" id="content-sellers">
+  <section class="tab-hero">
+    <div class="tab-hero-inner">
+      <div class="kicker">For Sellers</div>
+      <h1>Maximize your home's value<br>with <em>white-glove care</em>.</h1>
+      <p>We don't just put a sign in your yard. We craft immersive Matterport 3D virtual tours, 4K aerial drone showcases, and targeted campaigns that connect your home with qualified local buyers and off-island Act 60 relocators actively searching the island.</p>
+    </div>
+  </section>
+  <div class="tab-body">
+    <div class="feature-grid">
+      <div class="feature-card"><div class="icon">📷</div><h3>Full Media Package</h3><p>Every exclusive listing includes complimentary Matterport 3D digital twins, high-resolution interior photography, and 4K drone property overviews.</p></div>
+      <div class="feature-card"><div class="icon">📈</div><h3>Dual-Market Exposure</h3><p>Reach established local buyers and qualified mainland Act 60 relocators simultaneously through Stellar MLS, targeted social, and our private buyer network.</p></div>
+      <div class="feature-card"><div class="icon">🛠️</div><h3>Pre-Sale Property Prep</h3><p>Access our vetted trade network for strategic pre-sale improvements — fresh paint, tile work, electrical upgrades — that meaningfully lift your final sales price.</p></div>
+      <div class="feature-card"><div class="icon">💬</div><h3>Bilingual Representation</h3><p>Fluent in English and Spanish, Coral ensures nothing is lost in translation — whether with local buyers, mainland investors, or international applicants.</p></div>
+      <div class="feature-card"><div class="icon">📋</div><h3>Pricing & Market Analysis</h3><p>Receive a comprehensive, data-backed comparative market analysis grounded in current Stellar MLS activity — so your property launches at the right price.</p></div>
+      <div class="feature-card"><div class="icon">🤝</div><h3>Seller-First Negotiation</h3><p>We protect your interests at every step — from offer review and contingency management to appraisal disputes and closing coordination.</p></div>
+      <div class="feature-card"><div class="icon">🛋️</div><h3>Staging & Interior Design</h3><p>Access vetted local interior designers and furniture sourcing to stage your home for maximum buyer impact.</p></div>
+      <div class="feature-card"><div class="icon">🎥</div><h3>Drone Property Showcases</h3><p>4K aerial coastal and lot flyovers that show what interior photos never can — the setting, the light, the surrounding land.</p></div>
+      <div class="feature-card"><div class="icon">🌐</div><h3>Off-Island Buyer Reach</h3><p>Coral speaks directly to Act 60 relocators and mainland investors in the language they trust — long before they book a flight.</p></div>
+    </div>
+    <div class="form-card">
+      <div class="kicker" style="text-align:center;display:block;">Home valuation</div>
+      <h2>Request a <em>complimentary</em> valuation</h2>
+      <p>Receive a professional, data-backed comparative market assessment for your Puerto Rico property.</p>
+      <div class="form-success" id="seller-success">
+        <div class="check">✓</div>
+        <div class="title">Request received</div>
+        <div class="sub">Coral will be in touch within 24 hours.</div>
+      </div>
+      <form id="sellerForm" action="https://formspree.io/f/mdenwepa" method="POST">
+        <input type="hidden" name="form_type" value="Seller Valuation Request">
+        <div class="fld-row">
+          <div class="fld"><label>Full Name</label><input type="text" name="name" placeholder="Your name" required></div>
+          <div class="fld"><label>Phone</label><input type="tel" name="phone" placeholder="(787) 000-0000"></div>
+        </div>
+        <div class="fld"><label>Property Address & Municipality</label>
+          <input type="text" name="property_address" placeholder="Street Address, City, Zip">
+        </div>
+        <div class="fld"><label>Additional Notes</label>
+          <textarea name="message" rows="3" placeholder="Property type, size, condition, or anything else Coral should know..."></textarea>
+        </div>
+        <button type="submit" class="form-submit" id="seller-btn">Request Professional Valuation</button>
+        <div class="form-tel">Or call Coral directly at <a href="tel:+17875013992">(787) 501-3992</a></div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ═════════════════════ ADVISORY TAB ═════════════════════ -->
+<div class="tab-content" id="content-advisory">
+  <section class="tab-hero">
+    <div class="tab-hero-inner">
+      <div class="kicker">Relocation & Advisory</div>
+      <h1>Your complete<br><em>island advisory</em> partner.</h1>
+      <p>Guidance for first-time buyers, Act 60 decree holders, financing connections, contractor referrals, and complete relocation coordination — all under one trusted roof.</p>
+    </div>
+  </section>
+  <div class="tab-body">
+    <div class="feature-grid">
+      <div class="feature-card"><div class="icon">🇵🇷</div><h3>Act 60 Tax Incentive Relocation</h3><p>Navigating Puerto Rico's Act 60 requires local expertise. Coral provides bilingual administrative and logistical support — from decree application referrals to finding your qualifying residence.</p></div>
+      <div class="feature-card"><div class="icon">💰</div><h3>First-Time Homebuyers & Financing</h3><p>Island lending can be complex. Direct connections to trusted mortgage specialists, private financing options, and local banks who understand Puerto Rico's market.</p></div>
+      <div class="feature-card"><div class="icon">🛠️</div><h3>Contractor & Trade Network</h3><p>Instant access to hand-picked plumbers, electricians, masons, carpenters, painters, and tile specialists. Coordinated and overseen while you settle in from the mainland.</p></div>
+      <div class="feature-card"><div class="icon">🔑</div><h3>Landing Leases & Temp Housing</h3><p>Before committing, experience the neighborhood. Long-term leases or curated short stays so you can live like a local and make a confident buying decision.</p></div>
+      <div class="feature-card"><div class="icon">📋</div><h3>Permitting & Legal Navigation</h3><p>Puerto Rico's permitting has its own rhythm. Connections to experienced local attorneys and permitting specialists for renovations, additions, and new builds.</p></div>
+      <div class="feature-card"><div class="icon">🌐</div><h3>Community Integration</h3><p>Moving to an island is a lifestyle shift. Coral personally introduces you to community groups, expat networks, and neighborhood connections — day one.</p></div>
+      <div class="feature-card"><div class="icon">🛋️</div><h3>Interior Design & Furnishings</h3><p>From initial layout to full furniture sourcing, decor curation, and move-in staging — connected with designers who understand humidity, tropical light, and island living.</p></div>
+      <div class="feature-card"><div class="icon">🚁</div><h3>Neighborhood Scouting</h3><p>Coral personally walks target neighborhoods, records honest video, and delivers a real-time on-the-ground read — before you commit a dollar.</p></div>
+      <div class="feature-card"><div class="icon">🤝</div><h3>Ongoing Advisory</h3><p>After closing, Coral remains your island point-of-contact — for referrals, questions, and community connection well beyond the transaction.</p></div>
+    </div>
+    <div class="form-card">
+      <div class="kicker" style="text-align:center;display:block;">Start your journey</div>
+      <h2>Ready to begin your <em>island journey</em>?</h2>
+      <p>Send Coral a message and she'll be in touch shortly.</p>
+      <div class="form-success" id="fs-success">
+        <div class="check">✓</div>
+        <div class="title">Message sent</div>
+        <div class="sub">Coral will be in touch shortly.</div>
+      </div>
+      <form id="contactForm" action="https://formspree.io/f/mdenwepa" method="POST">
+        <div class="fld-row">
+          <div class="fld"><label>Full Name</label><input type="text" name="name" placeholder="Your name" required></div>
+          <div class="fld"><label>Email</label><input type="email" name="email" placeholder="you@example.com" required></div>
+        </div>
+        <div class="fld-row">
+          <div class="fld"><label>Phone</label><input type="tel" name="phone" placeholder="(787) 000-0000"></div>
+          <div class="fld"><label>Service Needed</label>
+            <select name="service">
+              <option>Buyer Representation</option>
+              <option>Seller Representation</option>
+              <option>Act 60 Relocation Support</option>
+              <option>First-Time Homebuyer Guidance</option>
+              <option>Drone Scouting & Neighborhood Report</option>
+              <option>Contractor Referral & Project Oversight</option>
+              <option>Full Relocation & Concierge Package</option>
+            </select>
+          </div>
+        </div>
+        <div class="fld"><label>Message</label>
+          <textarea name="message" rows="3" placeholder="Tell us about your goals, timeline, or questions..."></textarea>
+        </div>
+        <button type="submit" class="form-submit" id="fs-btn">Send Message to Coral</button>
+        <div class="form-tel">Or call directly at <a href="tel:+17875013992">(787) 501-3992</a></div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ═════════════════════ SCOUTING TAB ═════════════════════ -->
+<div class="tab-content" id="content-scouting">
+  <section class="tab-hero">
+    <div class="tab-hero-inner">
+      <div class="kicker">Off-Island Buyer Service</div>
+      <h1>Neighborhood flyovers<br>& <em>custom scouting</em>.</h1>
+      <p>Can't fly down in person? We provide 4K aerial drone flyovers, street walk-throughs, demographic profiles, local dining reviews, and honest neighborhood assessments — before you make an offer.</p>
+    </div>
+  </section>
+  <div class="tab-body">
+    <div class="feature-grid">
+      <div class="feature-card"><div class="icon">🚁</div><h3>4K Aerial Drone Scans</h3><p>View coastline proximity, surrounding lot conditions, roof integrity, and neighborhood elevation from above. Every angle photos can't show.</p></div>
+      <div class="feature-card"><div class="icon">🧭</div><h3>Local Vibe & Demographics</h3><p>Authentic breakdowns on noise, restaurants, school access, safety, and community culture — straight from someone who lives and works there.</p></div>
+      <div class="feature-card"><div class="icon">📷</div><h3>Matterport 3D Walkthroughs</h3><p>Virtually walk through interiors with room-by-room digital twin scans. Measure spaces and inspect finishes before stepping on a plane.</p></div>
+      <div class="feature-card"><div class="icon">🍽️</div><h3>Neighborhood Walk & Review</h3><p>Coral walks the streets around your target property and gives you an honest, on-the-ground account — coffee shops, noise, parking, community feel.</p></div>
+      <div class="feature-card"><div class="icon">🌊</div><h3>Beach & Water Access Report</h3><p>Detailed assessment of actual beach access, water quality, coastal erosion risk, and seasonal conditions for oceanfront properties.</p></div>
+      <div class="feature-card"><div class="icon">📋</div><h3>Full Scouting Package</h3><p>Combine all of the above into a comprehensive property and neighborhood report delivered within 5 business days.</p></div>
+    </div>
+    <div style="text-align:center; padding: 2rem 0;">
+      <a href="mailto:c.santiago@pronoiarealty.com?subject=Drone%20Scouting%20Request" class="btn btn-primary">Request a Drone Tour</a>
+      <a href="tel:+17875013992" class="btn btn-outline-dark" style="margin-left:0.5rem;">📞 Call Coral Directly</a>
+    </div>
+  </div>
+</div>
+
+<!-- ═════ MODAL ═════ -->
 <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
   <div class="modal" id="modalContent">
     <button class="modal-close" onclick="closeModalDirect()">✕</button>
@@ -648,37 +1555,44 @@
       <div class="modal-desc" id="mDesc"></div>
       <div class="modal-details-grid" id="mDetails"></div>
       <div class="modal-actions">
-        <a class="btn-primary" id="mShowing" href="mailto:c.santiago@pronoiarealty.com">Schedule a Showing</a>
-        <a class="btn-secondary" id="mInfo" href="mailto:c.santiago@pronoiarealty.com">Request Info</a>
+        <a class="btn btn-primary" id="mShowing" href="mailto:c.santiago@pronoiarealty.com">Schedule a Showing</a>
+        <a class="btn btn-outline-dark" id="mInfo" href="mailto:c.santiago@pronoiarealty.com">Request Info</a>
       </div>
       <div class="modal-call">or call Coral directly at <a href="tel:+17875013992">(787) 501-3992</a></div>
     </div>
   </div>
 </div>
 
-<!-- FOOTER -->
+<!-- ═════ FOOTER ═════ -->
 <footer>
   <div class="footer-inner">
     <div>
       <div class="footer-logo-wrap">
         <img src="https://raw.githubusercontent.com/Marauder67/Pronoia-Realty/main/%20Pronoia%20Logo%20NO%20SLOGAN%20Fondo%20Transparente%20.png" alt="Pronoia Realty">
-        <div class="footer-brand">PRONOIA <span>REALTY</span></div>
+        <div class="footer-brand">Pronoia<span>Realty · Puerto Rico</span></div>
       </div>
-      <div class="footer-tagline">Boutique buyer representation & concierge relocation across Puerto Rico. Guided by integrity, native expertise, and trusted community connections.</div>
+      <div class="footer-tagline">Boutique buyer &amp; seller representation across Puerto Rico. Guided by integrity, native expertise, and trusted community connections.</div>
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="Facebook">FB</a>
+        <a href="#" aria-label="LinkedIn">IN</a>
+      </div>
     </div>
     <div class="footer-col">
       <h4>Navigation</h4>
-      <a onclick="showTab('home')">Properties & MLS Search</a>
+      <a onclick="showTab('home')">Home</a>
+      <a onclick="showTab('buyers')">For Buyers</a>
+      <a onclick="showTab('sellers')">For Sellers</a>
       <a onclick="showTab('advisory')">Relocation & Advisory</a>
       <a onclick="showTab('scouting')">Drone & Scouting</a>
     </div>
     <div class="footer-col">
       <h4>Focus Areas</h4>
-      <a href="#">Dorado & North Coast</a>
-      <a href="#">Aguadilla & West</a>
-      <a href="#">Fajardo & Marinas</a>
-      <a href="#">San Juan Metro</a>
-      <a href="#">Mountain Highlands</a>
+      <a>Dorado & North Coast</a>
+      <a>Rincón & West</a>
+      <a>Fajardo & Marinas</a>
+      <a>San Juan Metro</a>
+      <a>Mountain Highlands</a>
     </div>
     <div class="footer-col">
       <h4>Contact Coral</h4>
@@ -689,22 +1603,52 @@
           <div class="footer-coral-title">Licensed Real Estate Broker</div>
         </div>
       </div>
-      <div class="footer-contact">📞 <a href="tel:+17875013992" style="color:rgba(255,255,255,0.5);text-decoration:none;">(787) 501-3992</a></div>
-      <div class="footer-contact">✉ <a href="mailto:c.santiago@pronoiarealty.com" style="color:rgba(255,255,255,0.5);text-decoration:none;">c.santiago@pronoiarealty.com</a></div>
+      <div class="footer-contact-item">📞 <a href="tel:+17875013992">(787) 501-3992</a></div>
+      <div class="footer-contact-item">✉ <a href="mailto:c.santiago@pronoiarealty.com">c.santiago@pronoiarealty.com</a></div>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 Pronoia Realty · All rights reserved · Data provided by <strong style="color:rgba(255,255,255,0.6)">Stellar MLS</strong></span>
-    <div><a href="#">Privacy Policy</a><a href="#">Equal Housing</a></div>
+    <span>© 2026 Pronoia Realty · All rights reserved · Data provided by <strong style="color:rgba(255,255,255,0.7)">Stellar MLS</strong></span>
+    <div><a href="#">Privacy Policy</a><a href="#">Equal Housing Opportunity</a></div>
   </div>
 </footer>
 
 <script>
-const PHOTOS=["https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=600&q=70","https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=70","https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&q=70","https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=600&q=70","https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?auto=format&fit=crop&w=600&q=70","https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=70","https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=600&q=70","https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=70","https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=600&q=70"];
-const LISTINGS=[{ListingKey:"PR-240001",ListingId:"PR24001",ListPrice:1850000,PropertyType:"Single Family",BedroomsTotal:5,BathroomsTotalInteger:4,LivingArea:4800,LotSizeAcres:0.85,City:"Dorado",StreetNumber:"18",StreetName:"Calle Palma Real",SubdivisionName:"Dorado Beach Resort",PublicRemarks:"Stunning resort-style estate within the prestigious Dorado Beach community. This fully renovated home features soaring ceilings, a chef's kitchen, and a wraparound terrace overlooking a private pool and manicured gardens. Walk to the beach, golf courses, and the Ritz-Carlton Reserve.",YearBuilt:2018,GarageSpaces:2,StandardStatus:"Active",DaysOnMarket:14,features:["Pool","Ocean View","Gated Community","Beachfront"],pricePerSqft:385,emoji:"🏡"},{ListingKey:"PR-240002",ListingId:"PR24002",ListPrice:425000,PropertyType:"Condo / Apartment",BedroomsTotal:2,BathroomsTotalInteger:2,LivingArea:1240,LotSizeAcres:null,City:"San Juan",StreetNumber:"1055",StreetName:"Ave Ashford",SubdivisionName:"Condado Lagoon",PublicRemarks:"Modern condo in the heart of Condado with spectacular lagoon views. Open floor plan, floor-to-ceiling windows, updated kitchen with quartz countertops, and a private balcony. Building amenities include pool, gym, and 24-hour concierge. Steps to restaurants, boutiques, and the beach.",YearBuilt:2015,GarageSpaces:1,StandardStatus:"Active",DaysOnMarket:28,features:["Pool","Ocean View"],pricePerSqft:342,emoji:"🏢"},{ListingKey:"PR-240003",ListingId:"PR24003",ListPrice:2750000,PropertyType:"Single Family",BedroomsTotal:6,BathroomsTotalInteger:6,LivingArea:7200,LotSizeAcres:1.2,City:"Guaynabo",StreetNumber:"34",StreetName:"Camino del Rey",SubdivisionName:"Bairoa Park",PublicRemarks:"Grand estate on a private acre in sought-after Guaynabo. Six en-suite bedrooms, a home theatre, wine cellar, full outdoor kitchen, and a resort pool with waterfall. Gated entrance, generator, and cistern. Ideal for the discerning buyer seeking privacy and luxury without compromise.",YearBuilt:2012,GarageSpaces:3,StandardStatus:"Active",DaysOnMarket:45,features:["Pool","Gated Community","Mountain View"],pricePerSqft:381,emoji:"🏰"},{ListingKey:"PR-240004",ListingId:"PR24004",ListPrice:320000,PropertyType:"Single Family",BedroomsTotal:3,BathroomsTotalInteger:2,LivingArea:1850,LotSizeAcres:0.22,City:"Bayamón",StreetNumber:"77",StreetName:"Calle Cedro",SubdivisionName:"Urb. Villa del Rey",PublicRemarks:"Well-maintained family home in a quiet, established neighborhood. Tile floors throughout, updated bathrooms, covered carport, and a large backyard with mature fruit trees. Minutes from shopping centers, schools, and the expressway. Solid concrete construction with recent roof.",YearBuilt:1998,GarageSpaces:1,StandardStatus:"Active",DaysOnMarket:62,features:[],pricePerSqft:173,emoji:"🏠"},{ListingKey:"PR-240005",ListingId:"PR24005",ListPrice:895000,PropertyType:"Single Family",BedroomsTotal:4,BathroomsTotalInteger:3,LivingArea:3100,LotSizeAcres:0.35,City:"Rincón",StreetNumber:"88",StreetName:"Calle Sandy Beach",SubdivisionName:"Puntas",PublicRemarks:"Surfer's paradise meets luxury living. This oceanfront property in Rincón's coveted Puntas area boasts panoramic Caribbean sunsets, a rooftop deck, three en-suite bedrooms, and an income-generating casita. Fully furnished and turnkey. Steps from Sandy Beach and world-class surf breaks.",YearBuilt:2019,GarageSpaces:0,StandardStatus:"Active",DaysOnMarket:9,features:["Ocean View","Beachfront","Pool"],pricePerSqft:288,emoji:"🌊"},{ListingKey:"PR-240006",ListingId:"PR24006",ListPrice:185000,PropertyType:"Land",BedroomsTotal:0,BathroomsTotalInteger:0,LivingArea:0,LotSizeAcres:2.4,City:"Isabela",StreetNumber:"",StreetName:"PR-4466 Km 1.2",SubdivisionName:"",PublicRemarks:"Exceptional 2.4-acre parcel in Isabela with unobstructed ocean views from every angle. Flat buildable terrain with access road, utilities at street, and preliminary topographic study available. Ideal for a private estate, boutique resort, or vacation rental development. Just minutes from Jobos Beach.",YearBuilt:null,GarageSpaces:0,StandardStatus:"Active",DaysOnMarket:103,features:["Ocean View"],pricePerSqft:0,emoji:"🌿"},{ListingKey:"PR-240007",ListingId:"PR24007",ListPrice:560000,PropertyType:"Condo / Apartment",BedroomsTotal:3,BathroomsTotalInteger:3,LivingArea:1890,LotSizeAcres:null,City:"Carolina",StreetNumber:"1 Ave",StreetName:"Los Gobernadores",SubdivisionName:"El Conquistador Resort Residences",PublicRemarks:"Rare three-bedroom unit at the exclusive El Conquistador resort community in Fajardo. Furnished with high-end finishes, private terrace, and access to five pools, marina, private island ferry, golf, and spa. Robust rental income history. Owner financing considered.",YearBuilt:2008,GarageSpaces:1,StandardStatus:"Active",DaysOnMarket:37,features:["Pool","Ocean View","Gated Community"],pricePerSqft:296,emoji:"🏖️"},{ListingKey:"PR-240008",ListingId:"PR24008",ListPrice:1200000,PropertyType:"Single Family",BedroomsTotal:5,BathroomsTotalInteger:4,LivingArea:4100,LotSizeAcres:0.6,City:"Ponce",StreetNumber:"200",StreetName:"Calle Luna",SubdivisionName:"El Vigía",PublicRemarks:"Architectural masterpiece perched on a hilltop in El Vigía with sweeping views of the southern coast and the Caribbean. Custom stone construction, vaulted ceilings, tropical courtyard with fountain, infinity pool, and a two-bedroom guest quarters. An extraordinary property in Puerto Rico's second city.",YearBuilt:2003,GarageSpaces:2,StandardStatus:"Active",DaysOnMarket:78,features:["Pool","Ocean View","Mountain View"],pricePerSqft:292,emoji:"🏛️"},{ListingKey:"PR-240009",ListingId:"PR24009",ListPrice:275000,PropertyType:"Townhouse",BedroomsTotal:3,BathroomsTotalInteger:2,LivingArea:1680,LotSizeAcres:0.08,City:"Guaynabo",StreetNumber:"12",StreetName:"Calle Roble",SubdivisionName:"Urb. Montehiedra",PublicRemarks:"Move-in ready townhouse in gated Montehiedra. Three bedrooms, updated kitchen, private patio, and two assigned parking spaces. Community pool and playground. Excellent location minutes from Las Catalinas mall, top schools, and major highways.",YearBuilt:2005,GarageSpaces:0,StandardStatus:"Active",DaysOnMarket:19,features:["Pool","Gated Community"],pricePerSqft:163,emoji:"🏘️"},{ListingKey:"PR-240010",ListingId:"PR24010",ListPrice:3900000,PropertyType:"Single Family",BedroomsTotal:7,BathroomsTotalInteger:7,LivingArea:9500,LotSizeAcres:3.1,City:"Dorado",StreetNumber:"5",StreetName:"Camino Playa Dorado",SubdivisionName:"Dorado Beach East",PublicRemarks:"Iconic beachfront compound on three acres of private oceanfront in Dorado Beach East. Ten-thousand square foot main residence plus two guest houses, a private gym, screening room, tennis court, and 160 feet of direct beach access. One of Puerto Rico's most significant private estates.",YearBuilt:2021,GarageSpaces:4,StandardStatus:"Active",DaysOnMarket:5,features:["Pool","Ocean View","Gated Community","Beachfront"],pricePerSqft:410,emoji:"🌴"},{ListingKey:"PR-240011",ListingId:"PR24011",ListPrice:149000,PropertyType:"Condo / Apartment",BedroomsTotal:1,BathroomsTotalInteger:1,LivingArea:720,LotSizeAcres:null,City:"San Juan",StreetNumber:"350",StreetName:"Ave de Diego",SubdivisionName:"Urb. Puerto Nuevo",PublicRemarks:"Affordable studio apartment in a well-maintained building in Puerto Nuevo. Fully renovated interior with ceramic floors, modern kitchen, and split AC. Building includes laundry facility and parking. Great for a first home or investment rental property in a central San Juan location.",YearBuilt:1985,GarageSpaces:1,StandardStatus:"Active",DaysOnMarket:44,features:[],pricePerSqft:206,emoji:"🏢"},{ListingKey:"PR-240012",ListingId:"PR24012",ListPrice:680000,PropertyType:"Single Family",BedroomsTotal:4,BathroomsTotalInteger:3,LivingArea:2900,LotSizeAcres:0.45,City:"Humacao",StreetNumber:"40",StreetName:"Calle Palmas",SubdivisionName:"Palmas del Mar",PublicRemarks:"Resort lifestyle in prestigious Palmas del Mar. This beautifully landscaped home features an open kitchen, formal dining, a private pool, and a large deck with tropical garden views. Access to 20+ amenities including golf, tennis, marina, beach club, and equestrian center. 24-hour security.",YearBuilt:2000,GarageSpaces:2,StandardStatus:"Active",DaysOnMarket:55,features:["Pool","Gated Community","Ocean View"],pricePerSqft:234,emoji:"⛳"},{ListingKey:"PR-240013",ListingId:"PR24013",ListPrice:495000,PropertyType:"Single Family",BedroomsTotal:3,BathroomsTotalInteger:3,LivingArea:2200,LotSizeAcres:0.28,City:"Aguadilla",StreetNumber:"22",StreetName:"Calle Coral",SubdivisionName:"Urb. Borinquen Beach",PublicRemarks:"Contemporary beach home steps from Borinquen Beach and the former Ramey Air Force Base. Three full suites, a chef's kitchen, wrap-around terrace, and an oversized lot with room for a pool. Walking distance to the Golf Club, Crash Boat Beach, and Rafael Hernandez Airport.",YearBuilt:2016,GarageSpaces:1,StandardStatus:"Active",DaysOnMarket:31,features:["Ocean View","Beachfront"],pricePerSqft:225,emoji:"🏄"},{ListingKey:"PR-240014",ListingId:"PR24014",ListPrice:220000,PropertyType:"Single Family",BedroomsTotal:3,BathroomsTotalInteger:2,LivingArea:1450,LotSizeAcres:0.18,City:"Mayagüez",StreetNumber:"55",StreetName:"Calle Dr. Loyola",SubdivisionName:"Urb. Santa María",PublicRemarks:"Charming home in a quiet residential neighborhood near the University of Puerto Rico, Mayagüez campus. Renovated kitchen and baths, tile floors, enclosed garage, and a covered patio. Excellent value in the heart of Puerto Rico's west coast hub.",YearBuilt:1992,GarageSpaces:1,StandardStatus:"Active",DaysOnMarket:88,features:[],pricePerSqft:151,emoji:"🏠"},{ListingKey:"PR-240015",ListingId:"PR24015",ListPrice:1450000,PropertyType:"Multi-Family",BedroomsTotal:8,BathroomsTotalInteger:8,LivingArea:5600,LotSizeAcres:0.32,City:"San Juan",StreetNumber:"222",StreetName:"Calle Loíza",SubdivisionName:"Ocean Park",PublicRemarks:"Four-unit income property one block from Ocean Park beach. Each unit is 2BR/2BA, individually metered, fully renovated with high-end finishes, and currently rented with excellent rental history. Cap rate 6.8%. Ideal for an investor seeking strong cash flow in one of San Juan's most desirable neighborhoods.",YearBuilt:1974,GarageSpaces:4,StandardStatus:"Active",DaysOnMarket:22,features:["Ocean View","Beachfront"],pricePerSqft:258,emoji:"🏗️"},{ListingKey:"PR-240016",ListingId:"PR24016",ListPrice:750000,PropertyType:"Single Family",BedroomsTotal:4,BathroomsTotalInteger:3,LivingArea:3400,LotSizeAcres:5.0,City:"Jayuya",StreetNumber:"10",StreetName:"Ruta Panorámica",SubdivisionName:"",PublicRemarks:"Breathtaking mountain estate on five acres in Puerto Rico's highlands. Dramatic valley and cloud forest views, spring-fed stream, coffee plantation, and a fully self-sufficient property with solar, rainwater collection, and a generator. A true sanctuary for nature lovers and those seeking off-grid luxury.",YearBuilt:2010,GarageSpaces:2,StandardStatus:"Active",DaysOnMarket:67,features:["Mountain View"],pricePerSqft:220,emoji:"⛰️"},{ListingKey:"PR-240017",ListingId:"PR24017",ListPrice:385000,PropertyType:"Condo / Apartment",BedroomsTotal:2,BathroomsTotalInteger:2,LivingArea:1380,LotSizeAcres:null,City:"Fajardo",StreetNumber:"100",StreetName:"Calle Marina",SubdivisionName:"Isleta Marina",PublicRemarks:"Stunning marina-front condo at Isleta Marina with direct views of Fajardo's sailboat harbor and the islands of Culebra and Vieques on the horizon. Two full suites, an open-concept living area, and a large terrace perfect for watching the sunset. Boat slip available separately.",YearBuilt:2011,GarageSpaces:1,StandardStatus:"Active",DaysOnMarket:41,features:["Ocean View","Pool"],pricePerSqft:278,emoji:"⛵"},{ListingKey:"PR-240018",ListingId:"PR24018",ListPrice:580000,PropertyType:"Single Family",BedroomsTotal:4,BathroomsTotalInteger:3,LivingArea:2600,LotSizeAcres:0.3,City:"Carolina",StreetNumber:"8",StreetName:"Calle Flamboyan",SubdivisionName:"Urb. Nuevo San Juan",PublicRemarks:"Spacious family home in a prime Carolina location minutes from Luis Muñoz Marín International Airport and the beaches of Isla Verde. Updated throughout with a modern kitchen, quartz baths, and a heated pool. Gated entrance, two-car garage, and mature tropical landscaping.",YearBuilt:2001,GarageSpaces:2,StandardStatus:"Active",DaysOnMarket:16,features:["Pool","Gated Community"],pricePerSqft:223,emoji:"🌺"}];
+// ═════ SAMPLE LISTINGS DATA ═════
+const PHOTOS=[
+  "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=75",
+  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=75",
+  "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=75",
+  "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=800&q=75",
+  "https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?auto=format&fit=crop&w=800&q=75",
+  "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=75",
+  "https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=800&q=75",
+  "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=75",
+  "https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=800&q=75"
+];
+const LISTINGS=[
+  {ListingKey:"PR-240001",ListingId:"PR24001",ListPrice:1850000,PropertyType:"Single Family",BedroomsTotal:5,BathroomsTotalInteger:4,LivingArea:4800,LotSizeAcres:0.85,City:"Dorado",StreetNumber:"18",StreetName:"Calle Palma Real",SubdivisionName:"Dorado Beach Resort",PublicRemarks:"Stunning resort-style estate within the prestigious Dorado Beach community. Fully renovated with soaring ceilings, chef's kitchen, and wraparound terrace overlooking a private pool and manicured gardens. Walk to the beach, golf courses, and the Ritz-Carlton Reserve.",YearBuilt:2018,GarageSpaces:2,StandardStatus:"Active",DaysOnMarket:14,features:["Pool","Ocean View","Gated Community","Beachfront"],pricePerSqft:385,emoji:"🏡"},
+  {ListingKey:"PR-240002",ListingId:"PR24002",ListPrice:425000,PropertyType:"Condo / Apartment",BedroomsTotal:2,BathroomsTotalInteger:2,LivingArea:1240,LotSizeAcres:null,City:"San Juan",StreetNumber:"1055",StreetName:"Ave Ashford",SubdivisionName:"Condado Lagoon",PublicRemarks:"Modern condo in the heart of Condado with spectacular lagoon views. Open floor plan, floor-to-ceiling windows, updated kitchen with quartz countertops, and a private balcony. Pool, gym, and 24-hour concierge. Steps to restaurants and the beach.",YearBuilt:2015,GarageSpaces:1,StandardStatus:"Active",DaysOnMarket:28,features:["Pool","Ocean View"],pricePerSqft:342,emoji:"🏢"},
+  {ListingKey:"PR-240003",ListingId:"PR24003",ListPrice:2750000,PropertyType:"Single Family",BedroomsTotal:6,BathroomsTotalInteger:6,LivingArea:7200,LotSizeAcres:1.2,City:"Guaynabo",StreetNumber:"34",StreetName:"Camino del Rey",SubdivisionName:"Bairoa Park",PublicRemarks:"Grand estate on a private acre in sought-after Guaynabo. Six en-suite bedrooms, a home theatre, wine cellar, full outdoor kitchen, and a resort pool with waterfall. Gated entrance, generator, and cistern.",YearBuilt:2010,GarageSpaces:3,StandardStatus:"Active",DaysOnMarket:45,features:["Pool","Gated Community"],pricePerSqft:382,emoji:"🏛"},
+  {ListingKey:"PR-240004",ListingId:"PR24004",ListPrice:675000,PropertyType:"Single Family",BedroomsTotal:3,BathroomsTotalInteger:3,LivingArea:2800,LotSizeAcres:0.4,City:"Rincón",StreetNumber:"142",StreetName:"Carr 413",SubdivisionName:"Puntas",PublicRemarks:"Charming beach cottage with panoramic ocean views in Rincón's coveted Puntas area. Direct beach access, wraparound wooden deck, hurricane shutters. World-class surf breaks steps from your door.",YearBuilt:2005,GarageSpaces:1,StandardStatus:"Active",DaysOnMarket:22,features:["Ocean View","Beachfront"],pricePerSqft:241,emoji:"🌊"},
+  {ListingKey:"PR-240005",ListingId:"PR24005",ListPrice:950000,PropertyType:"Single Family",BedroomsTotal:4,BathroomsTotalInteger:3,LivingArea:3200,LotSizeAcres:0.55,City:"Fajardo",StreetNumber:"78",StreetName:"Marina Blvd",SubdivisionName:"Palmas del Mar",PublicRemarks:"Marina-front residence in gated Palmas del Mar. Private dock, boat slip, and views of Vieques on clear days. Open-concept living, tropical landscaping, saltwater pool.",YearBuilt:2012,GarageSpaces:2,StandardStatus:"Pending",DaysOnMarket:60,features:["Pool","Ocean View","Gated Community"],pricePerSqft:297,emoji:"⛵"},
+  {ListingKey:"PR-240006",ListingId:"PR24006",ListPrice:325000,PropertyType:"Condo / Apartment",BedroomsTotal:1,BathroomsTotalInteger:1,LivingArea:820,LotSizeAcres:null,City:"San Juan",StreetNumber:"200",StreetName:"Calle Loíza",SubdivisionName:"Ocean Park",PublicRemarks:"Turnkey Ocean Park condo, one block from the beach. Recently renovated with modern finishes, tropical touches, and a private balcony. Excellent short-term rental history.",YearBuilt:2000,GarageSpaces:1,StandardStatus:"Active",DaysOnMarket:12,features:["Ocean View"],pricePerSqft:396,emoji:"🏢"},
+  {ListingKey:"PR-240007",ListingId:"PR24007",ListPrice:1250000,PropertyType:"Single Family",BedroomsTotal:4,BathroomsTotalInteger:4,LivingArea:4100,LotSizeAcres:2.1,City:"Jayuya",StreetNumber:"52",StreetName:"Carr 144",SubdivisionName:"Coffee Country",PublicRemarks:"Off-grid mountain estate on 2 acres in Puerto Rico's coffee country. Solar power, spring water, and 360° views of the Cordillera Central. Working coffee farm potential.",YearBuilt:2019,GarageSpaces:2,StandardStatus:"Active",DaysOnMarket:38,features:["Mountain View"],pricePerSqft:305,emoji:"⛰"},
+  {ListingKey:"PR-240008",ListingId:"PR24008",ListPrice:565000,PropertyType:"Townhouse",BedroomsTotal:3,BathroomsTotalInteger:2,LivingArea:1980,LotSizeAcres:0.08,City:"Bayamón",StreetNumber:"22",StreetName:"Ave Aguas Buenas",SubdivisionName:"Encantada",PublicRemarks:"Modern gated townhouse community. Three-story living, rooftop terrace, community pool, 24/7 security. Move-in ready with upgraded appliances.",YearBuilt:2020,GarageSpaces:2,StandardStatus:"Active",DaysOnMarket:19,features:["Pool","Gated Community"],pricePerSqft:285,emoji:"🏘"},
+  {ListingKey:"PR-240009",ListingId:"PR24009",ListPrice:210000,PropertyType:"Land",BedroomsTotal:0,BathroomsTotalInteger:0,LivingArea:0,LotSizeAcres:3.5,City:"Vieques",StreetNumber:"Sec",StreetName:"Playa Grande",SubdivisionName:"",PublicRemarks:"3.5 acres of buildable oceanfront land on Vieques. Direct water views, mature palm trees, and easy road access. Rare opportunity in a protected coastal zone.",YearBuilt:null,GarageSpaces:0,StandardStatus:"Active",DaysOnMarket:52,features:["Ocean View","Beachfront"],pricePerSqft:0,emoji:"🌴"},
+  {ListingKey:"PR-240010",ListingId:"PR24010",ListPrice:1450000,PropertyType:"Single Family",BedroomsTotal:5,BathroomsTotalInteger:5,LivingArea:5100,LotSizeAcres:0.7,City:"Dorado",StreetNumber:"9",StreetName:"Camino Real",SubdivisionName:"Sabanera",PublicRemarks:"Contemporary architectural masterpiece in Sabanera Dorado. Open floor plan with 20-foot ceilings, floor-to-ceiling glass, and a lap pool with mountain views. Smart home ready.",YearBuilt:2021,GarageSpaces:3,StandardStatus:"Active",DaysOnMarket:8,features:["Pool","Gated Community","Mountain View"],pricePerSqft:284,emoji:"🏡"},
+  {ListingKey:"PR-240011",ListingId:"PR24011",ListPrice:389000,PropertyType:"Condo / Apartment",BedroomsTotal:2,BathroomsTotalInteger:2,LivingArea:1180,LotSizeAcres:null,City:"Aguadilla",StreetNumber:"501",StreetName:"Playa Crash Boat",SubdivisionName:"",PublicRemarks:"Beachfront condo steps from Crash Boat. Fully furnished, strong rental history, ocean-view balcony. Ideal Act 60 landing property or investment.",YearBuilt:2008,GarageSpaces:1,StandardStatus:"Active",DaysOnMarket:24,features:["Pool","Ocean View","Beachfront"],pricePerSqft:330,emoji:"🏖"},
+  {ListingKey:"PR-240012",ListingId:"PR24012",ListPrice:735000,PropertyType:"Single Family",BedroomsTotal:4,BathroomsTotalInteger:3,LivingArea:2900,LotSizeAcres:0.5,City:"Humacao",StreetNumber:"11",StreetName:"Palmar Norte",SubdivisionName:"Palmas del Mar",PublicRemarks:"Family-friendly home in Palmas del Mar. Beach club access, golf, tennis, and equestrian center. Ocean breezes and a beautifully landscaped lot.",YearBuilt:2014,GarageSpaces:2,StandardStatus:"Active",DaysOnMarket:34,features:["Pool","Gated Community"],pricePerSqft:253,emoji:"🏡"},
+  {ListingKey:"PR-240013",ListingId:"PR24013",ListPrice:1975000,PropertyType:"Single Family",BedroomsTotal:5,BathroomsTotalInteger:5,LivingArea:5600,LotSizeAcres:1.4,City:"Guaynabo",StreetNumber:"88",StreetName:"Vista Alegre",SubdivisionName:"Torrimar",PublicRemarks:"Elegant Torrimar residence with formal living, chef's kitchen, and private pool. Close to top international schools and San Juan.",YearBuilt:2000,GarageSpaces:2,StandardStatus:"Active",DaysOnMarket:41,features:["Pool","Gated Community"],pricePerSqft:352,emoji:"🏛"},
+  {ListingKey:"PR-240014",ListingId:"PR24014",ListPrice:485000,PropertyType:"Condo / Apartment",BedroomsTotal:2,BathroomsTotalInteger:2,LivingArea:1420,LotSizeAcres:null,City:"Carolina",StreetNumber:"6100",StreetName:"Ave Isla Verde",SubdivisionName:"Isla Verde",PublicRemarks:"High-floor Isla Verde condo with sweeping Atlantic views. Building amenities include pool, gym, and 24-hour doorman. Minutes to the airport.",YearBuilt:2007,GarageSpaces:1,StandardStatus:"Active",DaysOnMarket:16,features:["Pool","Ocean View"],pricePerSqft:342,emoji:"🌊"},
+  {ListingKey:"PR-240015",ListingId:"PR24015",ListPrice:1150000,PropertyType:"Single Family",BedroomsTotal:4,BathroomsTotalInteger:3,LivingArea:3400,LotSizeAcres:0.65,City:"Rincón",StreetNumber:"200",StreetName:"Sea Beach Dr",SubdivisionName:"",PublicRemarks:"Contemporary beach house with unobstructed sunset views. Open living, imported finishes, saltwater pool, and direct beach access. Renowned surf spots nearby.",YearBuilt:2018,GarageSpaces:2,StandardStatus:"Active",DaysOnMarket:27,features:["Pool","Ocean View","Beachfront"],pricePerSqft:338,emoji:"🌅"},
+  {ListingKey:"PR-240016",ListingId:"PR24016",ListPrice:295000,PropertyType:"Single Family",BedroomsTotal:3,BathroomsTotalInteger:2,LivingArea:1600,LotSizeAcres:0.3,City:"Isabela",StreetNumber:"14",StreetName:"Playa Jobos",SubdivisionName:"",PublicRemarks:"Charming Jobos beach house needing light updates. Corner lot, ocean breezes, walkable to Jobos surf break and restaurants. Perfect starter or vacation home.",YearBuilt:1998,GarageSpaces:1,StandardStatus:"Active",DaysOnMarket:9,features:["Ocean View"],pricePerSqft:184,emoji:"🏄"},
+  {ListingKey:"PR-240017",ListingId:"PR24017",ListPrice:825000,PropertyType:"Multi-Family",BedroomsTotal:6,BathroomsTotalInteger:5,LivingArea:3800,LotSizeAcres:0.4,City:"San Juan",StreetNumber:"318",StreetName:"Calle San Sebastián",SubdivisionName:"Old San Juan",PublicRemarks:"Rare Old San Juan multi-unit opportunity. Two fully renovated units, colonial architecture preserved, rooftop terrace with bay views. Strong short-term rental potential.",YearBuilt:1890,GarageSpaces:0,StandardStatus:"Active",DaysOnMarket:31,features:[],pricePerSqft:217,emoji:"🏰"},
+  {ListingKey:"PR-240018",ListingId:"PR24018",ListPrice:2100000,PropertyType:"Single Family",BedroomsTotal:5,BathroomsTotalInteger:5,LivingArea:5900,LotSizeAcres:1.0,City:"Dorado",StreetNumber:"7",StreetName:"Playa Grande",SubdivisionName:"Dorado Beach Estates",PublicRemarks:"Beachfront estate on Playa Grande. Private access to a mile of white sand, tropical landscape, guest casita, and infinity pool. Truly one of a kind.",YearBuilt:2016,GarageSpaces:3,StandardStatus:"Active",DaysOnMarket:6,features:["Pool","Ocean View","Beachfront","Gated Community"],pricePerSqft:356,emoji:"🌴"}
+];
 
-let filtered=[...LISTINGS],currentView='grid';
-function fmt(n){return'$'+n.toLocaleString();}
+let filtered=[...LISTINGS], currentView='grid';
+function fmt(n){return '$'+n.toLocaleString();}
 function statusColor(s){if(s==='Pending')return'pending';if(s!=='Active')return'sold';return'';}
 function toggleSave(btn,key){btn.classList.toggle('saved');btn.innerHTML=btn.classList.contains('saved')?'♥':'♡';}
 
@@ -712,50 +1656,56 @@ function showTab(tab){
   document.querySelectorAll('.tab-content').forEach(el=>el.classList.remove('active'));
   document.querySelectorAll('.nav-tab').forEach(el=>el.classList.remove('active'));
   document.getElementById('content-'+tab).classList.add('active');
-  document.getElementById('tab-'+tab).classList.add('active');
+  const nt=document.getElementById('tab-'+tab); if(nt) nt.classList.add('active');
   window.scrollTo({top:0,behavior:'smooth'});
+  document.getElementById('navMobilePanel').classList.remove('open');
+}
+
+function toggleMobileNav(){
+  document.getElementById('navMobilePanel').classList.toggle('open');
 }
 
 function renderListings(){
   const sort=document.getElementById('sortSelect').value;
   let data=[...filtered];
-  if(sort==='price-asc')data.sort((a,b)=>a.ListPrice-b.ListPrice);
-  else if(sort==='price-desc')data.sort((a,b)=>b.ListPrice-a.ListPrice);
-  else if(sort==='sqft')data.sort((a,b)=>b.LivingArea-a.LivingArea);
+  if(sort==='price-asc') data.sort((a,b)=>a.ListPrice-b.ListPrice);
+  else if(sort==='price-desc') data.sort((a,b)=>b.ListPrice-a.ListPrice);
+  else if(sort==='sqft') data.sort((a,b)=>b.LivingArea-a.LivingArea);
   else data.sort((a,b)=>a.DaysOnMarket-b.DaysOnMarket);
   document.getElementById('countDisplay').textContent=data.length;
   const grid=document.getElementById('listingsGrid');
-  grid.style.gridTemplateColumns=currentView==='list'?'1fr':'repeat(auto-fill, minmax(280px, 1fr))';
+  grid.style.gridTemplateColumns = currentView==='list' ? '1fr' : 'repeat(auto-fill, minmax(280px, 1fr))';
   grid.innerHTML=data.map((p,i)=>{
     const imgSrc=PHOTOS[i%PHOTOS.length];
-    return`<div class="card" onclick="openModal('${p.ListingKey}')">
-      <div style="position:relative">
-        <img src="${imgSrc}" alt="${p.StreetName}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" class="card-img"/>
-        <div class="card-img-placeholder" style="display:none">${p.emoji}</div>
-        <div class="card-badge ${statusColor(p.StandardStatus)}">${p.StandardStatus}</div>
-        <button class="card-save" onclick="event.stopPropagation();toggleSave(this,'${p.ListingKey}')">♡</button>
+    return `<div class="lcard" onclick="openModal('${p.ListingKey}')">
+      <div class="lcard-img-wrap">
+        <img src="${imgSrc}" alt="${p.StreetName}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" class="lcard-img"/>
+        <div class="lcard-img-placeholder" style="display:none">${p.emoji}</div>
+        <div class="lcard-badge ${statusColor(p.StandardStatus)}">${p.StandardStatus}</div>
+        ${i===0?'<div class="source-badge exclusive">Pronoia Exclusive</div>':i===1?'<div class="source-badge mls">MLS Verified</div>':i===2?'<div class="source-badge direct">Direct Seller</div>':''}
+        <button class="lcard-save" onclick="event.stopPropagation();toggleSave(this,'${p.ListingKey}')">♡</button>
       </div>
-      <div class="card-body">
-        <div class="card-price">${fmt(p.ListPrice)}</div>
-        <div class="card-address">${p.StreetNumber} ${p.StreetName}${p.SubdivisionName?', '+p.SubdivisionName:''}</div>
-        <div class="card-location">${p.City}, PR</div>
-        <div class="card-specs">
+      <div class="lcard-body">
+        <div class="lcard-price">${fmt(p.ListPrice)}</div>
+        <div class="lcard-address">${p.StreetNumber} ${p.StreetName}${p.SubdivisionName?', '+p.SubdivisionName:''}</div>
+        <div class="lcard-loc">${p.City}, PR</div>
+        <div class="lcard-specs">
           ${p.BedroomsTotal>0?`<div class="spec"><span>🛏</span> <strong>${p.BedroomsTotal}</strong> bd</div>`:''}
           ${p.BathroomsTotalInteger>0?`<div class="spec"><span>🚿</span> <strong>${p.BathroomsTotalInteger}</strong> ba</div>`:''}
           ${p.LivingArea>0?`<div class="spec"><span>📐</span> <strong>${p.LivingArea.toLocaleString()}</strong> sqft</div>`:''}
           ${p.LotSizeAcres?`<div class="spec"><span>🌿</span> <strong>${p.LotSizeAcres}</strong> ac</div>`:''}
         </div>
       </div>
-      <div class="card-footer">
-        <span class="card-mls">MLS# ${p.ListingId}</span>
-        <span class="card-type">${p.PropertyType}</span>
+      <div class="lcard-footer">
+        <span class="lcard-mls">MLS# ${p.ListingId}</span>
+        <span class="lcard-type">${p.PropertyType}</span>
       </div>
     </div>`;
   }).join('');
 }
 
 function openModal(key){
-  const p=LISTINGS.find(l=>l.ListingKey===key);if(!p)return;
+  const p=LISTINGS.find(l=>l.ListingKey===key); if(!p) return;
   const i=LISTINGS.indexOf(p);
   const imgSrc=PHOTOS[i%PHOTOS.length];
   document.getElementById('modalGallery').innerHTML=`<img src="${imgSrc}" alt="${p.StreetName}" onerror="this.parentElement.textContent='${p.emoji}'" style="width:100%;height:100%;object-fit:cover;">`;
@@ -789,7 +1739,7 @@ function toggleContact(e){
 }
 document.addEventListener('click',function(e){
   const pop=document.getElementById('contactPop');
-  if(pop&&pop.classList.contains('open')&&!e.target.closest('.nav-contact')){
+  if(pop && pop.classList.contains('open') && !e.target.closest('.nav-contact')){
     pop.classList.remove('open');
     document.getElementById('navContactBtn').setAttribute('aria-expanded','false');
   }
@@ -811,23 +1761,23 @@ function applyFilters(){
   const beach=document.getElementById('chkBeach').checked;
   const mtn=document.getElementById('chkMtn').checked;
   filtered=LISTINGS.filter(p=>{
-    if(mun&&p.City!==mun)return false;
-    if(type&&p.PropertyType!==type)return false;
-    if(p.ListPrice<pMin||p.ListPrice>pMax)return false;
-    if(p.BedroomsTotal<beds)return false;
-    if(p.BathroomsTotalInteger<baths)return false;
-    if(pool&&!p.features.includes('Pool'))return false;
-    if(ocean&&!p.features.includes('Ocean View'))return false;
-    if(gated&&!p.features.includes('Gated Community'))return false;
-    if(beach&&!p.features.includes('Beachfront'))return false;
-    if(mtn&&!p.features.includes('Mountain View'))return false;
+    if(mun && p.City!==mun) return false;
+    if(type && p.PropertyType!==type) return false;
+    if(p.ListPrice<pMin || p.ListPrice>pMax) return false;
+    if(p.BedroomsTotal<beds) return false;
+    if(p.BathroomsTotalInteger<baths) return false;
+    if(pool && !p.features.includes('Pool')) return false;
+    if(ocean && !p.features.includes('Ocean View')) return false;
+    if(gated && !p.features.includes('Gated Community')) return false;
+    if(beach && !p.features.includes('Beachfront')) return false;
+    if(mtn && !p.features.includes('Mountain View')) return false;
     return true;
   });
   renderListings();
 }
 
 function resetFilters(){
-  ['filtMunicipio','filtType','filtBeds','filtBaths','heroMunicipio','heroType','heroPrice'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});
+  ['filtMunicipio','filtType','filtBeds','filtBaths','heroMunicipio','heroType','heroPrice','heroBeds'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});
   ['filtPriceMin','filtPriceMax'].forEach(id=>document.getElementById(id).value='');
   ['chkPool','chkOcean','chkGated','chkBeach','chkMtn'].forEach(id=>document.getElementById(id).checked=false);
   filtered=[...LISTINGS];renderListings();
@@ -836,49 +1786,33 @@ function resetFilters(){
 function applyHeroSearch(){
   const mun=document.getElementById('heroMunicipio').value;
   const type=document.getElementById('heroType').value;
-  const maxP=parseFloat(document.getElementById('heroPrice').value)||Infinity;
-  if(mun)document.getElementById('filtMunicipio').value=mun;
-  if(type)document.getElementById('filtType').value=type;
-  if(maxP<Infinity)document.getElementById('filtPriceMax').value=maxP;
+  const price=document.getElementById('heroPrice').value;
+  const beds=document.getElementById('heroBeds').value;
+  if(mun) document.getElementById('filtMunicipio').value=mun;
+  if(type) document.getElementById('filtType').value=type;
+  if(beds) document.getElementById('filtBeds').value=beds;
+  if(price){
+    const [lo,hi]=price.split('-');
+    document.getElementById('filtPriceMin').value=lo||'';
+    document.getElementById('filtPriceMax').value=hi||'';
+  }
+  document.getElementById('paths').scrollIntoView({behavior:'smooth'});
   applyFilters();
-  document.getElementById('listings').scrollIntoView({behavior:'smooth'});
 }
 
-function setView(v,btn){
+function setView(v){
   currentView=v;
   document.querySelectorAll('.view-btn').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
+  const btn=document.getElementById('view-'+v);
+  if(btn) btn.classList.add('active');
   renderListings();
 }
 
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModalDirect();});
-renderListings();
-</script>
-<script>
-// Formspree AJAX
-var fsForm=document.getElementById('contactForm');
-if(fsForm){
-  fsForm.addEventListener('submit',function(e){
-    e.preventDefault();
-    var btn=document.getElementById('fs-btn');
-    btn.textContent='Sending...';btn.disabled=true;
-    fetch('https://formspree.io/f/mdenwepa',{method:'POST',body:new FormData(fsForm),headers:{Accept:'application/json'}})
-    .then(function(r){
-      if(r.ok){fsForm.style.display='none';document.getElementById('fs-success').style.display='block';}
-      else{btn.textContent='Send Message to Coral';btn.disabled=false;alert('Something went wrong. Please call Coral directly at (787) 501-3992');}
-    })
-    .catch(function(){btn.textContent='Send Message to Coral';btn.disabled=false;alert('Something went wrong. Please call Coral directly at (787) 501-3992');});
-  });
-}
-// Contact Coral button — scroll to Meet Coral section
-var navCta=document.getElementById('navContactBtn');
-if(navCta){
-  navCta.addEventListener('click',function(e){
-    e.stopPropagation();
-    var pop=document.getElementById('contactPop');
-    if(pop){var open=pop.classList.toggle('open');navCta.setAttribute('aria-expanded',open);}
-  });
-}
+document.addEventListener('DOMContentLoaded',function(){
+  const sortSel=document.getElementById('sortSelect');
+  if(sortSel) sortSel.addEventListener('change',renderListings);
+  renderListings();
+});
 </script>
 </body>
 </html>
