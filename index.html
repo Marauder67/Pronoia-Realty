@@ -222,8 +222,8 @@
     max-width: 380px;
     justify-self: end;
   }
-  .hero-card-photo { position: relative; width: 100%; aspect-ratio: 4/5; border-radius: var(--radius); overflow: hidden; margin-bottom: 1rem; }
-  .hero-card-photo img { width: 100%; height: 100%; object-fit: cover; }
+  .hero-card-photo { position: relative; width: 100%; aspect-ratio: 3/4; border-radius: var(--radius); overflow: hidden; margin-bottom: 1rem; }
+  .hero-card-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
   .hero-card-photo::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, rgba(13,43,59,0.7) 100%); }
   .hero-card-label { font-size: 0.62rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.35rem; }
   .hero-card-name { font-family: var(--f-display); font-size: 1.4rem; color: #fff; font-weight: 500; margin-bottom: 0.15rem; }
@@ -670,8 +670,8 @@
     align-items: center;
   }
   .meet-photo {
-    width: 100%; aspect-ratio: 4/5;
-    object-fit: cover; border-radius: var(--radius-lg);
+    width: 100%; aspect-ratio: 3/4;
+    object-fit: cover; object-position: top center; border-radius: var(--radius-lg);
     box-shadow: var(--shadow-lg);
   }
   .meet-content .kicker { color: var(--gold); }
