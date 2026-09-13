@@ -1,0 +1,5 @@
+# www.pronoiarealty.com
+User-agent: *
+Allow: /
+
+Sitemap: https://www.pronoiarealty.com/sitemap.xml
