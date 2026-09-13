@@ -1227,6 +1227,17 @@
     </div>
   </div>
 
+  <!-- MLS DATA DISPLAY — IDX compliance styles -->
+  <style>
+    .data-notice{border-radius:10px;padding:.7rem 1rem;margin-bottom:1rem;font-size:.8rem;line-height:1.5}
+    .data-notice.sample{background:#FDF6E3;border:1px solid #E8D9A8;color:#7A5E12}
+    .data-notice.live{background:#F4F8F4;border:1px solid #D6E5D6;color:#3C5A3C}
+    .mls-attrib{margin-top:1.5rem;padding-top:1rem;border-top:1px solid #EAEAEA;font-size:.7rem;color:#8A8A8A;line-height:1.6}
+    .mls-attrib strong{color:#6A6A6A;font-weight:600}
+    .lcard-broker{display:block;padding:.45rem .9rem .7rem;font-size:.62rem;color:#9A9A9A;letter-spacing:.02em}
+    .modal-broker{margin-top:1rem;padding-top:.9rem;border-top:1px solid #EEE;font-size:.72rem;color:#8A8A8A;line-height:1.6}
+  </style>
+
   <!-- LISTINGS -->
   <section class="listings-wrap" id="listings">
     <div class="listings-head">
@@ -1295,6 +1306,7 @@
         <span class="reset-link" onclick="resetFilters()">Reset all filters</span>
       </aside>
       <div>
+        <div class="data-notice sample" id="dataNotice">Sample properties shown for demonstration. Live Stellar MLS listings appear here once the MLS Grid feed is connected.</div>
         <div class="listings-controls">
           <div class="listings-count">Showing <strong id="countDisplay">18</strong> properties</div>
           <div class="controls-right">
@@ -1311,6 +1323,7 @@
           </div>
         </div>
         <div class="listings-grid" id="listingsGrid"></div>
+        <div class="mls-attrib" id="mlsAttrib" hidden></div>
       </div>
     </div>
   </section>
@@ -1619,7 +1632,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 Pronoia Realty · All rights reserved · Data provided by <strong style="color:rgba(255,255,255,0.7)">Stellar MLS</strong></span>
+    <span>© 2026 Pronoia Realty · All rights reserved · Listings courtesy of <strong style="color:rgba(255,255,255,0.7)">Stellar MLS</strong> as distributed by <strong style="color:rgba(255,255,255,0.7)">MLS GRID</strong></span>
     <div><a href="#">Privacy Policy</a><a href="#">Equal Housing Opportunity</a></div>
   </div>
   <div style="background:#0a1628;padding:0.75rem 2rem;text-align:center;font-size:0.62rem;color:rgba(255,255,255,0.28);border-top:1px solid rgba(255,255,255,0.05);">
@@ -1640,7 +1653,7 @@ const PHOTOS=[
   "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=75",
   "https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=800&q=75"
 ];
-const LISTINGS=[
+const SAMPLE_LISTINGS=[
   {ListingKey:"PR-240001",ListingId:"PR24001",ListPrice:1850000,PropertyType:"Single Family",BedroomsTotal:5,BathroomsTotalInteger:4,LivingArea:4800,LotSizeAcres:0.85,City:"Dorado",StreetNumber:"18",StreetName:"Calle Palma Real",SubdivisionName:"Dorado Beach Resort",PublicRemarks:"Stunning resort-style estate within the prestigious Dorado Beach community. Fully renovated with soaring ceilings, chef's kitchen, and wraparound terrace overlooking a private pool and manicured gardens. Walk to the beach, golf courses, and the Ritz-Carlton Reserve.",YearBuilt:2018,GarageSpaces:2,StandardStatus:"Active",DaysOnMarket:14,features:["Pool","Ocean View","Gated Community","Beachfront"],pricePerSqft:385,emoji:"🏡"},
   {ListingKey:"PR-240002",ListingId:"PR24002",ListPrice:425000,PropertyType:"Condo / Apartment",BedroomsTotal:2,BathroomsTotalInteger:2,LivingArea:1240,LotSizeAcres:null,City:"San Juan",StreetNumber:"1055",StreetName:"Ave Ashford",SubdivisionName:"Condado Lagoon",PublicRemarks:"Modern condo in the heart of Condado with spectacular lagoon views. Open floor plan, floor-to-ceiling windows, updated kitchen with quartz countertops, and a private balcony. Pool, gym, and 24-hour concierge. Steps to restaurants and the beach.",YearBuilt:2015,GarageSpaces:1,StandardStatus:"Active",DaysOnMarket:28,features:["Pool","Ocean View"],pricePerSqft:342,emoji:"🏢"},
   {ListingKey:"PR-240003",ListingId:"PR24003",ListPrice:2750000,PropertyType:"Single Family",BedroomsTotal:6,BathroomsTotalInteger:6,LivingArea:7200,LotSizeAcres:1.2,City:"Guaynabo",StreetNumber:"34",StreetName:"Camino del Rey",SubdivisionName:"Bairoa Park",PublicRemarks:"Grand estate on a private acre in sought-after Guaynabo. Six en-suite bedrooms, a home theatre, wine cellar, full outdoor kitchen, and a resort pool with waterfall. Gated entrance, generator, and cistern.",YearBuilt:2010,GarageSpaces:3,StandardStatus:"Active",DaysOnMarket:45,features:["Pool","Gated Community"],pricePerSqft:382,emoji:"🏛"},
@@ -1661,8 +1674,70 @@ const LISTINGS=[
   {ListingKey:"PR-240018",ListingId:"PR24018",ListPrice:2100000,PropertyType:"Single Family",BedroomsTotal:5,BathroomsTotalInteger:5,LivingArea:5900,LotSizeAcres:1.0,City:"Dorado",StreetNumber:"7",StreetName:"Playa Grande",SubdivisionName:"Dorado Beach Estates",PublicRemarks:"Beachfront estate on Playa Grande. Private access to a mile of white sand, tropical landscape, guest casita, and infinity pool. Truly one of a kind.",YearBuilt:2016,GarageSpaces:3,StandardStatus:"Active",DaysOnMarket:6,features:["Pool","Ocean View","Beachfront","Gated Community"],pricePerSqft:356,emoji:"🌴"}
 ];
 
+// ═════ LIVE MLS DATA ═════
+// listings.json is rebuilt every 6 hours by .github/workflows/sync-listings.yml,
+// which pulls from the MLS Grid API. MLS Grid IDX rules require the display to
+// refresh at least once every 12 hours, drop listings that have left the feed,
+// and carry the "as of" timestamp and brokerage attribution below.
+// Until the feed is live the page falls back to clearly-labeled sample data.
+let LISTINGS=[...SAMPLE_LISTINGS];
+let DATA_SOURCE='sample';
+let DATA_AS_OF=null;
+
+async function loadListings(){
+  try{
+    const res=await fetch('listings.json?t='+Date.now(),{cache:'no-store'});
+    if(!res.ok) throw new Error('no feed');
+    const data=await res.json();
+    if(!data.listings||!data.listings.length) throw new Error('empty feed');
+    LISTINGS=data.listings;
+    DATA_SOURCE=data.source||'mlsgrid';
+    DATA_AS_OF=data.generatedAt||null;
+  }catch(e){
+    LISTINGS=[...SAMPLE_LISTINGS];
+    DATA_SOURCE='sample';
+    DATA_AS_OF=null;
+  }
+  filtered=[...LISTINGS];
+  renderDataNotice();
+  renderAttribution();
+  renderListings();
+}
+
+function asOfText(){
+  if(!DATA_AS_OF) return '';
+  const d=new Date(DATA_AS_OF);
+  return d.toLocaleString('en-US',{month:'long',day:'numeric',year:'numeric',hour:'numeric',minute:'2-digit',timeZoneName:'short'});
+}
+
+function renderDataNotice(){
+  const el=document.getElementById('dataNotice'); if(!el) return;
+  const live=DATA_SOURCE==='mlsgrid';
+  el.className='data-notice '+(live?'live':'sample');
+  el.innerHTML=live
+    ? `Live Stellar MLS listings. Updated ${asOfText()}.`
+    : 'Sample properties shown for demonstration &mdash; these are not MLS listings. Live Stellar MLS listings appear here once the MLS Grid feed is connected.';
+}
+
+function renderAttribution(){
+  const el=document.getElementById('mlsAttrib'); if(!el) return;
+  if(DATA_SOURCE!=='mlsgrid'){ el.hidden=true; return; }
+  el.hidden=false;
+  el.innerHTML=`<strong>Listings courtesy of Stellar MLS as distributed by MLS GRID.</strong><br>
+    Based on information submitted to the MLS GRID as of ${asOfText()}. All data is obtained from various sources
+    and may not have been verified by broker or MLS GRID. Supplied Open House information is subject to change without
+    notice. All information should be independently reviewed and verified for accuracy. Properties may or may not be
+    listed by the office/agent presenting the information. Listings displayed are provided for consumers' personal,
+    non-commercial use and may not be used for any purpose other than to identify prospective properties consumers
+    may be interested in purchasing.`;
+}
+
 let filtered=[...LISTINGS], currentView='grid';
 function fmt(n){return '$'+n.toLocaleString();}
+function photoFor(p,i,n){
+  if(p.photos&&p.photos.length) return p.photos[Math.min(n||0,p.photos.length-1)];
+  return PHOTOS[(i+(n||0))%PHOTOS.length];
+}
 function statusColor(s){if(s==='Pending')return'pending';if(s!=='Active')return'sold';return'';}
 function toggleSave(btn,key){btn.classList.toggle('saved');btn.innerHTML=btn.classList.contains('saved')?'♥':'♡';}
 
@@ -1686,17 +1761,20 @@ function renderListings(){
   else if(sort==='price-desc') data.sort((a,b)=>b.ListPrice-a.ListPrice);
   else if(sort==='sqft') data.sort((a,b)=>b.LivingArea-a.LivingArea);
   else data.sort((a,b)=>a.DaysOnMarket-b.DaysOnMarket);
+  // Pronoia's own listings lead within whatever sort is chosen (stable sort keeps the rest in order)
+  data.sort((a,b)=>(b.isOwn?1:0)-(a.isOwn?1:0));
   document.getElementById('countDisplay').textContent=data.length;
   const grid=document.getElementById('listingsGrid');
   grid.style.gridTemplateColumns = currentView==='list' ? '1fr' : 'repeat(auto-fill, minmax(280px, 1fr))';
   grid.innerHTML=data.map((p,i)=>{
-    const imgSrc=PHOTOS[i%PHOTOS.length];
+    const imgSrc=photoFor(p,i,0);
+    const sample=DATA_SOURCE!=='mlsgrid';
     return `<div class="lcard" onclick="openModal('${p.ListingKey}')">
       <div class="lcard-img-wrap">
-        <img src="${imgSrc}" alt="${p.StreetName}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" class="lcard-img"/>
+        <img src="${imgSrc}" alt="${p.StreetName}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" class="lcard-img"/>
         <div class="lcard-img-placeholder" style="display:none">${p.emoji}</div>
         <div class="lcard-badge ${statusColor(p.StandardStatus)}">${p.StandardStatus}</div>
-        ${i===0?'<div class="source-badge exclusive">Pronoia Exclusive</div>':i===1?'<div class="source-badge mls">MLS Verified</div>':i===2?'<div class="source-badge direct">Direct Seller</div>':''}
+        ${sample?(i===0?'<div class="source-badge exclusive">Pronoia Exclusive</div>':i===1?'<div class="source-badge mls">MLS Verified</div>':i===2?'<div class="source-badge direct">Direct Seller</div>':''):(p.isOwn?'<div class="source-badge exclusive">Pronoia Realty Listing</div>':'')}
         <button class="lcard-save" onclick="event.stopPropagation();toggleSave(this,'${p.ListingKey}')">♡</button>
       </div>
       <div class="lcard-body">
@@ -1714,6 +1792,7 @@ function renderListings(){
         <span class="lcard-mls">MLS# ${p.ListingId}</span>
         <span class="lcard-type">${p.PropertyType}</span>
       </div>
+      ${p.ListOfficeName?`<span class="lcard-broker">Listed by ${p.ListOfficeName}</span>`:''}
     </div>`;
   }).join('');
 }
@@ -1721,8 +1800,19 @@ function renderListings(){
 function openModal(key){
   const p=LISTINGS.find(l=>l.ListingKey===key); if(!p) return;
   const i=LISTINGS.indexOf(p);
-  const imgSrc=PHOTOS[i%PHOTOS.length];
-  document.getElementById('modalGallery').innerHTML=`<img src="${imgSrc}" alt="${p.StreetName}" onerror="this.parentElement.textContent='${p.emoji}'" style="width:100%;height:100%;object-fit:cover;">`;
+  const shots=(p.photos&&p.photos.length)?p.photos:[PHOTOS[i%PHOTOS.length]];
+  let shotIdx=0;
+  const gal=document.getElementById('modalGallery');
+  gal.innerHTML=`<img id="mGalImg" src="${shots[0]}" alt="${p.StreetName}" onerror="this.parentElement.textContent='${p.emoji}'" style="width:100%;height:100%;object-fit:cover;cursor:${shots.length>1?'pointer':'default'}">
+    ${shots.length>1?`<div id="mGalCount" style="position:absolute;bottom:10px;right:12px;background:rgba(0,0,0,0.6);color:#fff;font-size:.65rem;padding:.25rem .55rem;border-radius:20px;">1 / ${shots.length}</div>`:''}`;
+  if(shots.length>1){
+    gal.style.position='relative';
+    document.getElementById('mGalImg').onclick=function(){
+      shotIdx=(shotIdx+1)%shots.length;
+      this.src=shots[shotIdx];
+      document.getElementById('mGalCount').textContent=(shotIdx+1)+' / '+shots.length;
+    };
+  }
   document.getElementById('mPrice').textContent=fmt(p.ListPrice);
   document.getElementById('mAddress').textContent=`${p.StreetNumber} ${p.StreetName}${p.SubdivisionName?', '+p.SubdivisionName:''}`;
   document.getElementById('mLoc').textContent=`${p.City}, Puerto Rico · MLS# ${p.ListingId}`;
@@ -1736,7 +1826,9 @@ function openModal(key){
   ].join('');
   document.getElementById('mDesc').textContent=p.PublicRemarks;
   const details=[['Property Type',p.PropertyType],['Status',p.StandardStatus],['Days on Market',p.DaysOnMarket],['Garage Spaces',p.GarageSpaces||'None'],['Municipio',p.City],['Year Built',p.YearBuilt||'N/A'],['Features',p.features.length?p.features.join(', '):'Standard'],['Listing ID',p.ListingId]];
-  document.getElementById('mDetails').innerHTML=details.map(([k,v])=>`<div class="detail-row"><span>${k}</span><span>${v}</span></div>`).join('');
+  if(p.ListOfficeName) details.push(['Listed By',p.ListOfficeName]);
+  document.getElementById('mDetails').innerHTML=details.map(([k,v])=>`<div class="detail-row"><span>${k}</span><span>${v}</span></div>`).join('')
+    +(DATA_SOURCE==='mlsgrid'?`<div class="modal-broker">Listing courtesy of ${p.ListOfficeName||'the listing brokerage'}. Based on information submitted to the MLS GRID as of ${asOfText()}. Information deemed reliable but not guaranteed.</div>`:'');
   const addr=`${p.StreetNumber} ${p.StreetName}${p.SubdivisionName?', '+p.SubdivisionName:''}, ${p.City}`;
   const ref=`MLS# ${p.ListingId} — ${addr}`;
   document.getElementById('mShowing').href='mailto:c.santiago@pronoiarealty.com?subject='+encodeURIComponent(`Showing Request — ${ref}`)+'&body='+encodeURIComponent(`Hola Coral,\n\nI'd like to schedule a showing for:\n${ref}\nListed at ${fmt(p.ListPrice)}\n\nMy preferred days/times:\n\nName:\nPhone:\n\nThank you!`);
@@ -1825,7 +1917,9 @@ function setView(v){
 document.addEventListener('DOMContentLoaded',function(){
   const sortSel=document.getElementById('sortSelect');
   if(sortSel) sortSel.addEventListener('change',renderListings);
+  renderDataNotice();
   renderListings();
+  loadListings();
 
 // Language toggle
 function setLang(lang) {

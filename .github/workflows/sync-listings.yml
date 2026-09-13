@@ -1,0 +1,67 @@
+name: Sync MLS listings
+
+# MLS Grid IDX rules require IDX displays to refresh at least once every 12 hours
+# and to drop listings removed from the feed. Running every 6 hours leaves margin
+# for one failed run without falling out of compliance.
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Skip photo downloads (data only)'
+        type: boolean
+        default: false
+
+concurrency:
+  group: sync-listings
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install image resizer
+        run: npm install --no-save sharp
+        continue-on-error: true
+
+      - name: Sync listings from MLS Grid
+        env:
+          MLSGRID_TOKEN: ${{ secrets.MLSGRID_TOKEN }}
+          ORIGINATING_SYSTEM: ${{ vars.ORIGINATING_SYSTEM || 'MFRMLS' }}
+          LIST_OFFICE_MLS_ID: ${{ vars.LIST_OFFICE_MLS_ID }}
+          LIST_AGENT_MLS_ID: ${{ vars.LIST_AGENT_MLS_ID || '743524024' }}
+          ONLY_OWN: ${{ vars.ONLY_OWN }}
+          MAX_LISTINGS: ${{ vars.MAX_LISTINGS || '100' }}
+          MAX_PHOTOS: ${{ vars.MAX_PHOTOS || '5' }}
+          DRY_RUN: ${{ inputs.dry_run && '1' || '' }}
+        run: node scripts/sync-listings.mjs
+
+      - name: Report repository size
+        run: |
+          echo "photos: $(du -sh photos 2>/dev/null | cut -f1 || echo 0)"
+          echo "git:    $(du -sh .git | cut -f1)"
+
+      - name: Commit refreshed data
+        run: |
+          git config user.name  "pronoia-sync"
+          git config user.email "actions@github.com"
+          git add listings.json photos
+          if git diff --staged --quiet; then
+            echo "No changes — feed is unchanged since last run."
+            exit 0
+          fi
+          COUNT=$(node -e "console.log(require('./listings.json').count)")
+          git commit -m "sync: $COUNT active PR listings — $(date -u '+%Y-%m-%d %H:%M UTC')"
+          git push
