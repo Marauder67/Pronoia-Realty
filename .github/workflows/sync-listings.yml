@@ -1,11 +1,11 @@
 name: Sync MLS listings
 
 # MLS Grid IDX rules require IDX displays to refresh at least once every 12 hours
-# and to drop listings removed from the feed. Running every 6 hours leaves margin
+# and to drop listings removed from the feed. Running every 8 hours leaves margin
 # for one failed run without falling out of compliance.
 on:
   schedule:
-    - cron: '0 */6 * * *'
+    - cron: '0 */8 * * *'
   workflow_dispatch:
     inputs:
       dry_run:

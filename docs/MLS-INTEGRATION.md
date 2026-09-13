@@ -37,7 +37,7 @@ From the MLS Grid IDX Rules and the MLS Grid AI Use Addendum. None of these are 
 ## The pipeline
 
 ```
-GitHub Actions — every 6 hours (margin against the 12-hour rule)
+GitHub Actions — every 8 hours (margin against the 12-hour rule)
    │  MLSGRID_TOKEN held as an encrypted repository secret
    ▼
 scripts/sync-listings.mjs
