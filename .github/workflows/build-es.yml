@@ -1,0 +1,45 @@
+name: Build Spanish page
+
+# es/index.html is generated from index.html + i18n/es.json. Regenerating it here
+# means the two language pages can never drift apart, no matter who edits the
+# English page or how.
+on:
+  push:
+    branches: [main]
+    paths:
+      - index.html
+      - i18n/es.json
+      - scripts/build-es.mjs
+  workflow_dispatch:
+
+concurrency:
+  group: build-es
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Generate es/index.html
+        run: node scripts/build-es.mjs
+
+      - name: Commit the regenerated Spanish page
+        run: |
+          git config user.name  "pronoia-build"
+          git config user.email "actions@github.com"
+          git add es/index.html
+          if git diff --staged --quiet; then
+            echo "Spanish page already up to date."
+            exit 0
+          fi
+          git commit -m "build: regenerate es/index.html from index.html"
+          git push
