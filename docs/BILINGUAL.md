@@ -29,13 +29,16 @@ a plain link between them.
 `index.html` is the **single source of truth**. `es/index.html` is generated — it carries a
 "do not edit" banner.
 
-After any change to `index.html`:
+After any change to `index.html`, the Spanish page rebuilds **automatically** —
+`.github/workflows/build-es.yml` runs the generator on every push that touches
+`index.html`, `i18n/es.json`, or the script itself, and commits the result. The two pages
+cannot drift apart.
+
+To regenerate locally (useful for checking the untranslated-string report before pushing):
 
 ```bash
 node scripts/build-es.mjs
 ```
-
-Then commit both files. Skip this and the two pages drift apart.
 
 New or changed English copy shows up in the build output as an untranslated string:
 
