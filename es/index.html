@@ -932,9 +932,9 @@
   </div>
   <div class="nav-right">
     <img src="https://raw.githubusercontent.com/Marauder67/Pronoia-Realty/main/IMG_2351.jpeg" alt="Coral Santiago" class="nav-coral-img">
-    <div style="display:flex;gap:4px;background:rgba(255,255,255,0.12);border-radius:20px;padding:3px;margin-right:0.5rem;">
-      <a id="btn-en" href="/" hreflang="en" style="background:transparent;color:rgba(255,255,255,0.6);border:none;padding:4px 14px;border-radius:16px;font-size:0.72rem;font-weight:700;cursor:pointer;font-family:inherit;text-decoration:none;display:inline-block;">EN</a>
-      <a id="btn-es" href="/es/" hreflang="es" style="background:#C59B27;color:#fff;border:none;padding:4px 14px;border-radius:16px;font-size:0.72rem;font-weight:700;cursor:pointer;font-family:inherit;text-decoration:none;display:inline-block;">ES</a>
+    <div class="lang-switch">
+      <a id="btn-en" class="lang-chip active" href="/" hreflang="en" lang="en">EN</a>
+      <a id="btn-es" class="lang-chip" href="/es/" hreflang="es" lang="es">ES</a>
     </div>
     <div class="nav-contact">
       <button class="nav-cta" id="navContactBtn" onclick="toggleContact(event)" aria-expanded="false">Contactar a Coral</button>
@@ -1229,6 +1229,19 @@
       <div class="stat-item"><div class="stat-num">62</div><div class="stat-lbl">Días Promedio en el Mercado</div></div>
     </div>
   </div>
+
+  <!-- LANGUAGE SWITCH — the nav is cream, so the inactive chip must be dark ink, not white -->
+  <style>
+    .lang-switch{display:flex;gap:3px;background:rgba(18,59,79,0.07);border:1px solid rgba(18,59,79,0.12);border-radius:22px;padding:3px;margin-right:0.6rem}
+    .lang-chip{display:inline-block;padding:7px 15px;border-radius:18px;font-size:0.72rem;font-weight:700;letter-spacing:0.04em;line-height:1;text-decoration:none;color:#3F5D6B;background:transparent;font-family:inherit;cursor:pointer;transition:background .15s ease,color .15s ease}
+    .lang-chip:hover{background:rgba(18,59,79,0.10);color:#123B4F}
+    .lang-chip.active{background:#C59B27;color:#fff}
+    .lang-chip.active:hover{background:#B08B22;color:#fff}
+    @media (max-width:520px){
+      .lang-switch{margin-right:0.35rem}
+      .lang-chip{padding:7px 12px}
+    }
+  </style>
 
   <!-- MLS DATA DISPLAY — IDX compliance styles -->
   <style>
