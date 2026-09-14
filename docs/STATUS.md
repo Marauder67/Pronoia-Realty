@@ -20,7 +20,7 @@ which is out of our hands.
 | Forms | ✅ Formspree → c.santiago@pronoiarealty.com |
 | MLS pipeline (code) | ✅ Built, tested against mock data, compliant |
 | MLS feed (authorization) | ❌ **Blocked on Stellar** |
-| Listings shown today | Sample data, labeled "these are not MLS listings" |
+| Listings shown today | Sample data, labeled "Place holder — website under development" |
 
 ---
 
@@ -34,6 +34,21 @@ automatically by a GitHub Action on every push. They cannot drift apart.
 separate Stellar authorization, individual consumer registration — and would destroy the
 SEO the bilingual build exists to earn. Leads are captured at the point of intent instead:
 showing requests, alerts, saved searches, CMAs, off-market inventory.
+
+**Nothing on the page claims MLS provenance while the feed is unauthorized.** The site was
+opened to crawlers on 2026-09-13, so the sample properties are publicly indexable and the PR
+board of REALTORS could read them. Everything that could be mistaken for real MLS content is
+now suppressed while `DATA_SOURCE !== 'mlsgrid'`: the "Active" status chip, the "MLS
+Verified" / "Pronoia Exclusive" / "Direct Seller" badges, the `MLS#` on each card and in the
+modal, the "Homes on the market right now" heading, and the Stellar MLS credit line in the
+footer. In their place: a "Place Holder" chip, a "Website under development" badge, a
+prominent notice, and a modal disclaimer stating the property is not real and not sourced
+from any MLS.
+
+**This reverses itself.** None of it is a manual edit to undo — every piece is keyed to
+`DATA_SOURCE`. The moment the MLS Grid token is in place and the sync writes real data, the
+page returns to status chips, MLS numbers, the live heading, and the footer credit on its
+own. Do not "restore" anything by hand.
 
 **MLS compliance is built into the rendering**, not bolted on afterwards: 8-hour refresh
 (rule is 12), listings dropped when they leave the feed, listing brokerage name on every
