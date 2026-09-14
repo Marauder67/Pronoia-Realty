@@ -612,6 +612,9 @@
   }
   .lcard-badge.pending { background: var(--gold); }
   .lcard-badge.sold { background: var(--muted); }
+  /* Placeholder treatment — shown while the site runs on sample data, before the
+     Stellar MLS feed is authorized. Removed automatically once DATA_SOURCE==='mlsgrid'. */
+  .lcard-badge.placeholder { background: rgba(31,41,51,0.82); color: #fff; letter-spacing: 0.1em; }
   .source-badge {
     position: absolute; bottom: 0.85rem; left: 0.85rem;
     font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase;
@@ -620,6 +623,10 @@
   .source-badge.exclusive { background: var(--terracotta); color: #fff; }
   .source-badge.mls { background: rgba(13,43,59,0.85); color: #fff; backdrop-filter: blur(6px); }
   .source-badge.direct { background: rgba(31,41,51,0.85); color: #fff; }
+  .source-badge.placeholder {
+    background: rgba(255,255,255,0.94); color: #6A5320; border: 1px solid #E8D9A8;
+    letter-spacing: 0.08em; text-transform: none; font-size: 0.62rem;
+  }
   .lcard-save {
     position: absolute; top: 0.85rem; right: 0.85rem;
     background: rgba(255,255,255,0.92); width: 34px; height: 34px;
@@ -1257,9 +1264,9 @@
   <section class="listings-wrap" id="listings">
     <div class="listings-head">
       <div class="listings-head-left">
-        <div class="kicker">Featured properties</div>
-        <h2>Homes on the market <em>right now</em></h2>
-        <p>Stellar MLS listings, Pronoia exclusives, and direct-seller opportunities across Puerto Rico.</p>
+        <div class="kicker" id="listingsKicker">Sample properties</div>
+        <h2 id="listingsHeading">Property search <em>preview</em></h2>
+        <p id="listingsSub">A preview of how Puerto Rico listings will appear here. Live Stellar MLS listings once the MLS Grid feed is authorized.</p>
       </div>
     </div>
     <div class="listings-layout">
@@ -1321,7 +1328,7 @@
         <span class="reset-link" onclick="resetFilters()">Reset all filters</span>
       </aside>
       <div>
-        <div class="data-notice sample" id="dataNotice">Sample properties shown for demonstration. Live Stellar MLS listings appear here once the MLS Grid feed is connected.</div>
+        <div class="data-notice sample" id="dataNotice"><strong>Place holder &mdash; website under development.</strong> The properties below are sample data created to demonstrate the site layout. They are not real listings and are not sourced from Stellar MLS or any MLS. Live Stellar MLS listings will appear here once the MLS Grid feed is authorized.</div>
         <div class="listings-controls">
           <div class="listings-count">Showing <strong id="countDisplay">18</strong> properties</div>
           <div class="controls-right">
@@ -1647,7 +1654,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 Pronoia Realty · All rights reserved · Listings courtesy of <strong style="color:rgba(255,255,255,0.7)">Stellar MLS</strong> as distributed by <strong style="color:rgba(255,255,255,0.7)">MLS GRID</strong></span>
+    <span>© 2026 Pronoia Realty · All rights reserved<span id="footerMlsCredit"></span></span>
     <div><a href="#">Privacy Policy</a><a href="#">Equal Housing Opportunity</a></div>
   </div>
   <div style="background:#0a1628;padding:0.75rem 2rem;text-align:center;font-size:0.62rem;color:rgba(255,255,255,0.28);border-top:1px solid rgba(255,255,255,0.05);">
@@ -1699,6 +1706,20 @@ let LISTINGS=[...SAMPLE_LISTINGS];
 let DATA_SOURCE='sample';
 let DATA_AS_OF=null;
 
+/* Placeholder copy — used only while DATA_SOURCE!=='mlsgrid'. The sample properties must
+   not carry anything that reads as MLS status, an MLS number, or a verified listing.
+   All of it disappears on its own the moment the Stellar MLS feed is authorized. */
+const PLACEHOLDER_STATUS='Place holder — website under development';
+const PLACEHOLDER_ID='Not an MLS listing';
+const PLACEHOLDER_MODAL_NOTE='Place holder — website under development. This is a sample property created to demonstrate the site layout. It is not a real listing, it is not sourced from Stellar MLS or any MLS, and no representation is made about its availability, price, or status.';
+const HEAD_KICKER_SAMPLE='Sample properties';
+const HEAD_KICKER_LIVE='Featured properties';
+const HEAD_TITLE_SAMPLE='Property search <em>preview</em>';
+const HEAD_TITLE_LIVE='Homes on the market <em>right now</em>';
+const HEAD_SUB_SAMPLE='A preview of how Puerto Rico listings will appear here. Live Stellar MLS listings once the MLS Grid feed is authorized.';
+const HEAD_SUB_LIVE='Stellar MLS listings, Pronoia exclusives, and direct-seller opportunities across Puerto Rico.';
+const FOOTER_MLS_CREDIT=' · Listings courtesy of <strong style="color:rgba(255,255,255,0.7)">Stellar MLS</strong> as distributed by <strong style="color:rgba(255,255,255,0.7)">MLS GRID</strong>';
+
 async function loadListings(){
   try{
     const res=await fetch('/listings.json?t='+Date.now(),{cache:'no-store'});
@@ -1728,10 +1749,20 @@ function asOfText(){
 function renderDataNotice(){
   const el=document.getElementById('dataNotice'); if(!el) return;
   const live=DATA_SOURCE==='mlsgrid';
+  // The listings heading asserts live inventory; it must not do so on sample data.
+  const k=document.getElementById('listingsKicker'), h=document.getElementById('listingsHeading'), s=document.getElementById('listingsSub');
+  // MLS attribution in the footer is only truthful once real MLS data is on the page.
+  const fc=document.getElementById('footerMlsCredit');
+  if(fc) fc.innerHTML = live ? FOOTER_MLS_CREDIT : '';
+  if(k&&h&&s){
+    k.textContent = live ? HEAD_KICKER_LIVE : HEAD_KICKER_SAMPLE;
+    h.innerHTML   = live ? HEAD_TITLE_LIVE  : HEAD_TITLE_SAMPLE;
+    s.textContent = live ? HEAD_SUB_LIVE    : HEAD_SUB_SAMPLE;
+  }
   el.className='data-notice '+(live?'live':'sample');
   el.innerHTML=live
     ? `Live Stellar MLS listings. Updated ${asOfText()}.`
-    : 'Sample properties shown for demonstration &mdash; these are not MLS listings. Live Stellar MLS listings appear here once the MLS Grid feed is connected.';
+    : '<strong>Place holder &mdash; website under development.</strong> The properties below are sample data created to demonstrate the site layout. They are not real listings and are not sourced from Stellar MLS or any MLS. Live Stellar MLS listings will appear here once the MLS Grid feed is authorized.';
 }
 
 function renderAttribution(){
@@ -1792,8 +1823,8 @@ function renderListings(){
       <div class="lcard-img-wrap">
         <img src="${imgSrc}" alt="${p.StreetName}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" class="lcard-img"/>
         <div class="lcard-img-placeholder" style="display:none">${p.emoji}</div>
-        <div class="lcard-badge ${statusColor(p.StandardStatus)}">${p.StandardStatus}</div>
-        ${sample?(i===0?'<div class="source-badge exclusive">Pronoia Exclusive</div>':i===1?'<div class="source-badge mls">MLS Verified</div>':i===2?'<div class="source-badge direct">Direct Seller</div>':''):(p.isOwn?'<div class="source-badge exclusive">Pronoia Realty Listing</div>':'')}
+        ${sample?'<div class="lcard-badge placeholder">Place Holder</div>':`<div class="lcard-badge ${statusColor(p.StandardStatus)}">${p.StandardStatus}</div>`}
+        ${sample?'<div class="source-badge placeholder">Website under development</div>':(p.isOwn?'<div class="source-badge exclusive">Pronoia Realty Listing</div>':'')}
         <button class="lcard-save" onclick="event.stopPropagation();toggleSave(this,'${p.ListingKey}')">♡</button>
       </div>
       <div class="lcard-body">
@@ -1808,7 +1839,7 @@ function renderListings(){
         </div>
       </div>
       <div class="lcard-footer">
-        <span class="lcard-mls">MLS# ${p.ListingId}</span>
+        <span class="lcard-mls">${sample?'Sample property':'MLS# '+p.ListingId}</span>
         <span class="lcard-type">${p.PropertyType}</span>
       </div>
       ${p.ListOfficeName?`<span class="lcard-broker">Listed by ${p.ListOfficeName}</span>`:''}
@@ -1834,7 +1865,8 @@ function openModal(key){
   }
   document.getElementById('mPrice').textContent=fmt(p.ListPrice);
   document.getElementById('mAddress').textContent=`${p.StreetNumber} ${p.StreetName}${p.SubdivisionName?', '+p.SubdivisionName:''}`;
-  document.getElementById('mLoc').textContent=`${p.City}, Puerto Rico · MLS# ${p.ListingId}`;
+  const isSample=DATA_SOURCE!=='mlsgrid';
+  document.getElementById('mLoc').textContent=isSample?`${p.City}, Puerto Rico · Sample property`:`${p.City}, Puerto Rico · MLS# ${p.ListingId}`;
   document.getElementById('mSpecs').innerHTML=[
     p.BedroomsTotal>0?`<div class="modal-spec"><div class="modal-spec-val">${p.BedroomsTotal}</div><div class="modal-spec-key">Bedrooms</div></div>`:'',
     p.BathroomsTotalInteger>0?`<div class="modal-spec"><div class="modal-spec-val">${p.BathroomsTotalInteger}</div><div class="modal-spec-key">Bathrooms</div></div>`:'',
@@ -1846,10 +1878,13 @@ function openModal(key){
   document.getElementById('mDesc').textContent=p.PublicRemarks;
   const details=[['Property Type',p.PropertyType],['Status',p.StandardStatus],['Days on Market',p.DaysOnMarket],['Garage Spaces',p.GarageSpaces||'None'],['Municipio',p.City],['Year Built',p.YearBuilt||'N/A'],['Features',p.features.length?p.features.join(', '):'Standard'],['Listing ID',p.ListingId]];
   if(p.ListOfficeName) details.push(['Listed By',p.ListOfficeName]);
+  // While the site runs on sample data, nothing may read as MLS status or an MLS number.
+  // Positional indexes (not label text) so this survives translation on /es/.
+  if(isSample){ details[1][1]=PLACEHOLDER_STATUS; details[7][1]=PLACEHOLDER_ID; }
   document.getElementById('mDetails').innerHTML=details.map(([k,v])=>`<div class="detail-row"><span>${k}</span><span>${v}</span></div>`).join('')
-    +(DATA_SOURCE==='mlsgrid'?`<div class="modal-broker">Listing courtesy of ${p.ListOfficeName||'the listing brokerage'}. Based on information submitted to the MLS GRID as of ${asOfText()}. Information deemed reliable but not guaranteed.</div>`:'');
+    +(DATA_SOURCE==='mlsgrid'?`<div class="modal-broker">Listing courtesy of ${p.ListOfficeName||'the listing brokerage'}. Based on information submitted to the MLS GRID as of ${asOfText()}. Information deemed reliable but not guaranteed.</div>`:`<div class="modal-broker">${PLACEHOLDER_MODAL_NOTE}</div>`);
   const addr=`${p.StreetNumber} ${p.StreetName}${p.SubdivisionName?', '+p.SubdivisionName:''}, ${p.City}`;
-  const ref=`MLS# ${p.ListingId} — ${addr}`;
+  const ref=isSample?addr:`MLS# ${p.ListingId} — ${addr}`;
   document.getElementById('mShowing').href='mailto:c.santiago@pronoiarealty.com?subject='+encodeURIComponent(`Showing Request — ${ref}`)+'&body='+encodeURIComponent(`Hola Coral,\n\nI'd like to schedule a showing for:\n${ref}\nListed at ${fmt(p.ListPrice)}\n\nMy preferred days/times:\n\nName:\nPhone:\n\nThank you!`);
   document.getElementById('mInfo').href='mailto:c.santiago@pronoiarealty.com?subject='+encodeURIComponent(`Information Request — ${ref}`)+'&body='+encodeURIComponent(`Hola Coral,\n\nPlease send me more information about:\n${ref}\nListed at ${fmt(p.ListPrice)}\n\nMy questions:\n\nName:\nPhone:\n\nThank you!`);
   document.getElementById('modalOverlay').classList.add('open');
